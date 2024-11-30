@@ -28,19 +28,6 @@ In parallel, my capstone research in the **Cyber Security and Privacy (CSP) Lab*
 - **Cybersecurity in AI Systems**  
   Investigating vulnerabilities in neural networks and proposing defense strategies for secure machine learning.
 
-## Education
-
-- **New York University Abu Dhabi**  
-  - Bachelor of Science in Computer Science  
-  - Minors: Applied Mathematics, Engineering, and Interactive Media  
-  - **Expected Graduation:** May 2025  
-  - **GPA:** 3.622  
-  - Relevant Coursework:  
-    - Deep Learning and LLM-based Generative AI Systems  
-    - Processing Big Data for Analytics Applications  
-    - Computer Security and Cryptography  
-    - Applied Machine Learning  
-
 ## Connect with Me
 
 Explore this website to learn more about my **projects**, **publications**, and **achievements**. Feel free to reach out via [email](mailto:svn9705@nyu.edu) or connect with me on [LinkedIn](https://linkedin.com/in/sanjana-nambiar1967).
