@@ -1,6 +1,6 @@
 ---
 title: "Scribbles"
-excerpt: "Scribbles is healthcare application to help the healthcare professionals, ie the doctors and the nurse to better communicate with each other, organize the patient EHR with control-based access, quick analyze patinet records and send emergency notification to the other healthcare professional..<br/>"
+excerpt: "Scribbles is healthcare application to help the healthcare professionals, ie the doctors and the nurse to better communicate with each other, organize the patient EHR with control-based access, quick analyze patinet records and send emergency notification to the other healthcare professional.<br/>"
 collection: projects
 permalink: /project/scribbles/
 github_repo: "https://github.com/Sanjana-Nambiar/scribbles"
