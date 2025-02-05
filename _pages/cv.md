@@ -9,7 +9,7 @@ redirect_from:
 
 {% include base_path %}
 
-[Download Full Resume (PDF)](/files/academic_resume.pdf)
+[Download Full Resume (PDF)](/files/academic_resume.pdf) [last Updated 20th December 2024]
 
 # Education
 **Bachelor of Science in Computer Science**  
@@ -29,13 +29,13 @@ redirect_from:
 ---
 # Work Experience
 
-**Research Assistant, Data Intelligence and Computation in Engineering (DICE) Lab**<br>
-*Tandon School of Engineering, NYU - Prof Chinmay Hedge*<br>
-(July 2024 – Present)<br>
-
 **Research Assistant, Cyber Security and Privacy (CSP) Lab**<br>
 *NYU Abu Dhabi (Capstone Research) - Prof Christina Pöpper*<br>
 (February 2024 – Present)<br>
+
+**Research Assistant, Data Intelligence and Computation in Engineering (DICE) Lab**<br>
+*Tandon School of Engineering, NYU - Prof Chinmay Hedge*<br>
+(July 2024 – Jan 2025)<br>
 
 **Software Engineer Intern**<br>
 *Letsrise Academy, Abu Dhabi*<br>
