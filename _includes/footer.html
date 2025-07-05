@@ -4,18 +4,15 @@
 <div class="page__footer-follow">
   <ul class="social-icons">
     <li><strong>Connect with me:</strong></li>
-    {% if site.author.github %}
-      <li><a href="http://github.com/{{ site.author.github }}" target="_blank"><i class="fab fa-github" aria-hidden="true"></i> GitHub</a></li>
-    {% endif %}
     {% if site.author.linkedin %}
       <li><a href="https://linkedin.com/in/{{ site.author.linkedin }}" target="_blank"><i class="fab fa-linkedin" aria-hidden="true"></i> LinkedIn</a></li>
+    {% endif %}
+    {% if site.author.github %}
+      <li><a href="http://github.com/{{ site.author.github }}" target="_blank"><i class="fab fa-github" aria-hidden="true"></i> GitHub</a></li>
     {% endif %}
     {% if site.author.email %}
       <li><a href="mailto:{{ site.author.email }}" target="_blank"><i class="fa fa-envelope" aria-hidden="true"></i> Email</a></li>
     {% endif %}
-    <!-- {% if site.atom_feed.hide != true %}
-      <li><a href="{% if site.atom_feed.path %}{{ site.atom_feed.path }}{% else %}{{ base_path }}/feed.xml{% endif %}" target="_blank"><i class="fa fa-fw fa-rss-square" aria-hidden="true"></i> RSS Feed</a></li>
-    {% endif %} -->
   </ul>
 </div>
 {% endif %}

@@ -31,14 +31,14 @@ author:
   email            : "svn9705@nyu.edu" 
 
   # Academic websites
-  # arxiv            : # URL - Update with the correct link to your profile
-  # googlescholar    : #
+  arxiv            : "https://arxiv.org/search/?query=Sanjana+Nambiar&searchtype=all&source=header"
+  googlescholar    : "https://scholar.google.com/citations?user=oSRPEkYAAAAJ&hl=en"
   # impactstory      : # URL
-  # orcid            : #
+  orcid            : "https://orcid.org/0009-0001-2615-672X"
   # semantic         : # URL
   # pubmed           : #
   # researchgate     : # URL
-  # scopus           : # URL
+  # # scopus           : # URL
   # openreview       : "https://openreview.net/profile?id=~Sanjana_Nambiar1"
 
   # Repositories and software development
@@ -46,11 +46,11 @@ author:
   codepen          : # Username
   dribbble         : # Username
   github           : "Sanjana-Nambiar"
-  kaggle           : "sanjananambiar1301" 
+  kaggle           : # "sanjananambiar1301" 
   stackoverflow    : # User number or user number and name (i.e., use "1" or "1/jeff-atwood")    
 
   # Social media
-  facebook         : "sanjana.nambiar.735"
+  facebook         : # "sanjana.nambiar.735"
   flickr           : # Username
   foursquare       : # Username
   goodreads        : # Username
