@@ -13,16 +13,16 @@
     {% if site.author.email %}
       <li><a href="mailto:{{ site.author.email }}" target="_blank"><i class="fa fa-envelope" aria-hidden="true"></i> Email</a></li>
     {% endif %}
-    {% if site.atom_feed.hide != true %}
+    <!-- {% if site.atom_feed.hide != true %}
       <li><a href="{% if site.atom_feed.path %}{{ site.atom_feed.path }}{% else %}{{ base_path }}/feed.xml{% endif %}" target="_blank"><i class="fa fa-fw fa-rss-square" aria-hidden="true"></i> RSS Feed</a></li>
-    {% endif %}
+    {% endif %} -->
   </ul>
 </div>
 {% endif %}
 
 <div class="page__footer-copyright">
   &copy; {{ site.time | date: '%Y' }} <strong>{{ site.name | default: site.title }}</strong>.
-  Built using <a href="http://jekyllrb.com" rel="nofollow" target="_blank">Jekyll</a> and
+  <!-- Built using <a href="http://jekyllrb.com" rel="nofollow" target="_blank">Jekyll</a> and -->
   <!-- <a href="https://github.com/academicpages/academicpages.github.io" target="_blank">AcademicPages</a>, inspired by <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow" target="_blank">Minimal Mistakes</a>.<br /> -->
   Last updated: {{ "now" | date: '%Y-%m-%d' }}
 </div>
