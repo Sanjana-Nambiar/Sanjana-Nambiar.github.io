@@ -9,7 +9,7 @@ redirect_from:
 
 {% include base_path %}
 
-[Download Full Resume (PDF)](/files/academic_resume.pdf) [last Updated 1st July 2025]
+[Download Full Resume (PDF)](/files/academic_resume.pdf)
 
 # Education
 **Bachelor of Science in Computer Science**  
