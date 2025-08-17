@@ -11,7 +11,7 @@ redirect_from:
   <span class="role-rotator__text">AI/ML Researcher</span>
 </div>
 
-<div class="stats">
+<!-- <div class="stats">
   <div class="stat">
     <div class="stat__num"><span class="count" data-target="6">0</span><span class="unit">+</span></div>
     <div class="stat__label">Research projects</div>
@@ -28,7 +28,7 @@ redirect_from:
     <div class="stat__num">2025</div>
     <div class="stat__label">Graduated</div>
   </div>
-</div>
+</div> -->
 
 I’m **Sanjana Nambiar**, a Computer Science graduate from NYU Abu Dhabi with minors in Applied Mathematics and Engineering. My interests lie in **AI/ML security**, **privacy in AI systems**, **AI alignment**, and **optimization** techniques for building robust and ethical models. I’m also passionate about **product development** and **AI workflow optimization**, with hands‑on experience bridging research and real‑world impact.
 
