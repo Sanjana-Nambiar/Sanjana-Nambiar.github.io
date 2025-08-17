@@ -1,11 +1,15 @@
 ---
 title: "ControlNet Analysis"
+date: 2023-12-01
 excerpt: "An in-depth exploration of ControlNet's efficacy in image generation, focusing on the Canny edge detection model and its application to text-to-image diffusion models."
 collection: projects
 permalink: /project/controlnet-analysis/
+header:
+  teaser: projects/controlnet.png 
 github_repo: "https://github.com/Sanjana-Nambiar/controlNet_Analysis"
-# pdf_presentation: "/files/controlnet_analysis.pdf"
-timeline: "January 2024 - April 2024"
+pdf_presentation: "/files/controlnet.pdf"
+tags: [Python, PyTorch, OpenCV, Diffussion Models]
+timeline: "October 2023 - December 2023"
 ---
 
 ### ControlNet Analysis

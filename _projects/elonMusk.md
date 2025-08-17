@@ -1,8 +1,11 @@
 ---
 title: "Elon Musk's Takeover of Twitter"
+date: 2022-12-01
 excerpt: "A comprehensive data analysis examining the impact of Elon Musk's acquisition of Twitter on the platform and its user community, utilizing statistical methods, topic modeling, and sentiment analysis."
 collection: projects
 permalink: /project/elon-musk-twitter-takeover/
+header:
+  teaser: projects/elonmusk.png
 github_repo: "https://github.com/Sanjana-Nambiar/Elon-Musk-s-Takeover-of-Twitter"
 # pdf_presentation: "/files/elon_musk_twitter_takeover.pdf"
 timeline: "October 2022 - December 2022"

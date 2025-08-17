@@ -1,10 +1,13 @@
 ---
 title: "Scribbles"
+date: 2024-05-01
 excerpt: "Scribbles is healthcare application to help the healthcare professionals, ie the doctors and the nurse to better communicate with each other, organize the patient EHR with control-based access, quick analyze patinet records and send emergency notification to the other healthcare professional.<br/>"
 collection: projects
 permalink: /project/scribbles/
+header:
+  teaser: projects/scribbles.png
 github_repo: "https://github.com/Sanjana-Nambiar/scribbles"
-pdf_presentation: "/files/scribbles.pdf"
+slides: "https://www.canva.com/design/DAGEXwKPRhI/e9usK8aYuVsBRbOc2ZnauQ/view?utm_content=DAGEXwKPRhI&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hc37b8ed471"
 timeline: "January 2024 - March 2024"
 ---
 

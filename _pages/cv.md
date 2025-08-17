@@ -15,12 +15,12 @@ redirect_from:
 **Bachelor of Science in Computer Science**  
 *New York University Abu Dhabi* (Expected Graduation: May 2025)  
 - **Minors**: Applied Mathematics, Engineering, Interactive Media  
-- **Relevant Coursework**:  
-  - Deep Learning and LLM-based Generative AI Systems  
-  - Processing Big Data for Analytics Applications  
-  - Computer Security and Cryptography  
-  - Software Engineering  
-  - Applied Machine Learning  
+- **Advanced Coursework**: 
+  - Deep Learning and LLM‑based Generative AI Systems (NYU Courant, Grad Level)  
+  - Processing Big Data for Analytics Applications (NYU Courant)  
+  - Computer Security and Cryptography (NYU Courant)  
+  - Applied Machine Learning (NYU Abu Dhabi)  
+  - Introduction to Machine Learning (NYU Tandon)
 
 **CBSE Higher Secondary (AISSCE)**  
 *Sharjah Indian School* (April 2019 - March 2021)  

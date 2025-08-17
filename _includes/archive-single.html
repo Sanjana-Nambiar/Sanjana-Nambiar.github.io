@@ -1,84 +1,111 @@
 {% include base_path %}
 
-{% if post.header.teaser %}
-  {% capture teaser %}{{ post.header.teaser }}{% endcapture %}
-{% else %}
-  {% assign teaser = site.teaser %}
-{% endif %}
+{%- comment -%}
+Card layout for Projects/Publications/Awards (works across collections).
+Front‑matter it expects (all optional):
+- header.teaser: image path or full URL
+- link: external link for the title
+- timeline: "Jan 2024 – Apr 2024" (projects)
+- venue: "ICLR 2025" (publications)
+- github_repo: "https://github.com/..."
+- paperurl, slidesurl, arxivurl: links for publications
+- tags: [Python, Spark]  (shown as small chips)
+{%- endcomment -%}
 
-{% if post.id %}
-  {% assign title = post.title | markdownify | remove: "<p>" | remove: "</p>" %}
-{% else %}
-  {% assign title = post.title %}
-{% endif %}
+{%- assign teaser = nil -%}
+{%- if post.header and post.header.teaser -%}
+  {%- assign teaser = post.header.teaser -%}
+{%- elsif site.teaser -%}
+  {%- assign teaser = site.teaser -%}
+{%- endif -%}
 
-<div class="{{ include.type | default: "list" }}__item">
-  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
-    {% if include.type == "grid" and teaser %}
-      <div class="archive__item-teaser">
-        <img src=
-          {% if teaser contains "://" %}
-            "{{ teaser }}"
-          {% else %}
-            "{{ teaser | prepend: "/images/" | prepend: base_path }}"
-          {% endif %}
-          alt="">
-      </div>
-    {% endif %}
+{%- assign title = post.title -%}
+{%- if post.id -%}
+  {%- assign title = post.title | markdownify | remove: "<p>" | remove: "</p>" -%}
+{%- endif -%}
 
-    <h2 class="archive__item-title" itemprop="headline">
-      {% if post.link %}
-        <a href="{{ post.link }}">{{ title }}</a> <a href="{{ base_path }}{{ post.url }}" rel="permalink"><i class="fa fa-link" aria-hidden="true" title="permalink"></i><span class="sr-only">Permalink</span></a>
-      {% else %}
+<div class="card">
+  <div class="card__media">
+    {%- if teaser -%}
+      <img
+        src="{% if teaser contains '://' %}{{ teaser }}{% else %}{{ teaser | prepend: '/images/' | prepend: base_path }}{% endif %}"
+        alt="{{ title | strip_html }}">
+    {%- else -%}
+      <div class="card__placeholder">No image yet</div>
+    {%- endif -%}
+  </div>
+
+  <div class="card__body">
+
+    <h3 class="card__title">
+      {%- if post.link -%}
+        <a href="{{ post.link }}" target="_blank" rel="noopener">{{ title }}</a>
+        <a href="{{ base_path }}{{ post.url }}" rel="permalink" class="card__permalink" aria-label="Permalink">↗</a>
+      {%- else -%}
         <a href="{{ base_path }}{{ post.url }}" rel="permalink">{{ title }}</a>
-      {% endif %}
-    </h2>
-    
-    {% if post.read_time %}
-      <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> {% include read-time.html %}</p>
-    {% endif %}
+      {%- endif -%}
+    </h3>
 
-    {% if post.collection == 'teaching' %}
-      <p> {{ post.type }}, <i>{{ post.venue }}</i>, {{ post.date | default: "1900-01-01" | date: "%Y" }} </p>
-    {% elsif post.collection == 'publications' %}
-      <p>Published in <i>{{ post.venue }}</i>, {{ post.date | default: "1900-01-01" | date: "%Y" }} </p>
-    {% elsif post.collection == 'awards' and post.date %}
-      <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Received:</strong> <time datetime="{{ post.date | default: "1900-01-01" | date_to_xmlschema }}">{{ post.date | default: "1900-01-01" | date: "%B %d, %Y" }}</time></p>
-    {% elsif post.collection == 'projects' %}
-      <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Timeline:</strong> {{ post.timeline | default: "N/A" }}</p>
-    {% elsif post.date %}
-      <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].date_label | default: "Published:" }}</strong> <time datetime="{{ post.date | default: "1900-01-01" | date_to_xmlschema }}">{{ post.date | default: "1900-01-01" | date: "%B %d, %Y" }}</time></p>
-    {% endif %}
+    {%- comment -%} META LINE VARIES BY COLLECTION {%- endcomment -%}
+    <div class="card__meta">
+      {%- if post.collection == 'projects' and post.timeline -%}
+        <span><i class="fa fa-calendar" aria-hidden="true"></i> {{ post.timeline }}</span>
+      {%- endif -%}
 
-    {% if post.excerpt and site.read_more != 'enabled' %}
-      <p class="archive__item-excerpt" itemprop="description">{{ post.excerpt | markdownify }}</p>
-    {% elsif post.excerpt and site.read_more == 'enabled' %}
-      <p class="archive__item-excerpt" itemprop="description">{{ post.excerpt | markdownify | remove: '<p>' | remove: '</p>' }}<strong><a href="{{ base_path }}{{ post.url }}" rel="permalink"> Read more</a></strong></p>
-    {% endif %}
+      {%- if post.collection == 'publications' and post.venue -%}
+        <span><i class="fa fa-university" aria-hidden="true"></i> {{ post.venue }}</span>
+      {%- endif -%}
 
-    {% if post.github_repo or post.timeline %}
-      <div class="project-links">
-        {% if post.github_repo %}
-          <a href="{{ post.github_repo }}" class="btn btn-outline-primary" target="_blank"><i class="fab fa-github" aria-hidden="true"></i> View on GitHub</a>
-        {% endif %}
-        {% if post.timeline %}
-          <span class="btn btn-outline-secondary"><i class="fa fa-calendar" aria-hidden="true"></i> Timeline: {{ post.timeline }}</span>
-        {% endif %}
+      {%- if post.read_time -%}
+        <span><i class="fa fa-clock-o" aria-hidden="true"></i> {% include read-time.html %}</span>
+      {%- endif -%}
+    </div>
+
+    {%- if post.excerpt -%}
+      <p class="card__desc">{{ post.excerpt | markdownify | strip_html }}</p>
+    {%- endif -%}
+
+    {%- assign has_badge_row = false -%}
+    {%- if post.github_repo or post.timeline or post.paperurl or post.slidesurl or post.arxivurl or post.tags -%}
+      {%- assign has_badge_row = true -%}
+    {%- endif -%}
+
+    {%- if has_badge_row -%}
+      <div class="card__badges">
+
+        {%- if post.github_repo -%}
+          <a class="card__badge" href="{{ post.github_repo }}" target="_blank" rel="noopener">
+            <i class="fab fa-github" aria-hidden="true"></i> Code
+          </a>
+        {%- endif -%}
+        {%- if post.slides -%}
+            <a class="card__badge" href="{{ post.slides }}" target="_blank" rel="noopener">Slides</a>
+        {%- endif -%}
+
+        {%- if post.collection == 'publications' -%}
+          {%- if post.paperurl -%}
+            <a class="card__badge" href="{{ post.paperurl }}" target="_blank" rel="noopener">Paper</a>
+          {%- endif -%}
+
+          {%- if post.dataseturl -%}
+            <a class="card__badge" href="{{ post.dataseturl }}" target="_blank" rel="noopener">Dataset</a>
+          {%- endif -%}
+          {%- if post.codeurl -%}
+            <a class="card__badge" href="{{ post.codeurl }}" target="_blank" rel="noopener">Code</a>
+          {%- endif -%}
+          {%- if post.slidesurl -%}
+            <a class="card__badge" href="{{ post.slidesurl }}" target="_blank" rel="noopener">Slides</a>
+          {%- endif -%}
+        {%- endif -%}
+
+        {%- if post.tags and post.tags.size > 0 -%}
+          {%- for t in post.tags -%}
+            <span class="card__chip">{{ t }}</span>
+          {%- endfor -%}
+        {%- endif -%}
+
       </div>
-    {% endif %}
-    
-    {% if post.citation and post.paperurl and post.slidesurl %}
-      <p>Recommended citation: {{ post.citation }}<br /><a href="{{ post.paperurl }}">Download Paper</a> | <a href="{{ post.slidesurl }}">Download Slides</a></p>
-    {% elsif post.citation and post.paperurl %}
-      <p>Recommended citation: {{ post.citation }}<br /><a href="{{ post.paperurl }}">Download Paper</a></p>
-    {% elsif post.citation and post.slidesurl %}
-      <p>Recommended citation: {{ post.citation }}<br /><a href="{{ post.slidesurl }}">Download Slides</a></p>
-    {% elsif post.citation %}
-      <p>Recommended citation: {{ post.citation }}</p>
-    {% elsif post.paperurl %}
-      <p><a href=" {{ post.paperurl }} ">Download Paper</a></p>
-    {% elsif post.slidesurl %}
-      <p><a href="{{ post.slidesurl }}">Download Slides</a></p>
-    {% endif %}
-  </article>
+    {%- endif -%}
+
+  </div>
 </div>

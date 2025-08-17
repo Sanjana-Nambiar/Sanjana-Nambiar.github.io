@@ -11,7 +11,7 @@ locale                   : "en-US"
 title                    : "Sanjana Nambiar"
 title_separator          : "-"
 name                     : &name "Sanjana Nambiar"
-description              : &description "AI Security and Privacy Researcher"
+# description              : &description "AI Security and Privacy Researcher"
 url                      : https://sanjana-nambiar.github.io 
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "academicpages/academicpages.github.io"
@@ -24,13 +24,13 @@ author:
   avatar           : "profile.png"
   name             : "Sanjana Nambiar"
   pronouns         : "she/her"  
-  bio              : "AI Security and Privacy Researcher"
+  # bio              : "AI Security and Privacy Researcher"
   location         : "Sharjah, United Arab Emirates"
   employer         : "New York University Abu Dhabi"
   uri              : # URL
   email            : "svn9705@nyu.edu" 
 
-  linkedin         : "sanjana-nambiar1967"
+  linkedin         : "sanjanavnambiar"
   github           : "Sanjana-Nambiar"
 
   # Academic websites

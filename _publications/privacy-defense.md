@@ -6,6 +6,8 @@ permalink: /publication/privacy-defense
 excerpt: "Explores synthetic data fine-tuning to mitigate unauthorized access to private information in LLMs, focusing on reducing attack success rates while maintaining model utility."
 date: 2024-12-01
 venue: 'NeurIPS 2024 LLM Privacy Competition'
+header:
+  teaser: publications/fakedata.png 
 paperurl: '/files/llmpc_defense_strategy.pdf'
 citation: 'Sanjana Nambiar, Chinmay Hegde, Niv Cohen. (2024). "Synthetic Fine-Tuning as a Defense Mechanism in Large Language Model PII Attacks." <i>NeurIPS 2024 LLM Privacy Competition</i>.'
 ---

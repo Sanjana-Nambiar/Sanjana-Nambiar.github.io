@@ -1,10 +1,13 @@
 ---
 title: "NavGuard"
+date: 2023-12-01
 excerpt: "NavGuard is a safety-focused navigation application designed to optimize routing by considering real-time factors like construction, traffic, and collisions within a city, ensuring efficient and secure travel.<br/>"
 collection: projects
 permalink: /project/navguard/
+header:
+  teaser: projects/navguard.png
 github_repo: "https://github.com/Sanjana-Nambiar/NavGuard"
-# pdf_presentation: "/files/navguard.pdf"
+slideurl: "https://www.canva.com/design/DAF26ZruWUk/oOH0kzAzmxS6p3XQytw9sA/view?utm_content=DAF26ZruWUk&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=heb156b660d"
 timeline: "November 2023 - February 2024"
 ---
 
