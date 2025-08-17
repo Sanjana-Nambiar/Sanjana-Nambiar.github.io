@@ -10,7 +10,6 @@ redirect_from:
   - /about.html
 ---
 
-
 <div class="role-rotator" data-roles='["AI/ML Researcher","Product Manager","Data Scientist","AI Security Engineer"]'>
   <span class="role-rotator__text">AI/ML Researcher</span>
 </div>
