@@ -79,7 +79,11 @@ Front‑matter it expects (all optional):
           </a>
         {%- endif -%}
         {%- if post.slides -%}
-            <a class="card__badge" href="{{ post.slides }}" target="_blank" rel="noopener">Slides</a>
+          <a class="card__badge" href="{{ post.slides }}" target="_blank" rel="noopener">Slides</a>
+        {%- endif -%}
+
+        {%- if post.paper -%}
+          <a class="card__badge" href="{{ post.paper }}" target="_blank" rel="noopener">Paper</a>
         {%- endif -%}
 
         {%- if post.collection == 'publications' -%}

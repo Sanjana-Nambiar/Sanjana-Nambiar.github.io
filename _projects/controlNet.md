@@ -7,7 +7,7 @@ permalink: /project/controlnet-analysis/
 header:
   teaser: projects/controlnet.png 
 github_repo: "https://github.com/Sanjana-Nambiar/controlNet_Analysis"
-pdf_presentation: "/files/controlnet.pdf"
+paper: "/files/controlnet.pdf"
 tags: [Python, PyTorch, OpenCV, Diffussion Models]
 timeline: "October 2023 - December 2023"
 ---
@@ -28,5 +28,6 @@ Developed as part of a research initiative to enhance understanding of condition
 
 <div>
   <a href="{{ page.github_repo }}" target="_blank" class="btn btn-outline-primary"><i class="fab fa-github"></i> View on GitHub</a>
-  <a href="{{ page.pdf_presentation }}" target="_blank" class="btn btn-outline-secondary"><i class="fa fa-file-pdf"></i> View Presentation</a>
+  <a href="{{ page.paper }}" target="_blank" class="btn btn-outline-secondary"><i class="fa fa-file-pdf"></i> View PDF</a>
+  <!-- <a href="{{ page.slides }}" target="_blank" class="btn btn-outline-secondary"><i class="fa fa-book"></i> View Slides</a> -->
 </div>

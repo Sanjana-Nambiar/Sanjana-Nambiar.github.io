@@ -7,7 +7,7 @@ permalink: /project/elon-musk-twitter-takeover/
 header:
   teaser: projects/elonmusk.png
 github_repo: "https://github.com/Sanjana-Nambiar/Elon-Musk-s-Takeover-of-Twitter"
-# pdf_presentation: "/files/elon_musk_twitter_takeover.pdf"
+tags: [Python, Sentiment Analysis]
 timeline: "October 2022 - December 2022"
 ---
 
@@ -26,5 +26,7 @@ This analysis provides insights into the community's response to significant cha
 
 <div>
   <a href="{{ page.github_repo }}" target="_blank" class="btn btn-outline-primary"><i class="fab fa-github"></i> View on GitHub</a>
-  <a href="{{ page.pdf_presentation }}" target="_blank" class="btn btn-outline-secondary"><i class="fa fa-file-pdf"></i> View Presentation</a>
+  <!-- <a href="{{ page.paper }}" target="_blank" class="btn btn-outline-secondary"><i class="fa fa-file-pdf"></i> View PDF</a> -->
+  <!-- <a href="{{ page.slides }}" target="_blank" class="btn btn-outline-secondary"><i class="fa fa-book"></i> View Slides</a> -->
 </div>
+
