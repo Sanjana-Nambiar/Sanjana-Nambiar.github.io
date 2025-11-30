@@ -12,9 +12,9 @@ title                    : "Sanjana Nambiar"
 title_separator          : "-"
 name                     : &name "Sanjana Nambiar"
 # description              : &description "AI Security and Privacy Researcher"
-url                      : https://sanjana-nambiar.github.io 
+url                      : "https://sanjana-nambiar.github.io" 
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
-repository               : "academicpages/academicpages.github.io"
+repository               : "Sanjana-Nambiar/Sanjana-Nambiar.github.io"
 
 # Site Author - The following control what appear as part of the author content on the side bar.
 #               If a field is blank the icon and link will not appear, otherwise it will be shown.
@@ -305,7 +305,6 @@ timezone: Etc/UTC # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 plugins:
   - jekyll-feed
   - jekyll-gist
-  - jekyll-paginate
   - jekyll-sitemap
   - jemoji
 
@@ -313,7 +312,6 @@ plugins:
 whitelist:
   - jekyll-feed
   - jekyll-gist
-  - jekyll-paginate
   - jekyll-sitemap
   - jemoji
 
