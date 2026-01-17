@@ -1,0 +1,277 @@
+---
+layout: none
+title: "First Reversible Neuromorphic Chip Demonstrates On-Device Unlearning"
+permalink: /news12.html
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>First Reversible Neuromorphic Chip Demonstrates On-Device Unlearning</title>
+<meta name="description" content="A speculative research news brief on a reversible neuromorphic chip enabling task-bounded on-device unlearning via controllable synaptic reversibility windows.">
+
+<style>
+  :root{
+    --bg0:#020617; --bg1:#0b1220; --card:#071026;
+    --text:#e5e7eb; --muted:#9aa7bd; --accent:#a78bfa; --accent2:#22d3ee;
+    --line: rgba(255,255,255,0.08);
+    --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    --sans: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  }
+  body{
+    margin:0;
+    font-family:var(--sans);
+    background: radial-gradient(1200px 700px at 15% 10%, rgba(167,139,250,0.18), transparent 55%),
+                radial-gradient(1000px 600px at 85% 30%, rgba(34,211,238,0.14), transparent 60%),
+                linear-gradient(180deg, var(--bg1), var(--bg0));
+    color:var(--text);
+    line-height:1.9;
+  }
+  .wrap{max-width:1050px; margin:auto; padding:84px 28px;}
+  .card{
+    background: linear-gradient(180deg, rgba(7,16,38,0.92), rgba(2,6,23,0.92));
+    border-radius:22px;
+    padding:64px;
+    box-shadow: 0 50px 120px rgba(0,0,0,0.65), inset 0 0 0 1px var(--line);
+    position:relative;
+    overflow:hidden;
+  }
+  .label{
+    font-family:var(--mono);
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    font-size:.82em;
+    color:#c7b8ff;
+  }
+  h1{
+    margin:.35em 0 .2em;
+    font-size:3.0em;
+    line-height:1.1;
+    letter-spacing:-0.02em;
+  }
+  .meta{color:var(--muted); font-size:.98em; margin-top:8px;}
+  h2{
+    margin-top:3.2em;
+    color:var(--accent2);
+    font-size:1.6em;
+    letter-spacing:-0.01em;
+  }
+  p{margin:1.25em 0; color:var(--text);}
+  .grid{
+    display:grid;
+    grid-template-columns: 1.2fr .8fr;
+    gap:22px;
+    margin:34px 0 12px;
+  }
+  .panel{
+    background: rgba(255,255,255,0.03);
+    border-radius:16px;
+    padding:22px 22px;
+    border:1px solid var(--line);
+  }
+  .kpi{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap:14px;
+    margin-top:10px;
+  }
+  .kpi .box{
+    padding:14px 14px;
+    border-radius:14px;
+    background: rgba(167,139,250,0.10);
+    border:1px solid rgba(167,139,250,0.25);
+  }
+  .kpi .num{font-size:1.55em; font-weight:750; color:#e9ddff;}
+  .kpi .cap{font-size:.92em; color:var(--muted); margin-top:4px;}
+  .callout{
+    margin:40px 0;
+    padding:26px;
+    border-radius:16px;
+    background: linear-gradient(135deg, rgba(34,211,238,0.14), rgba(167,139,250,0.08));
+    border:1px solid rgba(34,211,238,0.25);
+  }
+  .quote{
+    margin:22px 0;
+    padding-left:18px;
+    border-left:3px solid rgba(34,211,238,0.55);
+    color:#d6def4;
+    font-style:italic;
+  }
+  table{
+    width:100%;
+    border-collapse:collapse;
+    margin:18px 0 8px;
+    font-size:.98em;
+  }
+  th, td{
+    border-bottom:1px solid var(--line);
+    padding:12px 10px;
+    vertical-align:top;
+  }
+  th{
+    color:#cfe8ff;
+    font-weight:650;
+    font-family:var(--mono);
+    font-size:.86em;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+  }
+  .refs a{color:#bfe8ff; text-decoration:none; border-bottom:1px dotted rgba(191,232,255,0.4);}
+  .refs a:hover{border-bottom-style:solid;}
+  footer{
+    margin-top:78px;
+    padding-top:26px;
+    border-top:1px solid var(--line);
+    color:var(--muted);
+    font-size:.9em;
+  }
+  .pill{
+    display:inline-block; padding:6px 10px; border-radius:999px;
+    background: rgba(255,255,255,0.04); border:1px solid var(--line);
+    color:var(--muted); font-family:var(--mono); font-size:.82em;
+  }
+</style>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="card">
+      <div class="label">Breakthrough Report · Neuromorphic Hardware</div>
+      <h1>First Reversible Neuromorphic Chip Demonstrates On-Device “Unlearning”</h1>
+      <div class="meta">
+        Helix Neuromorphics Lab (HNL) · Applied Memory Systems Desk · January 2026 ·
+        <span class="pill">Proof-of-concept</span> <span class="pill">Task-bounded</span> <span class="pill">Non-catastrophic</span>
+      </div>
+
+      <p>
+        A research team at the <strong>Helix Neuromorphics Lab</strong> claims it has demonstrated the first
+        <strong>reversible neuromorphic chip</strong> capable of <strong>on-device unlearning</strong>, selectively attenuating
+        specific learned patterns without full retraining, and without wiping adjacent task competence.
+      </p>
+
+      <p>
+        The result, presented as a controlled lab “systems note,” is careful about its scope: the team does <em>not</em> claim perfect erasure.
+        Instead, it introduces a hardware-defined <strong>Synaptic Reversibility Window (SRW)</strong> that enables <strong>pattern attenuation</strong>
+        under defined conditions, while retaining baseline circuit stability.
+      </p>
+
+      <div class="grid">
+        <div class="panel">
+          <strong>Working Definition</strong>
+          <div class="callout" style="margin:14px 0 0;">
+            <strong>On-device unlearning</strong> refers to a controlled reduction in activation likelihood for a target pattern
+            within a specified task manifold, achieved without a full network retrain and without global catastrophic interference.
+          </div>
+          <p style="margin-top:16px;">
+            The SRW is implemented as a reversible conductance regime for synapse elements (implemented here as a hybrid memristive array),
+            allowing a “forget” operation that behaves like <strong>localized weight decay</strong> rather than global rewrite.
+          </p>
+        </div>
+
+        <div class="panel">
+          <strong>Early Lab Metrics (HNL SRW-2 prototype)</strong>
+          <div class="kpi">
+            <div class="box">
+              <div class="num">−68%</div>
+              <div class="cap">Target pattern activation (median)</div>
+            </div>
+            <div class="box">
+              <div class="num">+1.9%</div>
+              <div class="cap">Adjacent task error increase</div>
+            </div>
+            <div class="box">
+              <div class="num">0.43×</div>
+              <div class="cap">Energy vs full retraining</div>
+            </div>
+            <div class="box">
+              <div class="num">14 min</div>
+              <div class="cap">Median unlearning cycle time</div>
+            </div>
+          </div>
+          <p style="margin-top:12px; color:var(--muted);">
+            Reported across 12 chip samples, 4 task families, and 3 “forget sets” per task.
+          </p>
+        </div>
+      </div>
+
+      <h2>What “Reversible” Means (And What It Doesn’t)</h2>
+      <p>
+        The team frames reversibility as a <strong>hardware operating regime</strong>, not a claim of perfect information deletion.
+        Their internal write-up repeatedly avoids “erase” language, substituting “attenuate,” “de-potentiate,” and “selective decay.”
+      </p>
+
+      <p class="quote">
+        “This is not memory deletion. It’s more like the chip can deliberately stop over-responding to a pattern it once amplified.”
+        — Dr. Mira Han, Lead Architect, HNL
+      </p>
+
+      <h2>Study Design Snapshot</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Task family</th>
+            <th>Target to unlearn</th>
+            <th>Evaluation</th>
+            <th>Key outcome</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Event detection</td>
+            <td>False-trigger motif</td>
+            <td>ROC-AUC pre/post</td>
+            <td>False positives ↓ with AUC stable</td>
+          </tr>
+          <tr>
+            <td>Adaptive control</td>
+            <td>Unsafe action bias</td>
+            <td>Constraint violations</td>
+            <td>Violations ↓, control stability preserved</td>
+          </tr>
+          <tr>
+            <td>Edge classification</td>
+            <td>Spurious shortcut feature</td>
+            <td>Shortcut reliance index</td>
+            <td>Reliance ↓ 52–61% (reported)</td>
+          </tr>
+          <tr>
+            <td>Incremental learning</td>
+            <td>Overfit micro-cluster</td>
+            <td>Generalization gap</td>
+            <td>Gap ↓ with minor recall tradeoff</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>Why This Is Suddenly Interesting in 2026</h2>
+      <p>
+        “Unlearning” has been discussed largely as a <strong>software problem</strong> (e.g., compliance-driven removal requests and safety interventions),
+        but the HNL result reframes it as a <strong>hardware affordance</strong>: if forgetting is a first-class operation, edge systems could adapt
+        without shipping raw data back to the cloud.
+      </p>
+
+      <p class="quote">
+        “The killer claim isn’t forgetting — it’s <em>selective</em> forgetting with bounded collateral damage.”
+        — Prof. S. Okafor, Neuromorphic Systems Reviewer
+      </p>
+
+      <h2>Limitations (The Part That Makes It Believable)</h2>
+      <ul>
+        <li><strong>Task-bounded:</strong> Unlearning was demonstrated inside constrained task manifolds, not arbitrary knowledge deletion.</li>
+        <li><strong>Windowed:</strong> SRW only functions under a calibrated conductance regime; it is not available continuously.</li>
+        <li><strong>Tradeoffs:</strong> Some forget operations increased error on adjacent tasks by 1–4% (reported variability).</li>
+        <li><strong>Verification gap:</strong> Independent replication is pending; HNL released only partial measurement traces.</li>
+      </ul>
+
+      <h2>References (Real-world anchors)</h2>
+      <div class="refs">
+        <ol>
+          <li><a href="https://www.nist.gov/itl/ai-risk-management-framework" target="_blank" rel="noreferrer">NIST AI Risk Management Framework (AI RMF)</a> — governance language for trustworthiness and lifecycle risk framing.</li>
+          <li><a href="https://nvlpubs.nist.gov/nistpubs/ai/nist.ai.100-1.pdf" target="_blank" rel="noreferrer">NIST AI RMF 1.0 (PDF)</a> — voluntary framework emphasizing transparency and accountability.</li>
+        </ol>
+      </div>
+  </div>
+</body>
+</html>

@@ -45,6 +45,23 @@ For more, check out **[Publications](/publications/)**, **[Projects](/projects/)
 <br><br><br>
 <h2>NEWS</h2>
 
+<b>First Reversible Neuromorphic Chip Demonstrates On-Device Unlearning</b><br>
+A speculative 2026 research report describes a reversible neuromorphic chip capable of task-bounded, on-device “unlearning” through controlled synaptic attenuation rather than full retraining. Early lab results suggest targeted pattern suppression (up to 68%) with minimal degradation to adjacent tasks, highlighting hardware-level approaches to selective forgetting in edge AI systems. <a href="/news12.html">[Click here for more details]</a>
+<br>
+
+<b>SentinelStack™ Launches as a Continuous AI Output Verification Layer</b><br>
+SentinelStack™ is a fictional enterprise middleware platform designed to continuously verify, score, and audit AI-generated outputs before deployment. Positioned as a trust and observability layer rather than a safety filter, early pilots report modest latency overhead (7–12 ms) alongside reductions in policy-violating outputs, reflecting growing demand for auditable AI infrastructure. <a href="/news13.html">[Click here for more details]</a>
+<br>
+
+<b>CLARITY-1.0 Introduces Cognitive Load Labels for AI Tools</b><br>
+CLARITY-1.0 is a proposed cross-platform disclosure standard that introduces “cognitive load labels” for AI-assisted systems, reporting estimated ranges for attention demand, verification burden, decision pressure, and accountability shift. Framed as a voluntary, procurement-oriented standard, CLARITY reflects emerging efforts to make the hidden cognitive costs of AI workflows visible and comparable. <a href="/news14.html">[Click here for more details]</a>
+<br>
+
+<b>Breaking: First Sustained Decline in Human-Origin Internet Traffic Detected</b><br>
+A speculative data synthesis from network measurement sources reports a 3–5% year-over-year decline in traffic classified as human-originated, despite continued overall internet traffic growth driven by automation and AI crawlers. Analysts emphasize methodological uncertainty, framing the trend as an early signal of shifting web dynamics rather than a definitive behavioral collapse. <a href="/news15.html">[Click here for more details]</a>
+<br>
+
+
 <b>Glowcare: Multispectral AI Skin Diagnostics Platform (ASIIG Brief, 2026)</b><br>
 Glowcare is an emerging AI-driven skin diagnostics platform combining multispectral facial imaging (RGB, UV, depth) with machine learning–based interpretation. A speculative research brief by the Adaptive Systems & Information Integrity Group (ASIIG) reports reduced inference variance (18–23%) and internal agreement rates of 82–91%, reflecting broader shifts toward perceptual, interpretable AI systems. <a href="/news7.html">[Click here for more details]</a>
 <br>

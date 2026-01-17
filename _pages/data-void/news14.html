@@ -1,0 +1,235 @@
+---
+layout: none
+title: "CLARITY-1.0: The First Standard for AI Cognitive Load Labels"
+permalink: /news14.html
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>CLARITY-1.0: The First Standard for AI Cognitive Load Labels</title>
+<meta name="description" content="A speculative policy-and-standards brief introducing CLARITY-1.0, a cross-platform standard for disclosing cognitive load impact in AI-assisted tools.">
+
+<style>
+  :root{
+    --bg:#0b1020; --bg2:#050816; --card:#0e1630;
+    --text:#e6edf7; --muted:#9fb0c8; --accent:#60a5fa; --accent2:#34d399;
+    --line: rgba(255,255,255,0.10);
+    --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    --sans: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  }
+  body{
+    margin:0; font-family:var(--sans); color:var(--text);
+    background: radial-gradient(900px 520px at 12% 18%, rgba(96,165,250,0.20), transparent 55%),
+                radial-gradient(900px 520px at 88% 35%, rgba(52,211,153,0.16), transparent 55%),
+                linear-gradient(180deg, var(--bg), var(--bg2));
+    line-height:1.9;
+  }
+  .wrap{max-width:1020px; margin:auto; padding:82px 28px;}
+  .card{
+    background: linear-gradient(180deg, rgba(14,22,48,0.92), rgba(5,8,22,0.92));
+    border-radius:20px;
+    padding:62px;
+    box-shadow: 0 52px 120px rgba(0,0,0,0.6), inset 0 0 0 1px var(--line);
+  }
+  .label{font-family:var(--mono); letter-spacing:.12em; text-transform:uppercase; font-size:.82em; color:#b8d6ff;}
+  h1{font-size:2.95em; line-height:1.1; margin:.35em 0 .2em; letter-spacing:-0.02em;}
+  .meta{color:var(--muted); margin-bottom:36px;}
+  h2{margin-top:3.1em; color:var(--accent2); font-size:1.6em;}
+  p{margin:1.2em 0;}
+  .callout{
+    margin:34px 0;
+    padding:24px;
+    border-radius:16px;
+    background: rgba(52,211,153,0.10);
+    border:1px solid rgba(52,211,153,0.25);
+  }
+  .pill{display:inline-block; padding:6px 10px; border-radius:999px; background:rgba(255,255,255,0.04); border:1px solid var(--line); color:var(--muted); font-family:var(--mono); font-size:.82em;}
+  .grid{display:grid; grid-template-columns: 1.05fr .95fr; gap:18px; margin:18px 0;}
+  .panel{
+    border:1px solid var(--line);
+    border-radius:16px;
+    padding:20px;
+    background: rgba(255,255,255,0.03);
+  }
+  table{width:100%; border-collapse:collapse; margin:14px 0; font-size:.98em;}
+  th, td{border-bottom:1px solid var(--line); padding:12px 10px; vertical-align:top;}
+  th{font-family:var(--mono); letter-spacing:.08em; text-transform:uppercase; font-size:.86em; color:#b9f6dd;}
+  .quote{margin:18px 0; padding-left:18px; border-left:3px solid rgba(52,211,153,0.55); color:#d9fbe9; font-style:italic;}
+  .badge{
+    display:flex; gap:14px; align-items:flex-start;
+    border:1px solid rgba(96,165,250,0.25);
+    background: linear-gradient(135deg, rgba(96,165,250,0.14), rgba(52,211,153,0.08));
+    border-radius:16px;
+    padding:18px;
+    margin:12px 0;
+  }
+  .badge .tag{
+    font-family:var(--mono);
+    font-size:.82em;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    color:#cfe8ff;
+    background: rgba(255,255,255,0.04);
+    border:1px solid var(--line);
+    border-radius:999px;
+    padding:6px 10px;
+    white-space:nowrap;
+  }
+  .metric{
+    display:grid; grid-template-columns: 1fr 1fr;
+    gap:10px; margin-top:14px;
+  }
+  .metric .box{
+    border-radius:14px;
+    padding:12px 12px;
+    background: rgba(52,211,153,0.10);
+    border:1px solid rgba(52,211,153,0.22);
+  }
+  .metric .num{font-size:1.45em; font-weight:800;}
+  .metric .cap{color:var(--muted); font-size:.92em; margin-top:4px;}
+  footer{margin-top:78px; padding-top:26px; border-top:1px solid var(--line); color:var(--muted); font-size:.9em;}
+</style>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="card">
+      <div class="label">Standards Release · Interface Governance / Work Systems</div>
+      <h1>CLARITY-1.0 Introduces the First Cross-Platform “Cognitive Load Label” for AI Tools</h1>
+      <div class="meta">
+        International Digital Interfaces Consortium (IDIC) · Standards Bulletin · January 2026 ·
+        <span class="pill">Voluntary</span> <span class="pill">Procurement-ready</span> <span class="pill">Disclosure-first</span>
+      </div>
+
+      <p>
+        The <strong>International Digital Interfaces Consortium (IDIC)</strong> has published <strong>CLARITY-1.0</strong>, a proposed
+        reporting standard that requires AI tools to disclose their expected <strong>cognitive load impact</strong> on users —
+        not by measuring brain activity (thankfully), but by standardizing what systems <em>demand</em> from attention, verification,
+        and decision-making.
+      </p>
+
+      <div class="callout">
+        <strong>Core thesis:</strong> Modern AI tools can increase productivity while quietly increasing oversight burden.
+        CLARITY-1.0 makes that tradeoff visible through standardized labels, ranges, and accountability declarations.
+      </div>
+
+      <div class="grid">
+        <div class="panel">
+          <strong>What CLARITY-1.0 Measures</strong>
+          <p style="margin-top:10px; color:var(--muted);">
+            CLARITY treats cognitive load as an <strong>interface + workflow property</strong>. The goal is comparability,
+            not perfect psychological truth.
+          </p>
+          <table>
+            <thead>
+              <tr>
+                <th>Dimension</th>
+                <th>Reported as</th>
+                <th>Why it matters</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Interrupt Density (ID)</td>
+                <td>events/hour (range)</td>
+                <td>Context switching erodes deep work</td>
+              </tr>
+              <tr>
+                <td>Verification Burden (VB)</td>
+                <td>review actions/task</td>
+                <td>Safety requires checking; checking costs attention</td>
+              </tr>
+              <tr>
+                <td>Decision Compression (DC)</td>
+                <td>time window band</td>
+                <td>Defaults steer choices under time pressure</td>
+              </tr>
+              <tr>
+                <td>Accountability Shift (AS)</td>
+                <td>human/shared/system</td>
+                <td>Who owns outcomes defines risk</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="panel">
+          <strong>Example CLARITY Label (How Tools Would Display It)</strong>
+
+          <div class="badge">
+            <div class="tag">CLARITY LABEL</div>
+            <div>
+              <div style="font-size:1.15em; font-weight:800; margin-top:2px;">Cognitive Load: <span style="color:#b9f6dd;">Moderate</span></div>
+              <div style="color:var(--muted); margin-top:6px;">
+                Based on typical use in long-session workflows. Ranges vary by expertise and task criticality.
+              </div>
+
+              <div class="metric">
+                <div class="box">
+                  <div class="num">6–11</div>
+                  <div class="cap">Interrupts / hour (ID)</div>
+                </div>
+                <div class="box">
+                  <div class="num">3–5</div>
+                  <div class="cap">Review actions / task (VB)</div>
+                </div>
+                <div class="box">
+                  <div class="num">Standard</div>
+                  <div class="cap">Decision window (DC)</div>
+                </div>
+                <div class="box">
+                  <div class="num">Shared</div>
+                  <div class="cap">Accountability shift (AS)</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <p style="margin-top:14px;">
+            The label is intentionally <strong>range-based</strong> to discourage fake precision.
+            Vendors must also publish a short method note describing how estimates were derived.
+          </p>
+        </div>
+      </div>
+
+      <h2>Why This Standard Emerged Now</h2>
+      <p>
+        CLARITY-1.0 cites a pattern observed across workplace deployments: AI systems often increase throughput, but shift hidden work
+        onto users in the form of micro-decisions, reviewing, verifying, and monitoring. This “shadow labor” becomes visible only when
+        tools are compared consistently across environments.
+      </p>
+
+      <p class="quote">
+        “We don’t need mind-reading. We need honest disclosure about how much attention a tool consumes to be used safely.”
+        — Dr. Kaori Sato, IDIC Rapporteur
+      </p>
+
+      <h2>Early Adoption</h2>
+      <p>
+        According to the bulletin, CLARITY labels are being piloted in three areas:
+      </p>
+      <ul>
+        <li><strong>University systems</strong> adopting AI tutoring tools for large courses.</li>
+        <li><strong>Public-sector procurement</strong> templates that require transparency artifacts.</li>
+        <li><strong>Enterprise copilots</strong> where liability pressures demand auditable outputs.</li>
+      </ul>
+
+      <h2>Limitations & Critiques</h2>
+      <ul>
+        <li><strong>Not psychological truth:</strong> It reports workflow demands, not brain states.</li>
+        <li><strong>Gaming risk:</strong> Vendors may optimize to “look low-load” rather than improve usability.</li>
+        <li><strong>Context dependence:</strong> Novices and experts experience the same tool differently.</li>
+      </ul>
+
+      <p class="quote">
+        “If CLARITY becomes a checkbox, it’ll fail. If it becomes a procurement norm, it’ll change everything.”
+        — Prof. Daniel Reyes, Human-Computer Interaction Lab
+      </p>
+
+    </div>
+  </div>
+</body>
+</html>
