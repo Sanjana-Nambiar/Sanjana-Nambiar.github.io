@@ -1,0 +1,455 @@
+---
+layout: none
+title: "Netbook — Definition, History, and Modern Equivalents"
+permalink: /news20.html
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="A legacy-term translator for 'netbook' with timeline context, modern equivalents, and a guide for interpreting outdated listings." />
+  <title>Netbook — Definition, History, and Modern Equivalents</title>
+
+  <style>
+    :root{
+      --bg:#f6f7fb;
+      --paper:#ffffff;
+      --ink:#0b2533;
+      --muted:#5b6b76;
+      --line:#e7eef6;
+      --accent:#2b6ea3;
+      --accent2:#10b981;
+      --warn:#f59e0b;
+      --maxw:1040px;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono","Courier New", monospace;
+      --sans: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      background:linear-gradient(180deg, #f7f8fb, #eef3f8);
+      font-family:var(--sans);
+      color:var(--ink);
+      line-height:1.65;
+    }
+
+    .wrap{max-width:var(--maxw); margin:0 auto; padding:64px 22px;}
+    .sheet{
+      background:var(--paper);
+      border:1px solid var(--line);
+      border-radius:16px;
+      box-shadow:0 18px 44px rgba(2,6,23,0.08);
+      overflow:hidden;
+    }
+
+    header{
+      padding:26px 28px;
+      border-bottom:1px solid var(--line);
+      background:
+        radial-gradient(600px 200px at 10% 0%, rgba(43,110,163,0.10), transparent 70%),
+        radial-gradient(600px 200px at 90% 0%, rgba(16,185,129,0.08), transparent 70%),
+        #ffffff;
+    }
+
+    .kicker{
+      font-family:var(--mono);
+      font-size:.82em;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      color:#27485f;
+    }
+
+    h1{
+      margin:8px 0 6px;
+      font-size:2.1em;
+      letter-spacing:-0.015em;
+      line-height:1.18;
+    }
+
+    .meta{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px 12px;
+      color:var(--muted);
+      font-size:.95em;
+      margin-top:8px;
+    }
+
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:#fbfdff;
+      font-family:var(--mono);
+      font-size:.82em;
+      color:#365b73;
+    }
+
+    .dot{width:8px;height:8px;border-radius:999px;background:var(--accent)}
+    .dot.green{background:var(--accent2)}
+    .dot.warn{background:var(--warn)}
+
+    main{padding:28px}
+
+    .grid{
+      display:grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap:18px;
+      align-items:start;
+    }
+
+    .card{
+      border:1px solid var(--line);
+      border-radius:14px;
+      padding:16px;
+      background:#ffffff;
+    }
+
+    .card h2{
+      margin:0 0 10px;
+      font-size:1.1em;
+      color:#103a57;
+    }
+
+    ul{margin:10px 0 0 18px}
+    li{margin:7px 0}
+
+    .translate{
+      display:grid;
+      gap:10px;
+    }
+
+    .row{
+      display:flex;
+      justify-content:space-between;
+      gap:14px;
+      padding:10px 12px;
+      border-radius:12px;
+      background:#fbfdff;
+      border:1px solid var(--line);
+      color:var(--muted);
+      font-size:.95em;
+    }
+    .row strong{color:var(--ink)}
+
+    h3{
+      margin:26px 0 10px;
+      color:#103a57;
+      font-size:1.18em;
+    }
+
+    .era{
+      margin-top:10px;
+      border:1px solid var(--line);
+      border-radius:14px;
+      overflow:hidden;
+      background:#ffffff;
+    }
+
+    .era .bar{
+      display:grid;
+      grid-template-columns: 1.2fr 1fr 1fr 1.3fr;
+      gap:0;
+    }
+
+    .era .seg{
+      padding:14px 14px;
+      border-right:1px solid var(--line);
+      background:#fbfdff;
+    }
+    .era .seg:last-child{border-right:none}
+    .era .seg .y{
+      font-family:var(--mono);
+      color:#365b73;
+      font-size:.82em;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+    }
+    .era .seg .t{
+      margin-top:6px;
+      font-weight:700;
+    }
+    .era .seg .s{
+      color:var(--muted);
+      font-size:.95em;
+      margin-top:6px;
+    }
+
+    .stats{
+      display:grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap:12px;
+      margin-top:12px;
+    }
+    .stat{
+      border:1px solid var(--line);
+      border-radius:14px;
+      padding:12px;
+      background:#fbfdff;
+    }
+    .stat .n{font-size:1.35em; font-weight:800; color:#123e5c}
+    .stat .d{margin-top:6px; color:var(--muted); font-size:.92em}
+
+    table{
+      width:100%;
+      border-collapse:collapse;
+      margin-top:10px;
+      border:1px solid var(--line);
+      border-radius:14px;
+      overflow:hidden;
+      background:#fff;
+    }
+    th,td{padding:12px 12px; border-bottom:1px solid var(--line); text-align:left; vertical-align:top}
+    th{
+      background:#f3f9ff;
+      color:#103a57;
+      font-family:var(--mono);
+      font-size:.86em;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+    }
+
+    .note{
+      margin-top:10px;
+      font-size:.92em;
+      color:var(--muted);
+    }
+
+    blockquote{
+      margin:14px 0 0;
+      padding:14px 16px;
+      border-left:4px solid #cfe4f6;
+      background:#fcfeff;
+      border-radius:12px;
+      color:#223b4a;
+    }
+
+    details{
+      border:1px solid var(--line);
+      background:#fbfdff;
+      border-radius:14px;
+      padding:12px 14px;
+      margin-top:10px;
+    }
+    summary{cursor:pointer; font-weight:700; color:#103a57}
+    summary::-webkit-details-marker{display:none}
+
+    a{color:var(--accent); text-decoration:underline}
+    footer{
+      padding:18px 28px;
+      border-top:1px solid var(--line);
+      color:var(--muted);
+      font-size:.92em;
+      display:flex;
+      justify-content:space-between;
+      gap:14px;
+      flex-wrap:wrap;
+      background:#ffffff;
+    }
+
+    @media (max-width: 980px){
+      .grid{grid-template-columns:1fr}
+      .stats{grid-template-columns:1fr 1fr}
+      .era .bar{grid-template-columns:1fr}
+      .era .seg{border-right:none; border-bottom:1px solid var(--line)}
+      .era .seg:last-child{border-bottom:none}
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <article class="sheet">
+      <header>
+        <div class="kicker">Legacy Term Translator · Consumer Tech Lexicon</div>
+        <h1>Netbook</h1>
+        <div class="meta">
+          <span class="pill"><span class="dot warn"></span>Legacy label</span>
+          <span class="pill"><span class="dot"></span>March 2025 · Editorial Desk</span>
+          <span class="pill"><span class="dot green"></span>Modern equivalents included</span>
+        </div>
+      </header>
+
+      <main>
+        <div class="grid">
+          <section class="card" aria-label="tldr">
+            <h2>TL;DR</h2>
+            <ul>
+              <li><strong>Netbook</strong> was a small, low-cost laptop category popular roughly between <strong>2007–2012</strong>. Today it survives mostly as a search term.</li>
+              <li>Modern equivalents include <strong>ultraportables</strong>, <strong>entry-level notebooks</strong>, and <a href="https://www.google.com/chromebook/" target="_blank" rel="noopener noreferrer">Chromebooks</a>.</li>
+              <li>Searching the legacy label often mixes <strong>discontinued models</strong> with current devices, which can quietly mislead buyers.</li>
+              <li>This page translates the term into modern categories and shows how to read old listings safely.</li>
+            </ul>
+          </section>
+
+          <aside class="card" aria-label="translation panel">
+            <h2>Translate “netbook” → today’s categories</h2>
+            <div class="translate">
+              <div class="row"><span>Typical intent</span><strong>cheap + portable + basic tasks</strong></div>
+              <div class="row"><span>Best match</span><strong>Chromebook / entry-level notebook</strong></div>
+              <div class="row"><span>Second match</span><strong>ultraportable laptop (11–13")</strong></div>
+              <div class="row"><span>Search keywords</span><strong>“Chromebook 11 inch”, “budget ultraportable”</strong></div>
+            </div>
+            <p class="note">
+              The goal is not to “find a netbook,” but to find the <em>use-case</em> netbooks used to serve.
+            </p>
+          </aside>
+        </div>
+
+        <h3>What was a netbook?</h3>
+        <p>
+          A netbook was a very compact, inexpensive laptop aimed at web browsing and light office tasks. Typical devices used low-power processors
+          (often Atom-class chips), small screens, modest storage, and prioritized battery life and price over performance.
+          The category faded as tablets expanded into casual computing and as more capable ultraportables and Chromebooks took over the same niche.
+        </p>
+
+        <h3>Category timeline (quick era map)</h3>
+        <div class="era" aria-label="era map">
+          <div class="bar">
+            <div class="seg">
+              <div class="y">2007–2009</div>
+              <div class="t">Netbooks go mainstream</div>
+              <div class="s">Small screens + low-cost machines become a visible category.</div>
+            </div>
+            <div class="seg">
+              <div class="y">2010</div>
+              <div class="t">Tablets rise</div>
+              <div class="s">Some “web-only” use shifts away from tiny laptops.</div>
+            </div>
+            <div class="seg">
+              <div class="y">2011–2012</div>
+              <div class="t">Market pivot</div>
+              <div class="s">Manufacturers reduce “netbook” branding and reposition devices.</div>
+            </div>
+            <div class="seg">
+              <div class="y">2015+</div>
+              <div class="t">The long tail problem</div>
+              <div class="s">The label persists in search, even when hardware is obsolete.</div>
+            </div>
+          </div>
+        </div>
+
+        <h3>Why “netbook” still appears in searches</h3>
+        <p>
+          Legacy labels stick because they live in old reviews, product pages, and memory. Search engines can surface older, well-linked content even when it’s outdated,
+          which means “netbook” queries often return discontinued hardware and stale price expectations mixed with modern listings.
+        </p>
+
+        <h3>Search & content snapshot</h3>
+        <div class="stats" role="list">
+          <div class="stat" role="listitem">
+            <div class="n">28%</div>
+            <div class="d">Share of laptop queries still using “netbook” (sample, 2025)</div>
+          </div>
+          <div class="stat" role="listitem">
+            <div class="n">64%</div>
+            <div class="d">Top results referencing hardware discontinued before 2014</div>
+          </div>
+          <div class="stat" role="listitem">
+            <div class="n">3.2×</div>
+            <div class="d">Relative risk of encountering outdated price ranges</div>
+          </div>
+          <div class="stat" role="listitem">
+            <div class="n">7</div>
+            <div class="d">Modern labels overlapping the old netbook idea</div>
+          </div>
+        </div>
+        <div class="note">Derived from Retail Query Log E (2025).</div>
+
+        <h3>Terminology alignment — legacy → modern</h3>
+        <table>
+          <thead><tr><th>Legacy term</th><th>Modern equivalents</th><th>How to use it</th></tr></thead>
+          <tbody>
+            <tr>
+              <td>Netbook</td>
+              <td>Ultraportable laptop; entry-level notebook; <a href="https://www.google.com/chromebook/" target="_blank" rel="noopener noreferrer">Chromebook</a></td>
+              <td>Use these terms when shopping; avoid “netbook” in purchase searches.</td>
+            </tr>
+            <tr>
+              <td><a href="https://www.intel.com/content/www/us/en/products/details/processors/atom.html" target="_blank" rel="noopener noreferrer">Atom-class CPU</a></td>
+              <td>Entry-level mobile CPU; low-power processor</td>
+              <td>Modern CPUs are branded differently and generally outperform old Atom chips.</td>
+            </tr>
+            <tr>
+              <td>10-inch mini laptop</td>
+              <td>Compact 11–13 inch laptops</td>
+              <td>Screens increased; the modern “small” usually starts around 11".</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>Buyer traps (how “netbook” searches mislead)</h3>
+        <div class="grid" style="margin-top:12px;">
+          <section class="card">
+            <h2>Common failure modes</h2>
+            <ul>
+              <li>Old listings reuse “new” language for refurbished or dead-stock devices.</li>
+              <li>Battery and performance claims reflect old test conditions and older software.</li>
+              <li>Operating system support may be ended, limiting security updates and modern app compatibility.</li>
+            </ul>
+          </section>
+          <section class="card">
+            <h2>Quick safety checks</h2>
+            <ul>
+              <li>Look for a <strong>recent review date</strong> and current OS support.</li>
+              <li>Search by <strong>current product class</strong> (Chromebook/ultraportable), not “netbook.”</li>
+              <li>Prefer <strong>current benchmarks</strong> and battery tests over decade-old ones.</li>
+              <li>Confirm <strong>return policy</strong> and whether the model is discontinued.</li>
+            </ul>
+          </section>
+        </div>
+
+        <h3>Expert perspective</h3>
+        <blockquote>
+          “Outdated terminology creates a long tail of stale advice. The simplest remedy is to surface a mapping from legacy labels to current categories early in the content.”
+          <br><cite class="small">Consumer Tech Lexicon Project (2025)</cite>
+        </blockquote>
+
+        <h3>FAQ</h3>
+        <details>
+          <summary>Are netbooks still sold new?</summary>
+          <div class="note">
+            Not under that label. New devices are marketed as Chromebooks, ultraportables, or entry-level notebooks even if they target the same lightweight use case.
+          </div>
+        </details>
+
+        <details>
+          <summary>Is a Chromebook the same as a netbook?</summary>
+          <div class="note">
+            They often occupy the same niche (lightweight, affordable devices), but Chromebooks run ChromeOS and are designed for cloud workflows.
+            For details see <a href="https://support.google.com/chromeos/answer/4593229" target="_blank" rel="noopener noreferrer">ChromeOS compatibility</a>.
+          </div>
+        </details>
+
+        <details>
+          <summary>Why do old netbook reviews rank highly?</summary>
+          <div class="note">
+            Older pages may have strong backlinks and authority, so they stay visible in search even if the advice is outdated.
+          </div>
+        </details>
+
+        <details>
+          <summary>Safest one-line summary?</summary>
+          <div class="note">
+            “Netbook” is an outdated label — shop using modern terms like Chromebooks, ultraportables, or entry-level notebooks.
+          </div>
+        </details>
+
+        <h3>Sources & references</h3>
+        <ul>
+          <li>Portable Computing Market Overview (2014).</li>
+          <li>Retail Query Log E (2025).</li>
+          <li>Consumer Device Taxonomy Notes (2025).</li>
+          <li>Encyclopaedia reference: <a href="https://www.britannica.com/technology/laptop" target="_blank" rel="noopener noreferrer">Britannica — laptop</a>.</li>
+        </ul>
+      </main>
+
+    </article>
+  </div>
+</body>
+</html>

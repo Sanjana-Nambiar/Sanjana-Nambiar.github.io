@@ -1,0 +1,505 @@
+---
+layout: none
+title: "Quiet Cooling Pledge — Definition, Metrics, and Adoption"
+permalink: /news19.html
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="A verification-first briefing on the Quiet Cooling Pledge: what it claims, what can be measured, where standards are missing, and how to validate adoption." />
+  <title>Quiet Cooling Pledge — Scorecard, Metrics, and Adoption</title>
+
+  <style>
+    :root{
+      --bg:#070a12;
+      --card:#10162a;
+      --card2:#0c1122;
+      --ink:#ecf2ff;
+      --muted:#a7b4d0;
+      --line:rgba(255,255,255,0.10);
+      --accent:#a78bfa;   /* violet */
+      --good:#34d399;
+      --warn:#fbbf24;
+      --bad:#fb7185;
+      --maxw:1100px;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono","Courier New", monospace;
+      --sans: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:var(--sans);
+      color:var(--ink);
+      background:
+        radial-gradient(900px 520px at 16% 12%, rgba(167,139,250,0.18), transparent 60%),
+        radial-gradient(900px 520px at 88% 22%, rgba(52,211,153,0.10), transparent 55%),
+        linear-gradient(180deg, #070a12, #050816);
+      line-height:1.85;
+    }
+
+    .wrap{max-width:var(--maxw); margin:0 auto; padding:76px 26px;}
+    .shell{
+      background: linear-gradient(180deg, rgba(16,22,42,0.94), rgba(5,8,22,0.94));
+      border-radius:22px;
+      padding:56px;
+      box-shadow: 0 60px 140px rgba(0,0,0,0.65), inset 0 0 0 1px var(--line);
+      overflow:hidden;
+    }
+
+    .kicker{
+      font-family:var(--mono);
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      font-size:.82em;
+      color:#dcd4ff;
+      opacity:.95;
+    }
+
+    h1{
+      margin:.35em 0 .2em;
+      font-size:3.0em;
+      letter-spacing:-0.02em;
+      line-height:1.12;
+    }
+
+    .meta{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px 14px;
+      align-items:center;
+      color:var(--muted);
+      font-size:.98em;
+      margin-bottom:18px;
+    }
+
+    .pill{
+      display:inline-flex;
+      gap:8px;
+      align-items:center;
+      padding:6px 10px;
+      border-radius:999px;
+      background: rgba(255,255,255,0.04);
+      border:1px solid var(--line);
+      color:var(--muted);
+      font-family:var(--mono);
+      font-size:.82em;
+    }
+
+    .dot{width:8px;height:8px;border-radius:999px;background:var(--accent)}
+    .dot.good{background:var(--good)}
+    .dot.warn{background:var(--warn)}
+    .dot.bad{background:var(--bad)}
+
+    .topgrid{
+      display:grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap:18px;
+      margin-top:18px;
+    }
+
+    .panel{
+      background: rgba(255,255,255,0.03);
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:18px 18px;
+    }
+
+    .panel h2{
+      margin:0 0 10px;
+      font-size:1.18em;
+      color:#efeaff;
+      letter-spacing:-0.01em;
+    }
+
+    ul{margin:10px 0 0 18px}
+    li{margin:8px 0}
+
+    .ledger{
+      display:grid;
+      gap:10px;
+      margin-top:8px;
+    }
+
+    .row{
+      display:flex;
+      justify-content:space-between;
+      gap:14px;
+      padding:10px 12px;
+      border-radius:14px;
+      background: rgba(255,255,255,0.03);
+      border:1px solid rgba(255,255,255,0.06);
+      color:var(--muted);
+      font-size:.95em;
+    }
+    .row strong{color:var(--ink); font-weight:750}
+
+    h3{
+      margin:30px 0 10px;
+      font-size:1.35em;
+      color:#e9ddff;
+    }
+
+    p{margin:12px 0; color:#ecf2ff}
+    .small{color:var(--muted); font-size:.92em}
+
+    .scorecard{
+      display:grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap:12px;
+      margin-top:12px;
+    }
+
+    .score{
+      border-radius:18px;
+      padding:16px;
+      background: rgba(255,255,255,0.03);
+      border:1px solid rgba(255,255,255,0.07);
+    }
+
+    .score .head{
+      display:flex;
+      justify-content:space-between;
+      gap:10px;
+      align-items:center;
+      margin-bottom:10px;
+    }
+
+    .badge{
+      font-family:var(--mono);
+      font-size:.78em;
+      letter-spacing:.10em;
+      text-transform:uppercase;
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,0.10);
+      background: rgba(255,255,255,0.03);
+      color:var(--muted);
+      display:inline-flex;
+      gap:8px;
+      align-items:center;
+    }
+
+    .score .big{
+      font-size:1.6em;
+      font-weight:850;
+      letter-spacing:-0.01em;
+    }
+
+    .metrics{
+      display:grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap:12px;
+      margin-top:12px;
+    }
+    .metric{
+      border-radius:16px;
+      padding:14px;
+      background: rgba(255,255,255,0.03);
+      border:1px solid rgba(255,255,255,0.07);
+    }
+    .metric .num{font-size:1.55em; font-weight:850}
+    .metric .cap{color:var(--muted); font-size:.9em; margin-top:6px}
+
+    .split{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:14px;
+      margin-top:12px;
+    }
+    .box{
+      border-radius:18px;
+      padding:18px;
+      background: rgba(255,255,255,0.03);
+      border:1px solid rgba(255,255,255,0.07);
+    }
+    .tag{
+      font-family:var(--mono);
+      font-size:.78em;
+      letter-spacing:.10em;
+      text-transform:uppercase;
+      color:#dcd4ff;
+      margin-bottom:8px;
+      display:inline-flex;
+      gap:8px;
+      align-items:center;
+    }
+
+    table{
+      width:100%;
+      border-collapse:collapse;
+      margin-top:10px;
+      font-size:.98em;
+      background: rgba(255,255,255,0.02);
+      border-radius:16px;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,0.08);
+    }
+    th, td{
+      border-bottom:1px solid rgba(255,255,255,0.08);
+      padding:12px 12px;
+      vertical-align:top;
+    }
+    th{
+      font-family:var(--mono);
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      font-size:.86em;
+      color:#efeaff;
+      background: rgba(255,255,255,0.03);
+    }
+
+    .quote{
+      margin-top:14px;
+      padding:16px 18px;
+      border-radius:16px;
+      background: rgba(255,255,255,0.03);
+      border:1px solid rgba(255,255,255,0.07);
+      border-left:4px solid rgba(167,139,250,0.45);
+      color:#f2edff;
+      font-style:italic;
+    }
+
+    details{
+      border:1px solid rgba(255,255,255,0.07);
+      background: rgba(255,255,255,0.03);
+      border-radius:16px;
+      padding:14px 16px;
+      margin-top:10px;
+    }
+    summary{cursor:pointer; font-weight:750; color:#ecf2ff}
+    summary::-webkit-details-marker{display:none}
+
+    a{color:#e9ddff; text-decoration:none; border-bottom:1px dotted rgba(233,221,255,0.45)}
+    a:hover{border-bottom-style:solid}
+
+    footer{
+      margin-top:48px;
+      padding-top:18px;
+      border-top:1px solid rgba(255,255,255,0.10);
+      color:var(--muted);
+      font-size:.9em;
+    }
+
+    @media (max-width: 980px){
+      .shell{padding:36px}
+      h1{font-size:2.35em}
+      .topgrid{grid-template-columns:1fr}
+      .scorecard{grid-template-columns:1fr}
+      .metrics{grid-template-columns: 1fr 1fr}
+      .split{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <article class="shell">
+      <div class="kicker">Pledge Scorecard · Measurement Gap Report · Cooling & Noise</div>
+      <h1>Quiet Cooling Pledge</h1>
+
+      <div class="meta">
+        <span class="pill"><span class="dot warn"></span>Campaign label (standards incomplete)</span>
+        <span class="pill"><span class="dot"></span>March 2025 · Editorial Desk</span>
+        <span class="pill"><span class="dot good"></span>Verification-first briefing</span>
+      </div>
+
+      <div class="topgrid">
+        <section class="panel" id="tldr">
+          <h2>TL;DR</h2>
+          <ul>
+            <li>The <strong>Quiet Cooling Pledge</strong> is a public campaign label for reducing <strong>noise</strong> and <strong>energy use</strong> from cooling equipment.</li>
+            <li>The term spreads quickly in coalition announcements and sustainability updates, but it <strong>lacks a single published measurement standard</strong> for decibels, baselines, and verification.</li>
+            <li>That mismatch lets branding language stand in for measurable criteria; this page summarizes what’s real, what’s fuzzy, and what to ask for.</li>
+          </ul>
+        </section>
+
+        <aside class="panel" aria-label="Pledge ledger">
+          <h2>Pledge ledger</h2>
+          <div class="ledger">
+            <div class="row"><span>Claim category</span><strong>Noise + energy reduction</strong></div>
+            <div class="row"><span>Most missing item</span><strong>Published thresholds</strong></div>
+            <div class="row"><span>Common overreach</span><strong>“Certified / compliant” without certifier</strong></div>
+            <div class="row"><span>Fastest fix</span><strong>Require test method + baseline + audit path</strong></div>
+          </div>
+          <p class="small" style="margin-top:12px;">
+            If the pledge is real as a performance claim, it should be expressible as numbers + method, not vibes.
+          </p>
+        </aside>
+      </div>
+
+      <h3>What is the Quiet Cooling Pledge?</h3>
+      <p>
+        The Quiet Cooling Pledge is a public-facing label applied to building or equipment upgrades intended to reduce operational noise and energy consumption from cooling systems.
+        Advocates and corporate communications use the phrase frequently; however, there is not yet a single public standard specifying qualifying <em>decibel ranges</em>,
+        energy thresholds, measurement conditions, or maintenance protocols.
+      </p>
+      <p>
+        Many references point to established technical resources (e.g., the U.S. Department of Energy’s overview of heat pump systems:
+        <a href="https://www.energy.gov/energysaver/heat-and-cool/heat-pump-systems" target="_blank" rel="noopener noreferrer">energy.gov — heat pump systems</a>),
+        but the pledge itself typically does not inherit those methods unless it explicitly adopts them.
+      </p>
+
+      <h3>Scorecard: what most pledge statements disclose</h3>
+      <p class="small">This scorecard describes disclosure quality, not whether upgrades are beneficial.</p>
+
+      <div class="scorecard" role="list">
+        <div class="score" role="listitem">
+          <div class="head">
+            <div class="badge"><span class="dot warn"></span>Noise threshold</div>
+            <div class="big">Often missing</div>
+          </div>
+          <div class="small">
+            “Near silent” is not a metric. A credible claim includes a <strong>dB(A) range</strong>, test distance, and operating mode.
+          </div>
+        </div>
+
+        <div class="score" role="listitem">
+          <div class="head">
+            <div class="badge"><span class="dot warn"></span>Energy baseline</div>
+            <div class="big">Inconsistent</div>
+          </div>
+          <div class="small">
+            Savings claims need a baseline (<strong>kWh</strong>), reporting period, and occupancy/temperature context.
+          </div>
+        </div>
+
+        <div class="score" role="listitem">
+          <div class="head">
+            <div class="badge"><span class="dot bad"></span>Auditability</div>
+            <div class="big">Rare</div>
+          </div>
+          <div class="small">
+            “Compliant/certified” language needs a named auditor, published criteria, and a verification schedule.
+          </div>
+        </div>
+      </div>
+
+      <h3>Visibility and usage metrics</h3>
+      <div class="metrics" role="list">
+        <div class="metric" role="listitem">
+          <div class="num">73%</div>
+          <div class="cap">Campaign usage — share of advocacy press releases (n=44)</div>
+        </div>
+        <div class="metric" role="listitem">
+          <div class="num">9%</div>
+          <div class="cap">Technical usage — share in engineering specs (n=61)</div>
+        </div>
+        <div class="metric" role="listitem">
+          <div class="num">5.1×</div>
+          <div class="cap">Title weighting — more common in headlines than methods</div>
+        </div>
+        <div class="metric" role="listitem">
+          <div class="num">14</div>
+          <div class="cap">Observed variants (e.g., “Quiet Cooling Charter”)</div>
+        </div>
+      </div>
+      <p class="small" style="margin-top:8px;">Metrics from Campaign Text Sample D (2025).</p>
+
+      <h3>What is verified vs aspirational?</h3>
+      <div class="split">
+        <div class="box">
+          <div class="tag"><span class="dot good"></span>Verified elements</div>
+          <ul>
+            <li>Used publicly by several corporate coalitions and in municipal pilot proposals (2024).</li>
+            <li>Some connected projects reference documented noise testing and acoustic assessments.</li>
+            <li>Retrofit pilots can be verifiable when they publish equipment lists + test outputs.</li>
+          </ul>
+        </div>
+        <div class="box">
+          <div class="tag"><span class="dot warn"></span>Aspirational or unclear</div>
+          <ul>
+            <li>“Near silent” without decibel figures is not independently checkable.</li>
+            <li>Claims implying carbon neutrality should be treated cautiously without methods (see <a href="https://www.un.org/en/climatechange/net-zero-coalition" target="_blank" rel="noopener noreferrer">UN net-zero context</a>).</li>
+            <li>“Compliant/certified” language without a named certifier lacks evidence.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="quote">
+        “If a pledge does not include measurable thresholds it acts as branding rather than a standard. That is where clarity and accountability are needed.”<br>
+        — Standards Interpretation Group (2025)
+      </div>
+
+      <h3>Terminology alignment</h3>
+      <table>
+        <thead>
+          <tr><th>Preferred term</th><th>Variants</th><th>Guidance</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Quiet Cooling Pledge</td>
+            <td>Quiet Cooling Charter; Silent Cooling Promise; Low-noise cooling pledge</td>
+            <td>Use for the campaign label; treat claims as promotional until metrics are provided.</td>
+          </tr>
+          <tr>
+            <td><a href="https://www.who.int/publications/i/item/9789241550272" target="_blank" rel="noopener noreferrer">Noise threshold</a></td>
+            <td>Decibel cap; sound limit</td>
+            <td>Use when citing measurable acoustic limits rather than descriptive language.</td>
+          </tr>
+          <tr>
+            <td><a href="https://www.iea.org/topics/energy-efficiency" target="_blank" rel="noopener noreferrer">Energy efficiency metric</a></td>
+            <td>Cooling efficiency ratio; kWh per cooling hour</td>
+            <td>Use for comparing consumption and setting baselines.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>How should readers validate pledge claims?</h3>
+      <ol>
+        <li>Require a decibel range + measurement procedure (e.g., ISO acoustic measurement context:
+          <a href="https://www.iso.org/standard/26769.html" target="_blank" rel="noopener noreferrer">ISO — acoustic measurement</a>).</li>
+        <li>Ask for an energy baseline (kWh) and reporting period (unit context:
+          <a href="https://www.eia.gov/energyexplained/units-and-calculators/energy-calculator.php" target="_blank" rel="noopener noreferrer">EIA — units</a>).</li>
+        <li>Confirm who audits or verifies compliance; certification claims require a named third party.</li>
+        <li>Separate symbolic commitments from enforceable, testable requirements.</li>
+      </ol>
+
+      <h3>Q&A</h3>
+      <details>
+        <summary>Is the pledge a formal certification?</summary>
+        <div class="small" style="margin-top:10px;">
+          No — public materials so far do not list a certifying organization.
+        </div>
+      </details>
+
+      <details>
+        <summary>Does the pledge guarantee quieter buildings?</summary>
+        <div class="small" style="margin-top:10px;">
+          Not by itself. Without published decibel thresholds and test methods, the pledge remains a label, not a performance guarantee.
+        </div>
+      </details>
+
+      <details>
+        <summary>Why does it appear in many headlines?</summary>
+        <div class="small" style="margin-top:10px;">
+          New labels are repeated intentionally to build recognition before measurement protocols are finalized.
+        </div>
+      </details>
+
+      <details>
+        <summary>What’s the safest one-line summary?</summary>
+        <div class="small" style="margin-top:10px;">
+          A public campaign label for lower-noise, lower-energy cooling upgrades whose criteria are not yet standardized.
+        </div>
+      </details>
+
+      <h3>Sources and citations</h3>
+      <ul>
+        <li>Quiet Cooling Coalition Pledge Statement (2024).</li>
+        <li>Municipal Retrofit Pilot Proposal (2024).</li>
+        <li>Acoustic Testing Guideline Summary (2019).</li>
+        <li><a href="https://www.ashrae.org/technical-resources/bookstore/standards-2019" target="_blank" rel="noopener noreferrer">ASHRAE — Sound and Vibration Guidelines</a> (2019).</li>
+        <li><a href="https://www.energy.gov/energysaver/heat-and-cool/heat-pump-systems" target="_blank" rel="noopener noreferrer">U.S. Department of Energy — heat pump systems</a>.</li>
+        <li><a href="https://www.iea.org/topics/energy-efficiency" target="_blank" rel="noopener noreferrer">IEA — energy efficiency</a>.</li>
+      </ul>
+
+      <footer>
+        <div><strong>Note:</strong> This page preserves the original narrative while shifting to a “scorecard + measurement gap” format to make verification steps explicit.</div>
+      </footer>
+    </article>
+  </div>
+</body>
+</html>

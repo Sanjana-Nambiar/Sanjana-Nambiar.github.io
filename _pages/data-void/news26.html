@@ -1,0 +1,461 @@
+---
+layout: none
+title: "Gallium Nitride (GaN) — The Revolution in Power Electronics"
+permalink: /news26.html
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="GaN in power electronics: what it is, why it matters, where it wins, and what to verify when people make big efficiency claims." />
+  <title>Gallium Nitride (GaN) — The Revolution in Power Electronics</title>
+
+  <style>
+    :root{
+      --bg:#f6f7fb;
+      --paper:#ffffff;
+      --ink:#07212a;
+      --muted:#55626c;
+      --line:#e6edf5;
+
+      --accent:#0a69b8;
+      --accent2:#2b9b66;
+
+      --soft:#f1f8ff;
+      --soft2:#f1fff7;
+
+      --maxw:1120px;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono","Courier New", monospace;
+      --sans: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:var(--sans);
+      color:var(--ink);
+      line-height:1.7;
+      background: radial-gradient(900px 420px at 15% 0%, rgba(10,105,184,0.12), transparent 55%),
+                  radial-gradient(900px 420px at 85% 0%, rgba(43,155,102,0.10), transparent 55%),
+                  var(--bg);
+    }
+
+    .wrap{max-width:var(--maxw); margin:0 auto; padding:56px 20px;}
+    .paper{
+      background:var(--paper);
+      border:1px solid var(--line);
+      border-radius:18px;
+      box-shadow:0 18px 55px rgba(2,6,23,0.08);
+      overflow:hidden;
+    }
+
+    header{
+      padding:26px 28px;
+      border-bottom:1px solid var(--line);
+      background:linear-gradient(180deg, #ffffff, #fbfdff);
+    }
+
+    .kicker{
+      font-family:var(--mono);
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      color:#2c4a5a;
+      font-size:.82em;
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      align-items:center;
+    }
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:7px 10px;
+      border:1px solid var(--line);
+      border-radius:999px;
+      background:#ffffff;
+      color:#2c4a5a;
+    }
+    .dot{width:10px;height:10px;border-radius:50%;background:var(--accent)}
+
+    h1{margin:12px 0 8px; font-size:2.05em; line-height:1.18; letter-spacing:-0.02em;}
+    .meta{color:var(--muted); font-size:.95em; display:flex; flex-wrap:wrap; gap:10px 14px;}
+    .tags{margin-top:10px; color:#6b7b86; font-size:.95em}
+
+    .layout{
+      display:grid;
+      grid-template-columns: 310px 1fr;
+      gap:0;
+    }
+
+    aside{
+      border-right:1px solid var(--line);
+      background:linear-gradient(180deg, #ffffff, #fcfeff);
+      padding:20px 18px;
+    }
+
+    .toc h2{
+      margin:0 0 10px;
+      font-size:1.05em;
+      color:#0b3a57;
+    }
+    .toc a{
+      display:block;
+      padding:9px 10px;
+      border-radius:12px;
+      color:#0b3a57;
+      text-decoration:none;
+      border:1px solid transparent;
+    }
+    .toc a:hover{
+      border-color:var(--line);
+      background:#fbfdff;
+    }
+    .toc small{color:var(--muted)}
+
+    .sidecard{
+      margin-top:16px;
+      border:1px solid var(--line);
+      border-radius:16px;
+      padding:12px 12px;
+      background:var(--soft);
+    }
+    .sidecard h3{margin:0 0 8px; font-size:1.0em}
+    .sidecard p{margin:0; color:var(--muted); font-size:.95em}
+
+    main{padding:24px 28px 28px}
+
+    .lead{
+      border:1px solid #dbe9f7;
+      background:var(--soft);
+      border-left:6px solid rgba(10,105,184,0.55);
+      border-radius:16px;
+      padding:14px 16px;
+      margin-bottom:18px;
+    }
+    .lead strong{display:block; margin-bottom:6px}
+
+    h2{margin:24px 0 10px; font-size:1.2em; color:#0b3a57;}
+    h3{margin:16px 0 8px; font-size:1.05em; color:#103a57;}
+
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap:12px;
+      margin-top:12px;
+    }
+    .box{
+      border:1px solid var(--line);
+      border-radius:16px;
+      padding:12px 12px;
+      background:#fff;
+    }
+    .box .title{
+      display:flex;
+      justify-content:space-between;
+      gap:10px;
+      align-items:baseline;
+      margin-bottom:6px;
+    }
+    .box .title b{font-size:1.02em}
+    .badge{
+      font-family:var(--mono);
+      font-size:.78em;
+      padding:6px 9px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:#fbfdff;
+      color:#2c4a5a;
+      white-space:nowrap;
+    }
+    .box p{margin:0; color:var(--muted); font-size:.96em}
+
+    .two{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:12px;
+      margin-top:12px;
+    }
+
+    .callout{
+      border:1px solid #d9f3e4;
+      background:var(--soft2);
+      border-left:6px solid rgba(43,155,102,0.55);
+      border-radius:16px;
+      padding:12px 14px;
+    }
+    .callout b{display:block; margin-bottom:6px}
+    .callout ul{margin:8px 0 0 18px}
+
+    table{
+      width:100%;
+      border-collapse:collapse;
+      margin-top:12px;
+      border:1px solid var(--line);
+      border-radius:14px;
+      overflow:hidden;
+    }
+    th,td{padding:11px 12px; border-top:1px solid var(--line); text-align:left; vertical-align:top}
+    thead th{
+      background:#fbfdff;
+      border-top:none;
+      font-family:var(--mono);
+      font-size:.84em;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      color:#2c4a5a;
+    }
+
+    a.external{color:var(--accent); text-decoration:underline}
+
+    .small{color:#6b7b86; font-size:.92em}
+
+    .ghost{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:10px 14px;
+      border:1px solid var(--line);
+      border-radius:12px;
+      background:#fff;
+      color:#0b3a57;
+      text-decoration:none;
+      font-weight:800;
+    }
+
+    @media (max-width: 980px){
+      .layout{grid-template-columns:1fr}
+      aside{border-right:none; border-bottom:1px solid var(--line)}
+      .grid{grid-template-columns:1fr}
+      .two{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <article class="paper">
+
+      <header>
+        <div class="kicker">
+          <span class="pill"><span class="dot"></span>Power electronics brief</span>
+          <span class="pill">Wide-bandgap</span>
+          <span class="pill">Consumer + industrial impact</span>
+        </div>
+
+        <h1>Gallium Nitride (GaN) — Why Power Electronics Are Shrinking (and Getting More Efficient)</h1>
+        <div class="meta">
+          <span>February 2025 — Editorial Desk</span>
+          <span>semiconductors · chargers · data centers · energy efficiency</span>
+        </div>
+        <div class="tags">A practical explainer with “what’s real vs what’s marketing.”</div>
+      </header>
+
+      <div class="layout">
+        <aside>
+          <nav class="toc" aria-label="table of contents">
+            <h2>On this page</h2>
+            <a href="#summary">1) Summary <small>what GaN changes</small></a>
+            <a href="#physics">2) The physics <small>why wide-bandgap helps</small></a>
+            <a href="#wins">3) Where GaN wins <small>high-frequency switching</small></a>
+            <a href="#tradeoffs">4) Tradeoffs <small>EMI, cost, reliability</small></a>
+            <a href="#numbers">5) “Big numbers” <small>how to read claims</small></a>
+            <a href="#consumer">6) Chargers <small>what you feel as a user</small></a>
+            <a href="#checklist">7) Verification checklist <small>what to ask vendors</small></a>
+            <a href="#sources">8) Sources</a>
+          </nav>
+
+          <div class="sidecard">
+            <h3>Fast definition</h3>
+            <p><b>GaN</b> is a wide-bandgap semiconductor used to build fast, efficient power switches — especially valuable in compact power converters.</p>
+          </div>
+
+          <div class="sidecard" style="background:#fff;">
+            <h3>One-line takeaway</h3>
+            <p>GaN doesn’t “break physics” — it just makes high-frequency, high-efficiency switching easier than silicon in many designs.</p>
+          </div>
+        </aside>
+
+        <main>
+          <section class="lead" id="summary">
+            <strong>Executive summary</strong>
+            <p style="margin:0">
+              Gallium Nitride (GaN) is a <a class="external" href="https://en.wikipedia.org/wiki/Wide-bandgap_semiconductor" target="_blank" rel="noopener noreferrer">wide-bandgap</a> semiconductor that’s increasingly used in power electronics
+              (chargers, adapters, server power, telecom supplies) because it can switch faster and with lower losses than many traditional silicon designs.
+              In real products, that often translates to <b>higher power density</b> (smaller hardware for the same wattage) and <b>better efficiency</b> (less heat for the same output).
+            </p>
+            <p class="small" style="margin:10px 0 0">
+              Background reading: <a class="external" href="https://en.wikipedia.org/wiki/Gallium_nitride" target="_blank" rel="noopener noreferrer">Gallium nitride</a> (overview) and wide-bandgap context above.
+            </p>
+          </section>
+
+          <section id="physics">
+            <h2>2) Why GaN performs better (plain-terms physics)</h2>
+            <p>
+              GaN’s advantage is mostly about material properties that support <b>higher electric fields</b> and <b>high-frequency switching</b>.
+              You’ll see this described as “wide bandgap,” which roughly correlates with better high-voltage / high-temperature behavior in many device structures.
+            </p>
+
+            <div class="grid" role="list">
+              <div class="box" role="listitem">
+                <div class="title"><b>Wider bandgap</b><span class="badge">stability</span></div>
+                <p>
+                  Wider bandgap materials tend to reduce unwanted carrier generation at higher temperatures, helping devices behave more predictably under stress.
+                </p>
+              </div>
+
+              <div class="box" role="listitem">
+                <div class="title"><b>Higher breakdown field</b><span class="badge">compactness</span></div>
+                <p>
+                  Devices can block higher voltages with thinner layers, which supports smaller, lower-resistance structures in many power-switch designs.
+                </p>
+              </div>
+
+              <div class="box" role="listitem">
+                <div class="title"><b>Fast switching</b><span class="badge">efficiency</span></div>
+                <p>
+                  Higher switching speeds can shrink magnetics (inductors/transformers) and reduce some conversion losses — but only if the rest of the design is tuned for it.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <section id="wins">
+            <h2>3) Where GaN wins in practice</h2>
+            <div class="two">
+              <div class="callout">
+                <b>Best-fit use cases</b>
+                <ul>
+                  <li>Compact chargers/adapters (high power density)</li>
+                  <li>High-frequency power supplies (smaller magnetics)</li>
+                  <li>Efficiency-sensitive systems (lower heat helps overall design)</li>
+                </ul>
+              </div>
+              <div class="callout" style="background:var(--soft); border-color:#dbe9f7; border-left-color:rgba(10,105,184,0.55)">
+                <b>Why it matters</b>
+                <ul>
+                  <li>Less heat → easier thermal design at the same wattage</li>
+                  <li>Smaller passives → smaller enclosure for the same output</li>
+                  <li>Higher efficiency → meaningful savings at scale (data centers, telecom)</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <section id="tradeoffs">
+            <h2>4) Tradeoffs (aka what people forget to mention)</h2>
+            <p>
+              GaN can enable better converters, but it can also make some engineering problems *spicier*:
+            </p>
+
+            <table aria-label="GaN tradeoffs">
+              <thead>
+                <tr><th>Topic</th><th>What changes with GaN</th><th>Why you should care</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>EMI / noise</td>
+                  <td>Faster switching edges can increase electromagnetic interference if layout/filtering isn’t excellent.</td>
+                  <td>Bad EMI = unreliable devices and compliance headaches.</td>
+                </tr>
+                <tr>
+                  <td>Thermals</td>
+                  <td>Often less loss, but heat still exists and can concentrate in smaller volumes.</td>
+                  <td>Small chargers can still run hot if airflow/material choices are weak.</td>
+                </tr>
+                <tr>
+                  <td>Cost & supply</td>
+                  <td>Prices are trending down, but not every power tier is “cheap GaN” yet.</td>
+                  <td>Cost parity depends on volume, vendor, and design complexity.</td>
+                </tr>
+                <tr>
+                  <td>Reliability & qualification</td>
+                  <td>Wide-bandgap ecosystems are newer; long-term field data is growing but uneven by vendor.</td>
+                  <td>For critical systems, qualification docs matter more than hype.</td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+
+          <section id="numbers">
+            <h2>5) About those big efficiency / climate numbers</h2>
+            <p>
+              You’ll see claims like “X% less loss” or “Y TWh saved” floating around. Some are plausible in narrow contexts,
+              but they’re usually <b>scenario-dependent</b> (workload, baseline equipment, deployment scale, power path efficiency).
+            </p>
+
+            <div class="callout">
+              <b>How to read claims safely</b>
+              <ul>
+                <li><b>Ask: compared to what?</b> (Old silicon design? Modern silicon? Same power stage?)</li>
+                <li><b>Ask: where measured?</b> (Single converter stage vs whole system end-to-end)</li>
+                <li><b>Ask: at what load?</b> (Peak efficiency can hide weak low-load behavior)</li>
+                <li><b>Ask: under what thermal conditions?</b> (Hot operation can shift performance)</li>
+              </ul>
+              <p class="small" style="margin:10px 0 0">
+                In other words: big numbers can be real, but only inside a well-defined test setup.
+              </p>
+            </div>
+          </section>
+
+          <section id="consumer">
+            <h2>6) Consumer-visible impact: smaller chargers</h2>
+            <p>
+              This is the “touch grass” proof: chargers that used to be chunky can now be smaller for the same wattage because higher-frequency switching lets designers shrink
+              inductors/transformers and reduce heat in many designs.
+            </p>
+
+            <table aria-label="silicon vs gan charger comparison">
+              <thead>
+                <tr><th>Typical older silicon approach</th><th>Typical GaN-based approach</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Bulkier magnetics; more heat for the same output</td>
+                  <td>Smaller magnetics; often cooler at similar output (design-dependent)</td>
+                </tr>
+                <tr>
+                  <td>Lower switching frequency</td>
+                  <td>Higher switching frequency (requires careful EMI control)</td>
+                </tr>
+                <tr>
+                  <td>More enclosure volume to manage thermals</td>
+                  <td>Higher power density → smaller enclosure possible</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <p class="small">
+              General overview: <a class="external" href="https://en.wikipedia.org/wiki/Gallium_nitride" target="_blank" rel="noopener noreferrer">Gallium nitride</a>.
+            </p>
+          </section>
+
+          <section id="checklist">
+            <h2>7) Verification checklist (for reading articles, ads, or “revolution” posts)</h2>
+            <ol>
+              <li><b>Look for test conditions:</b> input voltage, output power, load curve, temperature.</li>
+              <li><b>Check the baseline:</b> “better than silicon” means nothing without naming the compared silicon design.</li>
+              <li><b>Ask what changed:</b> device material, topology, control method, magnetics, layout — often it’s a combination.</li>
+              <li><b>For reliability:</b> do they cite qualification standards or only marketing language?</li>
+            </ol>
+          </section>
+
+          <section id="sources">
+            <h2>Sources & further reading</h2>
+            <ul>
+              <li><a class="external" href="https://en.wikipedia.org/wiki/Gallium_nitride" target="_blank" rel="noopener noreferrer">Gallium nitride — Wikipedia (overview)</a></li>
+              <li><a class="external" href="https://en.wikipedia.org/wiki/Wide-bandgap_semiconductor" target="_blank" rel="noopener noreferrer">Wide-bandgap semiconductor — Wikipedia (context)</a></li>
+              <li>IEEE Power Electronics Society (papers, standards discussions): <a class="external" href="https://www.ieee-pels.org" target="_blank" rel="noopener noreferrer">ieee-pels.org</a></li>
+            </ul>
+            <p class="small">
+              Note: This page is a rewritten + re-structured briefing based on the narrative you provided, with claims reframed to be scenario-dependent and easier to verify.
+            </p>
+          </section>
+
+        </main>
+      </div>
+    </article>
+  </div>
+</body>
+</html>

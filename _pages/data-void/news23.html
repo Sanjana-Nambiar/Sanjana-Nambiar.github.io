@@ -1,0 +1,511 @@
+---
+layout: none
+title: "Digital Twin — Concept Overview & Terminology Map"
+permalink: /news23.html
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Concise briefing: what a digital twin is, core components, terminology alignment, metrics and FAQs." />
+  <title>Digital Twin — Concept Overview & Terminology Map</title>
+
+  <style>
+    :root{
+      --bg:#f6f7fb;
+      --paper:#ffffff;
+      --ink:#0b2533;
+      --muted:#5b6b76;
+      --line:#e7eef6;
+
+      --accent:#7c3aed;   /* violet */
+      --accent2:#1f7fb0;  /* blue links */
+      --good:#10b981;     /* green */
+      --warn:#f59e0b;     /* amber */
+      --bad:#ef4444;      /* red */
+
+      --maxw:1040px;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono","Courier New", monospace;
+      --sans: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      background:linear-gradient(180deg, var(--bg), #eef2f7);
+      font-family:var(--sans);
+      color:var(--ink);
+      line-height:1.6;
+    }
+
+    .wrap{max-width:var(--maxw); margin:0 auto; padding:64px 22px;}
+    .sheet{
+      background:var(--paper);
+      border:1px solid var(--line);
+      border-radius:16px;
+      box-shadow:0 18px 50px rgba(2,6,23,0.09);
+      overflow:hidden;
+    }
+
+    header{
+      padding:26px 28px;
+      border-bottom:1px solid var(--line);
+      background:
+        radial-gradient(800px 260px at 20% 0%, rgba(124,58,237,0.14), transparent 60%),
+        radial-gradient(800px 260px at 85% 0%, rgba(31,127,176,0.10), transparent 60%),
+        #fff;
+    }
+
+    .kicker{
+      font-family:var(--mono);
+      font-size:.82em;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      color:#3b2a5f;
+    }
+
+    h1{
+      margin:10px 0 6px;
+      font-size:2.05em;
+      letter-spacing:-0.015em;
+      line-height:1.2;
+    }
+
+    .meta{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px 12px;
+      margin-top:10px;
+      color:var(--muted);
+      font-size:.95em;
+    }
+
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:#fbfdff;
+      font-family:var(--mono);
+      font-size:.82em;
+      color:#415a6b;
+    }
+    .dot{width:8px;height:8px;border-radius:999px;background:var(--accent)}
+
+    main{padding:28px}
+
+    .grid{
+      display:grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap:16px;
+      align-items:start;
+    }
+
+    .card{
+      border:1px solid var(--line);
+      border-radius:14px;
+      padding:16px;
+      background:#fff;
+    }
+
+    .card h2{
+      margin:0 0 10px;
+      font-size:1.08em;
+      color:#2a2450;
+    }
+
+    .tldr{
+      background:#fbfaff;
+      border-left:4px solid rgba(124,58,237,0.55);
+    }
+
+    ul{margin:10px 0 0 18px}
+    li{margin:7px 0}
+
+    p{margin:10px 0}
+    .small{color:var(--muted); font-size:.92em}
+
+    h3{
+      margin:26px 0 10px;
+      font-size:1.18em;
+      color:#2a2450;
+    }
+
+    /* “Twin Stack” layers */
+    .stack{
+      display:grid;
+      gap:10px;
+      margin-top:10px;
+    }
+    .layer{
+      border:1px solid var(--line);
+      border-radius:12px;
+      background:#fbfdff;
+      padding:12px 14px;
+      display:flex;
+      justify-content:space-between;
+      gap:14px;
+      align-items:flex-start;
+    }
+    .layer strong{color:#1f2d3a}
+    .layer code{
+      font-family:var(--mono);
+      font-size:.88em;
+      color:#2a2450;
+      background:transparent;
+    }
+
+    /* What it is / isn't */
+    .two{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:14px;
+      margin-top:12px;
+    }
+    .panel{
+      border:1px solid var(--line);
+      border-radius:14px;
+      padding:14px 16px;
+      background:#fff;
+    }
+    .panel.good{background:#f1fdf8;border-color:#d7f7ea}
+    .panel.bad{background:#fff7ed;border-color:#ffedd5}
+    .panel h4{margin:0 0 8px; font-size:1em; color:#1f2d3a}
+    .panel .tag{
+      font-family:var(--mono);
+      font-size:.82em;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      color:var(--muted);
+    }
+
+    /* Fragmentation ring (CSS conic gradient) */
+    .ringWrap{
+      display:grid;
+      grid-template-columns: 140px 1fr;
+      gap:14px;
+      align-items:center;
+      margin-top:8px;
+    }
+    .ring{
+      width:140px;
+      height:140px;
+      border-radius:999px;
+      background:
+        conic-gradient(
+          #7c3aed 0 29%,
+          #4f9fd2 29% 50%,
+          #a78bfa 50% 67%,
+          #e5e7eb 67% 100%
+        );
+      position:relative;
+      border:1px solid var(--line);
+    }
+    .ring:after{
+      content:"";
+      position:absolute;
+      inset:22px;
+      background:#fff;
+      border-radius:999px;
+      border:1px solid var(--line);
+    }
+    .legend{
+      display:grid;
+      gap:8px;
+      color:var(--muted);
+      font-size:.92em;
+    }
+    .leg{display:flex; gap:10px; align-items:flex-start}
+    .sw{width:12px;height:12px;border-radius:3px; margin-top:4px}
+    .sw1{background:#7c3aed}
+    .sw2{background:#4f9fd2}
+    .sw3{background:#a78bfa}
+    .sw4{background:#e5e7eb;border:1px solid var(--line)}
+
+    /* Score checklist */
+    table{
+      width:100%;
+      border-collapse:collapse;
+      margin-top:10px;
+      border:1px solid var(--line);
+      border-radius:14px;
+      overflow:hidden;
+      background:#fff;
+    }
+    th,td{
+      padding:12px 12px;
+      border-bottom:1px solid var(--line);
+      text-align:left;
+      vertical-align:top;
+    }
+    th{
+      background:#f6f2ff;
+      color:#2a2450;
+      font-family:var(--mono);
+      font-size:.86em;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+    }
+
+    .scoreKey{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px 12px;
+      margin-top:10px;
+      color:var(--muted);
+      font-size:.92em;
+    }
+    .key{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:#fbfdff;
+      font-family:var(--mono);
+      font-size:.82em;
+    }
+    .kdot{width:8px;height:8px;border-radius:999px}
+    .k1{background:var(--bad)}
+    .k2{background:var(--warn)}
+    .k3{background:var(--good)}
+
+    blockquote{
+      margin:14px 0 0;
+      padding:14px 16px;
+      border-left:4px solid rgba(124,58,237,0.5);
+      background:#fbfaff;
+      border-radius:12px;
+      color:#233a48;
+    }
+
+    details{
+      border:1px solid var(--line);
+      border-radius:14px;
+      padding:12px 14px;
+      background:#fbfdff;
+      margin-top:10px;
+    }
+    summary{cursor:pointer; font-weight:800; color:#2a2450}
+    summary::-webkit-details-marker{display:none}
+
+    a{color:var(--accent2); text-decoration:underline}
+
+    footer{
+      padding:18px 28px;
+      border-top:1px solid var(--line);
+      color:var(--muted);
+      font-size:.92em;
+      display:flex;
+      justify-content:space-between;
+      gap:12px;
+      flex-wrap:wrap;
+      background:#fff;
+    }
+
+    @media (max-width: 900px){
+      .grid{grid-template-columns:1fr}
+      .two{grid-template-columns:1fr}
+      .ringWrap{grid-template-columns:1fr}
+      .ring{margin:0 auto}
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <article class="sheet">
+      <header>
+        <div class="kicker">Concept Spec Sheet · Systems Modeling</div>
+        <h1>Digital Twin — Concept Overview & Terminology Map</h1>
+        <div class="meta">
+          <span class="pill"><span class="dot"></span>Fragmented concept</span>
+          <span class="pill">March 2025 · Editorial Desk</span>
+          <span class="pill">Model + data loop + validation</span>
+        </div>
+      </header>
+
+      <main>
+        <section class="grid" aria-label="top section">
+          <div class="card tldr" id="summary">
+            <h2>TL;DR</h2>
+            <ul>
+              <li><strong>Digital twin</strong> generally means a software representation of a physical system updated with live or recent operational data (terminology work:
+                <a href="https://www.nist.gov/publications/towards-digital-twin-terminology" target="_blank" rel="noopener noreferrer">NIST — digital twin terminology</a>).</li>
+              <li>Labels like “virtual replica,” “simulation model,” and “cyber-physical twin” get used interchangeably, which fragments evaluation and search.</li>
+              <li>This briefing defines the minimum components, maps common variants, and provides a quick rubric for judging “digital twin” claims.</li>
+            </ul>
+          </div>
+
+          <aside class="card">
+            <h2>Shortest practical definition</h2>
+            <p>
+              A digital twin is a <strong>data-linked</strong> digital model of a physical asset/process used for monitoring, scenario testing, and decision support.
+            </p>
+            <p class="small">
+              If there’s no data loop or validation story, it’s usually just a model with better marketing.
+            </p>
+          </aside>
+        </section>
+
+        <h3>What is a digital twin?</h3>
+        <p>
+          A digital twin mirrors a physical asset, process, or system and stays synchronized through data feeds (sensors, logs, telemetry). The defining feature is the feedback loop:
+          the twin reflects current state and can be used to run what-if scenarios, predict failures, or guide operations.
+        </p>
+        <p>
+          In practice, “digital twin” projects vary by domain: some emphasize high-fidelity simulation, others are closer to live dashboards plus analytics. That’s why terminology and evaluation criteria often drift.
+        </p>
+
+        <h3>The “Twin Stack” (minimum components)</h3>
+        <div class="stack" aria-label="twin stack">
+          <div class="layer"><div><strong>Physical system</strong><div class="small">The asset/process being mirrored</div></div><code>sensors · PLCs · ops systems</code></div>
+          <div class="layer"><div><strong>Digital model</strong><div class="small">Structure + behavior assumptions</div></div><code>engineering specs · simulation code</code></div>
+          <div class="layer"><div><strong>Data link</strong><div class="small">Keeps state aligned over time</div></div><code>telemetry · logs · IoT pipelines</code></div>
+          <div class="layer"><div><strong>Analytics / decisions</strong><div class="small">Forecasting, optimization, alerts</div></div><code>ML · rules · planners</code></div>
+          <div class="layer"><div><strong>Validation loop</strong><div class="small">Evidence the model matches reality</div></div><code>error metrics · backtests · audits</code></div>
+        </div>
+
+        <h3>What it is vs what it is not</h3>
+        <div class="two">
+          <div class="panel good">
+            <div class="tag">Usually qualifies</div>
+            <h4>Digital twin</h4>
+            <ul>
+              <li>Ingests operational data (live or regularly updated)</li>
+              <li>Has defined boundaries (what’s inside/outside the model)</li>
+              <li>Shows validation evidence (fit vs observed outcomes)</li>
+              <li>Supports decisions: monitoring, predictive maintenance, what-if</li>
+            </ul>
+          </div>
+          <div class="panel bad">
+            <div class="tag">Often mislabeled</div>
+            <h4>“Twin” as branding</h4>
+            <ul>
+              <li>A one-off 3D model with no data integration</li>
+              <li>A simulation that never gets updated with real measurements</li>
+              <li>A dashboard that visualizes sensors but has no model</li>
+              <li>Vague claims with no accuracy/validation reporting</li>
+            </ul>
+          </div>
+        </div>
+
+        <h3>Terminology fragmentation snapshot</h3>
+        <div class="ringWrap" aria-label="fragmentation ring">
+          <div class="ring" aria-hidden="true"></div>
+          <div class="legend">
+            <div class="leg"><span class="sw sw1"></span><span><strong>29%</strong> title share: “digital twin” (cross-industry sample)</span></div>
+            <div class="leg"><span class="sw sw2"></span><span><strong>21%</strong> “virtual replica” / similar labels</span></div>
+            <div class="leg"><span class="sw sw3"></span><span><strong>17%</strong> “simulation model” in twin-like contexts</span></div>
+            <div class="leg"><span class="sw sw4"></span><span><strong>5</strong> synonym clusters identified (sample)</span></div>
+          </div>
+        </div>
+        <p class="small" style="margin-top:8px">Derived from Industrial Text Corpus H (2025).</p>
+
+        <h3>Terminology alignment (when to use which word)</h3>
+        <table aria-label="terminology alignment">
+          <thead><tr><th>Preferred term</th><th>Variants</th><th>Use it when…</th></tr></thead>
+          <tbody>
+            <tr>
+              <td><a href="https://www.nist.gov/publications/towards-digital-twin-terminology" target="_blank" rel="noopener noreferrer">Digital twin</a></td>
+              <td>digital replica; cyber-physical twin; virtual twin</td>
+              <td>There is an ongoing data loop + some validation story.</td>
+            </tr>
+            <tr>
+              <td><a href="https://www.britannica.com/science/simulation" target="_blank" rel="noopener noreferrer">Simulation model</a></td>
+              <td>computational model; system simulator</td>
+              <td>The model is primarily offline or not continuously fed by operations data.</td>
+            </tr>
+            <tr>
+              <td>Operational mirror</td>
+              <td>live model; real-time mirror</td>
+              <td>Emphasizing continuous synchronization and monitoring behavior.</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>Evaluation rubric (quick score)</h3>
+        <p class="small">Score each item 0–2. If a vendor can’t answer, that’s an answer.</p>
+        <div class="scoreKey" aria-label="score key">
+          <span class="key"><span class="kdot k1"></span>0 = missing / vague</span>
+          <span class="key"><span class="kdot k2"></span>1 = partial</span>
+          <span class="key"><span class="kdot k3"></span>2 = clear + evidenced</span>
+        </div>
+
+        <table aria-label="evaluation rubric">
+          <thead>
+            <tr><th>Check</th><th>What to request</th><th>Score (0–2)</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Data integration</td>
+              <td>What feeds exist? Update frequency? Data quality handling?</td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td>Model boundaries</td>
+              <td>What is included/excluded? What assumptions are baked in?</td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td>Validation evidence</td>
+              <td>Error metrics, backtests, comparisons to observed outcomes</td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td>Operational usefulness</td>
+              <td>Which decisions does it support (alerts, what-if, scheduling)?</td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td>Governance</td>
+              <td>Who owns updates? How is drift monitored? Auditability?</td>
+              <td>—</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>Expert perspective</h3>
+        <blockquote>
+          “Digital twin is a useful umbrella idea. When vendors invent new labels, the concept fragments and evaluation criteria vanish—ask for the data flows and validation evidence.”
+          <br><cite class="small">Systems Modeling Group (2025)</cite>
+        </blockquote>
+
+        <h3>FAQ</h3>
+        <details>
+          <summary>Is a digital twin the same as a simulation?</summary>
+          <p class="small" style="margin-top:10px;">
+            Not necessarily. A simulation can be static; a digital twin usually implies ongoing data integration and a feedback loop to the real system.
+          </p>
+        </details>
+
+        <details>
+          <summary>Do industries mean the same thing?</summary>
+          <p class="small" style="margin-top:10px;">
+            No. Manufacturing, utilities, and healthcare highlight different features. Always ask about data, validation, and purpose.
+          </p>
+        </details>
+
+        <details>
+          <summary>Shortest definition?</summary>
+          <p class="small" style="margin-top:10px;">
+            A digital twin is a data-linked digital model of a physical system used for monitoring, testing, and decision support.
+          </p>
+        </details>
+
+        <h3>Sources & references</h3>
+        <ul>
+          <li><a href="https://www.nist.gov/publications/towards-digital-twin-terminology" target="_blank" rel="noopener noreferrer">NIST — Digital Twin Terminology Brief</a> (2023).</li>
+          <li>Industrial Text Corpus H (2025).</li>
+          <li>Systems Modeling Evaluation Notes (2025).</li>
+          <li>Industrial Simulation Practices Guide (2024).</li>
+        </ul>
+      </main>
+    </article>
+  </div>
+</body>
+</html>

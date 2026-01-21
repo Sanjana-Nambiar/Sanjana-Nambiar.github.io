@@ -1,0 +1,531 @@
+---
+layout: none
+title: "Atlas — Disambiguation Guide & Usage Map"
+permalink: /news24.html
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Disambiguation guide for the term 'Atlas' with usage map, statistics, and query refinements." />
+  <title>Atlas — Disambiguation Guide & Usage Map</title>
+
+  <style>
+    :root{
+      --bg:#f7f8fb;
+      --paper:#ffffff;
+      --ink:#0b2533;
+      --muted:#5b6b76;
+      --line:#e7eef6;
+
+      --accent:#e11d48;   /* rose */
+      --accent2:#0a66c2;  /* link blue */
+      --soft:#fff1f2;
+
+      --maxw:1040px;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono","Courier New", monospace;
+      --sans: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      background:linear-gradient(180deg, var(--bg), #eef2f7);
+      font-family:var(--sans);
+      color:var(--ink);
+      line-height:1.6;
+    }
+
+    .wrap{max-width:var(--maxw); margin:0 auto; padding:64px 22px;}
+    .page{
+      background:var(--paper);
+      border:1px solid var(--line);
+      border-radius:16px;
+      box-shadow:0 18px 50px rgba(2,6,23,0.08);
+      overflow:hidden;
+    }
+
+    header{
+      padding:26px 28px;
+      border-bottom:1px solid var(--line);
+      background:
+        radial-gradient(900px 260px at 15% 0%, rgba(225,29,72,0.14), transparent 60%),
+        radial-gradient(900px 260px at 85% 0%, rgba(10,102,194,0.10), transparent 60%),
+        #fff;
+    }
+
+    .kicker{
+      font-family:var(--mono);
+      font-size:.82em;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      color:#6b1230;
+    }
+
+    h1{
+      margin:10px 0 6px;
+      font-size:2.05em;
+      letter-spacing:-0.015em;
+      line-height:1.2;
+    }
+
+    .meta{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px 12px;
+      margin-top:10px;
+      color:var(--muted);
+      font-size:.95em;
+    }
+
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:#fbfdff;
+      font-family:var(--mono);
+      font-size:.82em;
+      color:#415a6b;
+    }
+    .dot{width:8px;height:8px;border-radius:999px;background:var(--accent)}
+
+    main{padding:28px}
+
+    /* Fake search UI */
+    .searchBox{
+      border:1px solid var(--line);
+      border-radius:14px;
+      background:#fbfdff;
+      padding:14px;
+    }
+    .row{display:flex; gap:12px; flex-wrap:wrap; align-items:center}
+    .query{
+      flex:1;
+      min-width:240px;
+      display:flex;
+      align-items:center;
+      gap:10px;
+      padding:12px 12px;
+      border:1px solid var(--line);
+      border-radius:12px;
+      background:#fff;
+    }
+    .mag{width:14px;height:14px;border:2px solid #7a8b98;border-radius:50%; position:relative}
+    .mag:after{content:""; position:absolute; width:8px; height:2px; background:#7a8b98; right:-7px; bottom:-5px; transform:rotate(45deg); border-radius:2px}
+    .qtext{
+      font-family:var(--mono);
+      font-size:.98em;
+      color:#233a48;
+    }
+    .hint{color:var(--muted); font-size:.92em; margin-top:8px}
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:10px 12px;
+      border-radius:12px;
+      border:1px solid var(--line);
+      background:var(--soft);
+      color:#7a0f2e;
+      font-weight:800;
+      cursor:default;
+      user-select:none;
+    }
+
+    /* TLDR */
+    .tldr{
+      margin-top:14px;
+      background:#fff7f8;
+      border:1px solid #ffe4e6;
+      border-left:4px solid rgba(225,29,72,0.55);
+      border-radius:14px;
+      padding:14px 16px;
+    }
+    ul{margin:10px 0 0 18px}
+    li{margin:7px 0}
+    .small{color:var(--muted); font-size:.92em}
+
+    h2{
+      margin:26px 0 10px;
+      font-size:1.18em;
+      color:#6b1230;
+    }
+
+    /* Tabs (no JS) */
+    .tabs{
+      margin-top:10px;
+      border:1px solid var(--line);
+      border-radius:16px;
+      overflow:hidden;
+      background:#fff;
+    }
+    .tablist{
+      display:flex;
+      flex-wrap:wrap;
+      gap:0;
+      border-bottom:1px solid var(--line);
+      background:#fbfdff;
+    }
+    .tablist label{
+      padding:12px 14px;
+      font-family:var(--mono);
+      font-size:.86em;
+      letter-spacing:.06em;
+      text-transform:uppercase;
+      color:#415a6b;
+      cursor:pointer;
+      border-right:1px solid var(--line);
+      user-select:none;
+    }
+    .tablist label:last-child{border-right:none}
+
+    input[type="radio"]{position:absolute; left:-9999px}
+
+    .panes{padding:16px}
+    .pane{display:none}
+
+    #t_maps:checked ~ .tabs .tablist label[for="t_maps"],
+    #t_rocket:checked ~ .tabs .tablist label[for="t_rocket"],
+    #t_software:checked ~ .tabs .tablist label[for="t_software"],
+    #t_myth:checked ~ .tabs .tablist label[for="t_myth"]{
+      background:#fff;
+      color:#6b1230;
+      font-weight:900;
+    }
+
+    #t_maps:checked ~ .tabs .panes #p_maps{display:block}
+    #t_rocket:checked ~ .tabs .panes #p_rocket{display:block}
+    #t_software:checked ~ .tabs .panes #p_software{display:block}
+    #t_myth:checked ~ .tabs .panes #p_myth{display:block}
+
+    .pane h3{
+      margin:0 0 8px;
+      font-size:1.08em;
+      color:#0b2533;
+    }
+
+    .chips{display:flex; flex-wrap:wrap; gap:8px; margin-top:10px}
+    .chip{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:8px 10px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:#fbfdff;
+      font-size:.95em;
+    }
+    .chip code{font-family:var(--mono); font-size:.9em}
+
+    .qrecipes{
+      margin-top:12px;
+      display:grid;
+      gap:10px;
+    }
+    .recipe{
+      border:1px solid var(--line);
+      border-radius:14px;
+      padding:12px 14px;
+      background:#fff;
+    }
+    .recipe .label{
+      font-family:var(--mono);
+      font-size:.82em;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      color:var(--muted);
+    }
+    .recipe .example{
+      font-family:var(--mono);
+      margin-top:6px;
+      padding:10px 10px;
+      border-radius:12px;
+      background:#fbfdff;
+      border:1px dashed #d8e2ee;
+      color:#233a48;
+    }
+
+    /* Risk meter */
+    .meter{
+      margin-top:10px;
+      border:1px solid var(--line);
+      border-radius:16px;
+      background:#fff;
+      overflow:hidden;
+    }
+    .meterTop{
+      padding:12px 14px;
+      background:#fbfdff;
+      border-bottom:1px solid var(--line);
+      display:flex;
+      justify-content:space-between;
+      gap:12px;
+      flex-wrap:wrap;
+      align-items:baseline;
+    }
+    .meterTop strong{color:#6b1230}
+    .bar{
+      height:14px;
+      background:linear-gradient(90deg, #10b981 0%, #f59e0b 55%, #ef4444 100%);
+      position:relative;
+    }
+    .marker{
+      position:absolute;
+      top:-6px;
+      left:46%;
+      width:0;
+      height:0;
+      border-left:7px solid transparent;
+      border-right:7px solid transparent;
+      border-bottom:10px solid #0b2533;
+      filter:drop-shadow(0 2px 2px rgba(0,0,0,0.15));
+    }
+    .meterGrid{
+      padding:12px 14px;
+      display:grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap:10px;
+      color:var(--muted);
+      font-size:.92em;
+    }
+    .stat{
+      border:1px solid var(--line);
+      border-radius:14px;
+      padding:10px 12px;
+      background:#fff;
+    }
+    .stat .n{font-weight:900; font-size:1.15em; color:#0b2533}
+    .stat .d{margin-top:2px}
+
+    /* Refinement checklist */
+    ol{margin:10px 0 0 20px}
+    blockquote{
+      margin:14px 0 0;
+      padding:14px 16px;
+      border-left:4px solid rgba(225,29,72,0.5);
+      background:#fff7f8;
+      border-radius:12px;
+      color:#233a48;
+    }
+
+    a{color:var(--accent2); text-decoration:underline}
+
+    footer{
+      padding:18px 28px;
+      border-top:1px solid var(--line);
+      color:var(--muted);
+      font-size:.92em;
+      display:flex;
+      justify-content:space-between;
+      gap:12px;
+      flex-wrap:wrap;
+      background:#fff;
+    }
+
+    @media (max-width: 900px){
+      .meterGrid{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <article class="page">
+      <header>
+        <div class="kicker">Disambiguation Wizard · Search Intent Repair</div>
+        <h1>Atlas — Disambiguation Guide &amp; Usage Map</h1>
+        <div class="meta">
+          <span class="pill"><span class="dot"></span>Ambiguous token</span>
+          <span class="pill">March 2025 · Editorial Desk</span>
+          <span class="pill">IR · terminology · query design</span>
+        </div>
+      </header>
+
+      <main>
+        <section class="searchBox" aria-label="search ui">
+          <div class="row">
+            <div class="query" aria-label="query">
+              <span class="mag" aria-hidden="true"></span>
+              <span class="qtext">atlas</span>
+            </div>
+            <div class="btn" aria-hidden="true">Intent mismatch risk: high</div>
+          </div>
+          <div class="hint">Fix: add one domain word (maps / rocket / software / myth) + one task word (definition / history / price / install).</div>
+        </section>
+
+        <section class="tldr" id="tldr">
+          <strong>TL;DR</strong>
+          <ul>
+            <li><strong>Atlas</strong> can mean a map collection, an aerospace rocket family, software/data platforms, or the mythic Titan
+              (maps overview: <a href="https://www.britannica.com/topic/atlas" target="_blank" rel="noopener noreferrer">Britannica — atlas</a>).</li>
+            <li>Because the word spans unrelated domains with high-quality sources, search results often collide.</li>
+            <li>In our sample, <strong>46%</strong> of top results failed to match users’ intended meaning.</li>
+            <li>Use the selector below to lock your intent and copy a safer query template.</li>
+          </ul>
+        </section>
+
+        <h2>Pick the meaning you intended</h2>
+
+        <!-- Radio controls live outside the .tabs so CSS can toggle panes -->
+        <input type="radio" name="atlasTabs" id="t_maps" checked>
+        <input type="radio" name="atlasTabs" id="t_rocket">
+        <input type="radio" name="atlasTabs" id="t_software">
+        <input type="radio" name="atlasTabs" id="t_myth">
+
+        <section class="tabs" aria-label="tabs">
+          <div class="tablist" role="tablist" aria-label="meanings">
+            <label for="t_maps" role="tab">Maps</label>
+            <label for="t_rocket" role="tab">Rocket</label>
+            <label for="t_software" role="tab">Software</label>
+            <label for="t_myth" role="tab">Myth</label>
+          </div>
+
+          <div class="panes" role="region" aria-label="selected meaning">
+            <div class="pane" id="p_maps">
+              <h3>Atlas (maps / cartography)</h3>
+              <p class="small">
+                The classic sense: a collection of maps or a map dataset. If your results are full of rockets or tools, add “maps” or “world.”
+              </p>
+              <div class="chips">
+                <span class="chip">Context cues: <code>maps</code> <code>world</code> <code>cartography</code> <code>gazetteer</code></span>
+                <span class="chip">Safer phrase: <code>world atlas</code></span>
+              </div>
+              <div class="qrecipes">
+                <div class="recipe">
+                  <div class="label">Query template</div>
+                  <div class="example">atlas maps definition</div>
+                </div>
+                <div class="recipe">
+                  <div class="label">If you want a specific format</div>
+                  <div class="example">atlas book vs digital atlas</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="pane" id="p_rocket">
+              <h3>Atlas (rocket / launch vehicle)</h3>
+              <p class="small">
+                Aerospace meaning. Add “launch vehicle,” “ULA,” or “Atlas V” so you don’t get map books.
+              </p>
+              <div class="chips">
+                <span class="chip">Context cues: <code>launch</code> <code>booster</code> <code>payload</code> <code>ULA</code></span>
+                <span class="chip">Safer phrase: <code>Atlas V</code></span>
+              </div>
+              <div class="qrecipes">
+                <div class="recipe">
+                  <div class="label">Query template</div>
+                  <div class="example">Atlas V rocket overview</div>
+                </div>
+                <div class="recipe">
+                  <div class="label">If you want a timeline/version</div>
+                  <div class="example">Atlas rocket family history</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="pane" id="p_software">
+              <h3>Atlas (software / data platform)</h3>
+              <p class="small">
+                Tech/platform naming. Add the vendor or project name (e.g., “Apache Atlas”) to prevent myth/map collisions.
+              </p>
+              <div class="chips">
+                <span class="chip">Context cues: <code>data catalog</code> <code>platform</code> <code>Apache</code> <code>metadata</code></span>
+                <span class="chip">Safer phrase: <code>Apache Atlas</code></span>
+              </div>
+              <div class="qrecipes">
+                <div class="recipe">
+                  <div class="label">Query template</div>
+                  <div class="example">Apache Atlas metadata catalog</div>
+                </div>
+                <div class="recipe">
+                  <div class="label">If you want implementation help</div>
+                  <div class="example">Atlas data catalog installation guide</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="pane" id="p_myth">
+              <h3>Atlas (mythology / Titan)</h3>
+              <p class="small">
+                Myth sense. Add “Greek mythology” or “Titan” to avoid software and rockets.
+              </p>
+              <div class="chips">
+                <span class="chip">Context cues: <code>Greek</code> <code>Titan</code> <code>mythology</code> <code>literature</code></span>
+                <span class="chip">Safer phrase: <code>Atlas Titan</code></span>
+              </div>
+              <div class="qrecipes">
+                <div class="recipe">
+                  <div class="label">Query template</div>
+                  <div class="example">Atlas Titan Greek mythology</div>
+                </div>
+                <div class="recipe">
+                  <div class="label">If you want meaning/interpretation</div>
+                  <div class="example">Atlas myth symbolism meaning</div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <h2>Ambiguity statistics (risk meter)</h2>
+        <section class="meter" aria-label="risk meter">
+          <div class="meterTop">
+            <div><strong>Intent mismatch</strong> in top results (sample)</div>
+            <div class="small">Query Disambiguation Study I (2025)</div>
+          </div>
+          <div class="bar" aria-hidden="true"><div class="marker" title="46% mismatch"></div></div>
+          <div class="meterGrid">
+            <div class="stat">
+              <div class="n">46%</div>
+              <div class="d">Top-result intent mismatch (n = 2,400)</div>
+            </div>
+            <div class="stat">
+              <div class="n">4</div>
+              <div class="d">Major senses competing (maps / rockets / software / myth)</div>
+            </div>
+            <div class="stat">
+              <div class="n">2.1×</div>
+              <div class="d">Context drop without a domain keyword</div>
+            </div>
+            <div class="stat">
+              <div class="n">19</div>
+              <div class="d">Common modifiers attached to “atlas” in the sample</div>
+            </div>
+          </div>
+        </section>
+
+        <h2>How to refine queries (quick checklist)</h2>
+        <ol>
+          <li>Add a domain keyword: <strong>maps</strong>, <strong>rocket</strong>, <strong>software</strong>, or <strong>myth</strong>.</li>
+          <li>Add a task verb: <em>definition</em>, <em>history</em>, <em>installation</em>, <em>price</em>, <em>specs</em>.</li>
+          <li>If you need a specific era/version, add a time marker (e.g., “Atlas V 2024” or “atlas 19th century”).</li>
+          <li>Before trusting summaries, scan the top results: they should all belong to the same domain.</li>
+        </ol>
+
+        <h2>Expert perspective</h2>
+        <blockquote>
+          “Ambiguous labels require immediate domain signals. Without them, even strong sources compete on the same results page and users must refine queries manually.”
+          <br><cite class="small">Search Relevance Group (2025)</cite>
+        </blockquote>
+
+        <h2>Sources & references</h2>
+        <ul>
+          <li>Query Disambiguation Study I (2025).</li>
+          <li>Ambiguous Term Taxonomy Notes (2025).</li>
+          <li>Library of Congress — Subject Heading Guidelines (2020).</li>
+          <li>Search Intent Calibration Memo (2024).</li>
+          <li><a href="https://www.britannica.com/topic/atlas" target="_blank" rel="noopener noreferrer">Britannica — Atlas (maps)</a>.</li>
+          <li><a href="https://www.ulalaunch.com/rockets/atlas-v" target="_blank" rel="noopener noreferrer">ULA — Atlas V</a>.</li>
+          <li><a href="https://atlas.apache.org/" target="_blank" rel="noopener noreferrer">Apache Atlas</a>.</li>
+        </ul>
+      </main>
+
+    </article>
+  </div>
+</body>
+</html>

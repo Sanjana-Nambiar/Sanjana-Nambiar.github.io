@@ -1,0 +1,462 @@
+---
+layout: none
+title: "Community Solar — Program Overview & Terminology Map"
+permalink: /news22.html
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Community solar briefing: terminology map, business model outline, metrics and FAQs to help readers compare offers." />
+  <title>Community Solar — Program Overview & Terminology Map</title>
+
+  <style>
+    :root{
+      --bg:#f4f7f3;
+      --paper:#ffffff;
+      --ink:#0b2533;
+      --muted:#5a6a75;
+      --line:#e6ece8;
+      --accent:#2f7a3e;      /* green */
+      --accent2:#0a72b8;     /* blue links */
+      --soft:#f2fbf4;
+      --maxw:1020px;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono","Courier New", monospace;
+      --sans: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      background:linear-gradient(180deg, var(--bg), #eef4ef);
+      font-family:var(--sans);
+      color:var(--ink);
+      line-height:1.65;
+    }
+
+    .wrap{max-width:var(--maxw); margin:0 auto; padding:64px 22px;}
+    .page{
+      background:var(--paper);
+      border:1px solid var(--line);
+      border-radius:16px;
+      box-shadow:0 18px 48px rgba(2,6,23,0.08);
+      overflow:hidden;
+    }
+
+    header{
+      padding:26px 28px;
+      border-bottom:1px solid var(--line);
+      background:
+        radial-gradient(800px 260px at 20% 0%, rgba(47,122,62,0.14), transparent 60%),
+        radial-gradient(800px 260px at 85% 0%, rgba(10,114,184,0.10), transparent 60%),
+        #fff;
+    }
+
+    .kicker{
+      font-family:var(--mono);
+      font-size:.82em;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      color:#2e4a35;
+    }
+
+    h1{
+      margin:10px 0 8px;
+      font-size:2.05em;
+      letter-spacing:-0.015em;
+      line-height:1.2;
+    }
+
+    .meta{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px 12px;
+      color:var(--muted);
+      font-size:.95em;
+      margin-top:6px;
+    }
+
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:#fbfcfb;
+      font-family:var(--mono);
+      font-size:.82em;
+      color:#2e4a35;
+    }
+    .dot{width:8px;height:8px;border-radius:999px;background:var(--accent)}
+
+    main{padding:28px}
+
+    .grid{
+      display:grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap:16px;
+      align-items:start;
+    }
+
+    .card{
+      border:1px solid var(--line);
+      border-radius:14px;
+      padding:16px;
+      background:#fff;
+    }
+
+    .card h2{
+      margin:0 0 10px;
+      font-size:1.08em;
+      color:#14301a;
+    }
+
+    .tldr{
+      background:var(--soft);
+      border-left:4px solid rgba(47,122,62,0.55);
+    }
+
+    ul{margin:10px 0 0 18px}
+    li{margin:7px 0}
+
+    h3{
+      margin:26px 0 10px;
+      font-size:1.18em;
+      color:#14301a;
+    }
+
+    p{margin:10px 0}
+    .small{color:var(--muted); font-size:.92em}
+
+    /* term chips map */
+    .chips{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:10px;
+    }
+    .chip{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:8px 10px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:#fbfcfb;
+      font-size:.95em;
+    }
+    .chip code{
+      font-family:var(--mono);
+      font-size:.9em;
+      color:#1f3a24;
+      background:transparent;
+    }
+
+    /* distribution bar */
+    .dist{
+      margin-top:12px;
+      border:1px solid var(--line);
+      border-radius:14px;
+      overflow:hidden;
+      background:#fff;
+    }
+    .dist .bar{
+      display:flex;
+      height:14px;
+      width:100%;
+    }
+    .seg1{background:#2f7a3e; width:34%}
+    .seg2{background:#5aa66a; width:27%}
+    .seg3{background:#a9d6b2; width:18%}
+    .seg4{background:#e3f1e6; width:21%}
+    .dist .legend{
+      display:grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap:10px;
+      padding:12px 12px;
+      border-top:1px solid var(--line);
+      background:#fbfcfb;
+    }
+    .leg{
+      display:flex;
+      gap:10px;
+      align-items:flex-start;
+      color:var(--muted);
+      font-size:.92em;
+    }
+    .sw{width:12px;height:12px;border-radius:3px; margin-top:4px}
+    .sw1{background:#2f7a3e}
+    .sw2{background:#5aa66a}
+    .sw3{background:#a9d6b2}
+    .sw4{background:#e3f1e6; border:1px solid var(--line)}
+
+    /* worksheet */
+    table{
+      width:100%;
+      border-collapse:collapse;
+      margin-top:10px;
+      border:1px solid var(--line);
+      border-radius:14px;
+      overflow:hidden;
+      background:#fff;
+    }
+    th,td{
+      padding:12px 12px;
+      border-bottom:1px solid var(--line);
+      text-align:left;
+      vertical-align:top;
+    }
+    th{
+      background:#f2fbf4;
+      color:#14301a;
+      font-family:var(--mono);
+      font-size:.86em;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+    }
+
+    blockquote{
+      margin:14px 0 0;
+      padding:14px 16px;
+      border-left:4px solid rgba(47,122,62,0.45);
+      background:#fbfcfb;
+      border-radius:12px;
+      color:#233a48;
+    }
+
+    details{
+      border:1px solid var(--line);
+      border-radius:14px;
+      padding:12px 14px;
+      background:#fbfcfb;
+      margin-top:10px;
+    }
+    summary{cursor:pointer; font-weight:800; color:#14301a}
+    summary::-webkit-details-marker{display:none}
+
+    a{color:var(--accent2); text-decoration:underline}
+
+    footer{
+      padding:18px 28px;
+      border-top:1px solid var(--line);
+      color:var(--muted);
+      font-size:.92em;
+      display:flex;
+      justify-content:space-between;
+      gap:12px;
+      flex-wrap:wrap;
+      background:#fff;
+    }
+
+    @media (max-width: 900px){
+      .grid{grid-template-columns:1fr}
+      .dist .legend{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <article class="page">
+      <header>
+        <div class="kicker">Program Explainer · Offer Comparison Worksheet</div>
+        <h1>Community Solar — Program Overview & Terminology Map</h1>
+        <div class="meta">
+          <span class="badge"><span class="dot"></span>Fragmented labels</span>
+          <span class="badge">March 2025 · Editorial Desk</span>
+          <span class="badge">Energy access · subscriber models</span>
+        </div>
+      </header>
+
+      <main>
+        <section class="grid" aria-label="top section">
+          <div class="card tldr" id="summary">
+            <h2>TL;DR</h2>
+            <ul>
+              <li><strong>Community solar</strong> is a shared-solar model where multiple participants subscribe to or receive credits from one installation (basics:
+                <a href="https://www.nrel.gov/solar/community-solar.html" target="_blank" rel="noopener noreferrer">NREL — community solar</a>).</li>
+              <li>Programs are marketed under multiple names (<em>shared solar</em>, <em>solar gardens</em>, <em>subscriber solar</em>), which fragments search and documentation.</li>
+              <li>In our monitoring sample no single label exceeded ~34% of page titles, so discoverability is scattered.</li>
+              <li>This page maps the terms, outlines typical program mechanics, and gives a worksheet for comparing offers.</li>
+            </ul>
+          </div>
+
+          <aside class="card">
+            <h2>One-sentence definition</h2>
+            <p>
+              Community solar lets you benefit from solar generation <strong>without putting panels on your roof</strong> by subscribing to a share of a nearby project and receiving bill credits or offsets.
+            </p>
+            <p class="small">
+              Participation rules often depend on utility territory, billing regulations, and the specific contract model.
+            </p>
+          </aside>
+        </section>
+
+        <h3>What is community solar?</h3>
+        <p>
+          Community solar (often called <a href="https://www.nrel.gov/solar/community-solar.html" target="_blank" rel="noopener noreferrer">shared solar</a>)
+          enables households and businesses to share the output of a single solar array. Subscribers receive billing credits or direct offsets for a portion of the energy produced,
+          which is useful for renters, shaded rooftops, and customers unable to install panels.
+        </p>
+        <p>
+          The mechanics vary: some programs sell blocks of output (kWh), others allocate capacity (kW), and many use bill-credit systems such as virtual net metering
+          (see: <a href="https://www.energy.gov/eere/solar/net-metering" target="_blank" rel="noopener noreferrer">energy.gov — net metering</a>).
+        </p>
+
+        <h3>Why the terminology is fragmented</h3>
+        <p>
+          Labels vary because states, utilities, and developers adopt different billing rules, contract structures, and marketing language.
+          Terms like “solar garden” are common in some utility programs (see:
+          <a href="https://www.energy.gov/scep/solar-gardens" target="_blank" rel="noopener noreferrer">energy.gov — solar gardens</a>)
+          while “subscriber solar” may emphasize the contract model rather than the infrastructure.
+        </p>
+
+        <h3>Terminology map (synonyms you’ll see)</h3>
+        <div class="chips" aria-label="terminology chips">
+          <span class="chip"><code>community solar</code> → general public explainers</span>
+          <span class="chip"><code>shared solar</code> → broad synonym</span>
+          <span class="chip"><code>solar garden</code> → utility / regional branding</span>
+          <span class="chip"><code>subscriber solar</code> → contract framing</span>
+          <span class="chip"><code>virtual net metering</code> → regulatory / technical docs</span>
+          <span class="chip"><code>bill credits</code> → customer-facing terms</span>
+        </div>
+        <p class="small">Same family of programs, different naming conventions depending on who is speaking.</p>
+
+        <h3>How a typical program runs (simple model)</h3>
+        <table aria-label="community solar stages">
+          <thead>
+            <tr><th>Stage</th><th>What happens</th><th>What to ask</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Development</td>
+              <td>A shared array is sited, financed, built, and operated by a developer, utility, or community group.</td>
+              <td>Who owns the project and who services it?</td>
+            </tr>
+            <tr>
+              <td>Subscription</td>
+              <td>Customers subscribe to output (kWh) or capacity (kW) under a contract.</td>
+              <td>Is it kWh- or kW-based, and what’s the term length?</td>
+            </tr>
+            <tr>
+              <td>Billing</td>
+              <td>Credits are applied on the utility bill (virtual net metering) or handled through direct billing.</td>
+              <td>How is the credit rate calculated and updated over time?</td>
+            </tr>
+            <tr>
+              <td>Exit</td>
+              <td>Subscribers transfer, cancel, or sell their share under program rules.</td>
+              <td>Are there exit fees, transfer rules, or minimum stay periods?</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>Fragmentation statistics (sample)</h3>
+        <div class="dist" aria-label="label distribution">
+          <div class="bar" aria-label="distribution bar">
+            <div class="seg1" title="Community solar — 34%"></div>
+            <div class="seg2" title="Shared solar — 27%"></div>
+            <div class="seg3" title="Solar garden variants — 18%"></div>
+            <div class="seg4" title="Other label clusters — 21%"></div>
+          </div>
+          <div class="legend">
+            <div class="leg"><span class="sw sw1"></span><span><strong>34%</strong> “community solar” (largest title share)</span></div>
+            <div class="leg"><span class="sw sw2"></span><span><strong>27%</strong> “shared solar”</span></div>
+            <div class="leg"><span class="sw sw3"></span><span><strong>18%</strong> “solar garden” variants</span></div>
+            <div class="leg"><span class="sw sw4"></span><span><strong>6</strong> distinct label clusters identified (remaining titles spread across variants)</span></div>
+          </div>
+        </div>
+        <p class="small" style="margin-top:8px;">Derived from Energy Policy Corpus G (2025).</p>
+
+        <h3>Expert perspective</h3>
+        <blockquote>
+          “A plain-language map of synonyms plus clear comparisons of billing models is the quickest way to reduce confusion for prospective subscribers.”
+          <br><cite class="small">Energy Access Research Team (2025)</cite>
+        </blockquote>
+
+        <h3>Offer comparison worksheet (copy/paste friendly)</h3>
+        <p class="small">
+          Use this like a checklist when a provider pitches you “shared solar” vs “solar garden” vs “subscriber solar.” Make them answer in numbers.
+        </p>
+        <table aria-label="offer worksheet">
+          <thead>
+            <tr>
+              <th>Question</th>
+              <th>Why it matters</th>
+              <th>Your notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Is my subscription based on <strong>kWh</strong> (output) or <strong>kW</strong> (capacity)?</td>
+              <td>Changes how credits map to your usage. Unit refresher: <a href="https://www.eia.gov/energyexplained/units-and-calculators/energy-calculator.php" target="_blank" rel="noopener noreferrer">EIA — units</a>.</td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td>What is the <strong>credit rate</strong> and how does it change over time?</td>
+              <td>Some credits float with utility rates; others are fixed or discounted differently.</td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td>Contract length + renewal terms?</td>
+              <td>Short terms reduce lock-in; long terms may improve predictability (or risk).</td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td>Fees: admin, maintenance, transfer, cancellation?</td>
+              <td>Fees can quietly erase expected savings.</td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td>Exit rules: can I transfer if I move?</td>
+              <td>Programs often restrict participation to a territory; transferability matters for renters.</td>
+              <td>—</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>FAQ</h3>
+        <details>
+          <summary>Is shared solar the same as community solar?</summary>
+          <p class="small" style="margin-top:10px;">
+            Usually yes — “shared solar” is commonly used as a synonym, though billing mechanics can vary by jurisdiction and contract type.
+          </p>
+        </details>
+
+        <details>
+          <summary>Do I need to live near the solar site?</summary>
+          <p class="small" style="margin-top:10px;">
+            Often no, but many programs restrict participation to customers inside the same utility territory or state.
+          </p>
+        </details>
+
+        <details>
+          <summary>Can renters join?</summary>
+          <p class="small" style="margin-top:10px;">
+            Yes. Community solar is frequently designed to include renters and households without suitable rooftops.
+          </p>
+        </details>
+
+        <details>
+          <summary>Safest one-line summary?</summary>
+          <p class="small" style="margin-top:10px;">
+            Community solar is a shared subscription model that provides bill credits or offsets from one solar installation to multiple customers.
+          </p>
+        </details>
+
+        <h3>Sources & references</h3>
+        <ul>
+          <li><a href="https://www.nrel.gov/solar/community-solar.html" target="_blank" rel="noopener noreferrer">NREL — Community Solar Basics</a>.</li>
+          <li><a href="https://www.energy.gov/scep/solar-gardens" target="_blank" rel="noopener noreferrer">Energy.gov — Solar Gardens</a>.</li>
+          <li><a href="https://www.energy.gov/eere/solar/net-metering" target="_blank" rel="noopener noreferrer">Energy.gov — Net metering</a>.</li>
+          <li>Energy Policy Corpus G (2025) — labeling and fragmentation analysis.</li>
+          <li>Subscriber Model Comparison Notes (2025).</li>
+        </ul>
+      </main>
+
+    </article>
+  </div>
+</body>
+</html>

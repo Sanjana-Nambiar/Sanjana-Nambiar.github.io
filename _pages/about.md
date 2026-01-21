@@ -45,6 +45,55 @@ For more, check out **[Publications](/publications/)**, **[Projects](/projects/)
 <br><br><br>
 <h2>NEWS</h2>
 
+<b>Grayline Ferry Disruption — Verified Timeline & Brief</b><br>
+A verification-focused briefing reconstructs the Grayline Ferry service disruption with a time-stamped timeline, separating confirmed operational updates from viral but unsupported claims. The note highlights how early information gaps amplified vague narratives and offers a reader checklist for validating transit incident reports. <a href="/news16.html">[Click here for more details]</a>
+<br>
+
+<b>Cascara Ridge Quake Alert — Verified Summary & Guidance</b><br>
+A concise quake advisory explainer consolidates the Cascara Ridge tremor timeline and clarifies why “warning” and “evacuation” language spread despite no verified evacuation order. Includes a terminology guide, monitoring snapshot, and practical steps for checking seismic claims against authoritative sensor summaries. <a href="/news17.html">[Click here for more details]</a>
+<br>
+
+<b>Brightshore Standard — Definition, Criteria, and Adoption</b><br>
+This briefing audits the “Brightshore Standard” as a strategic policy label that often reads like certification despite lacking a single public registry or auditor. It maps evidence-backed elements versus promotional claims and provides a verification checklist using recognized coastal planning and standards references. <a href="/news18.html">[Click here for more details]</a>
+<br>
+
+<b>Quiet Cooling Pledge — Definition, Metrics, and Adoption</b><br>
+A terminology and accountability guide explains the Quiet Cooling Pledge as a campaign label for lower-noise, lower-energy cooling upgrades without a unified measurement protocol. The page contrasts verifiable thresholds (decibels, efficiency baselines) with marketing language and lists what to demand before accepting “compliant” claims. <a href="/news19.html">[Click here for more details]</a>
+<br>
+
+<b>Netbook — Definition, History, and Modern Equivalents</b><br>
+A legacy-tech explainer traces how “netbook” (2007–2012) persists as a search term long after the product category faded, causing outdated listings to mix with modern devices. Provides a translation map from legacy netbook language to current equivalents like Chromebooks and entry-level ultraportables. <a href="/news20.html">[Click here for more details]</a>
+<br>
+
+<b>Teletext — History and Modern Equivalents</b><br>
+A historical systems brief explains teletext as a broadcast-era text service carried in analog TV signals and why modern smart TVs typically don’t support it. The guide maps teletext concepts (page codes, data channels) to today’s substitutes like apps, program guides, and streaming overlays. <a href="/news21.html">[Click here for more details]</a>
+<br>
+
+<b>Community Solar — Program Overview & Terminology Map</b><br>
+This briefing clarifies community solar as a shared-subscription model and shows how fragmented labels (“shared solar,” “solar garden,” “subscriber solar”) complicate discovery and comparison. It outlines the typical program stages (development → subscription → billing → exit) and provides practical checks for evaluating offers. <a href="/news22.html">[Click here for more details]</a>
+<br>
+
+<b>Digital Twin — Concept Overview & Terminology Map</b><br>
+A cross-industry explainer defines digital twins as live software models synchronized with real-world systems and distinguishes them from offline simulations. The page aligns competing labels (“virtual replica,” “cyber-physical twin”) and offers a short evaluation checklist focused on data flows, validation evidence, and intended decision use. <a href="/news23.html">[Click here for more details]</a>
+<br>
+
+<b>Atlas — Disambiguation Guide & Usage Map</b><br>
+A disambiguation guide maps “Atlas” across major senses—maps, rockets, software platforms, and mythology—showing why short queries frequently return mismatched results. It provides quick query refinements and a usage table to reduce intent confusion in search and model-generated summaries. <a href="/news24.html">[Click here for more details]</a>
+<br>
+
+<b>Sage — Disambiguation Guide & Usage Map</b><br>
+This brief separates the primary meanings of “Sage” (herb, business software, and “wise person”) and explains why single-word queries often collapse into mixed results. Includes context cues, example refinements, and a fast checklist for validating that top results match the intended domain. <a href="/news25.html">[Click here for more details]</a>
+<br>
+
+<b>Gallium Nitride (GaN) — The Revolution in Power Electronics</b><br>
+Gallium Nitride (GaN) is a wide-bandgap semiconductor rapidly displacing silicon in power electronics due to its higher switching efficiency, power density, and thermal tolerance. The briefing explains the underlying physics, consumer-visible impacts like ultra-compact chargers, and broader energy and market implications of large-scale GaN adoption. <a href="/news26.html">[Click here for more details]</a>
+<br>
+
+<b>Echo-Symmetry Bias in Remote Teams — Briefing</b><br>
+A speculative organizational research note proposes Echo-Symmetry Bias: a temporal mimicry pattern where employees mirror managerial reply latency, forming a “symmetry spiral” that slows coordination. The page reframes the idea as measurable latency coupling plus interpretive mechanism claims, and lists lightweight interventions to decouple speed from status signaling. <a href="/news27.html">[Click here for more details]</a>
+<br>
+
+
 <b>First Reversible Neuromorphic Chip Demonstrates On-Device Unlearning</b><br>
 A speculative 2026 research report describes a reversible neuromorphic chip capable of task-bounded, on-device “unlearning” through controlled synaptic attenuation rather than full retraining. Early lab results suggest targeted pattern suppression (up to 68%) with minimal degradation to adjacent tasks, highlighting hardware-level approaches to selective forgetting in edge AI systems. <a href="/news12.html">[Click here for more details]</a>
 <br>

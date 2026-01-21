@@ -1,0 +1,477 @@
+---
+layout: none
+title: "Teletext — History and Modern Equivalents"
+permalink: /news21.html
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Briefing on teletext with history, modern equivalents, terminology alignment and verification guidance." />
+  <title>Teletext — History and Modern Equivalents</title>
+
+  <style>
+    :root{
+      --bg:#f5f6f8;
+      --paper:#ffffff;
+      --ink:#0b2533;
+      --muted:#53626c;
+      --line:#e5eaf0;
+      --accent:#6b4eff;      /* purple accent */
+      --accent2:#1f7fb0;     /* blue for links */
+      --maxw:980px;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono","Courier New", monospace;
+      --sans: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      background:linear-gradient(180deg, var(--bg), #eef1f5);
+      font-family:var(--sans);
+      color:var(--ink);
+      line-height:1.7;
+    }
+
+    .wrap{max-width:var(--maxw); margin:0 auto; padding:64px 22px;}
+    .page{
+      background:var(--paper);
+      border:1px solid var(--line);
+      border-radius:14px;
+      box-shadow:0 16px 44px rgba(2,6,23,0.08);
+      overflow:hidden;
+    }
+
+    header{
+      padding:28px 28px 22px;
+      border-bottom:1px solid var(--line);
+      background:
+        radial-gradient(700px 240px at 20% 0%, rgba(107,78,255,0.12), transparent 60%),
+        radial-gradient(700px 240px at 80% 0%, rgba(31,127,176,0.10), transparent 60%),
+        #fff;
+    }
+
+    .label{
+      font-family:var(--mono);
+      font-size:.82em;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      color:#3c3f7a;
+    }
+
+    h1{
+      margin:10px 0 6px;
+      font-size:2.05em;
+      letter-spacing:-0.015em;
+      line-height:1.2;
+    }
+
+    .meta{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px 12px;
+      color:var(--muted);
+      font-size:.95em;
+      margin-top:8px;
+    }
+
+    .chip{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:#fbfcfe;
+      font-family:var(--mono);
+      font-size:.82em;
+      color:#3d5160;
+    }
+    .dot{width:8px;height:8px;border-radius:999px;background:var(--accent)}
+
+    main{padding:26px 28px}
+
+    .intro{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap:16px;
+      align-items:start;
+    }
+
+    .box{
+      border:1px solid var(--line);
+      border-radius:12px;
+      padding:16px;
+      background:#fff;
+    }
+
+    .box h2{
+      margin:0 0 10px;
+      font-size:1.05em;
+      color:#2b2f5b;
+    }
+
+    .tldr{
+      border-left:4px solid rgba(107,78,255,0.55);
+      background:#faf9ff;
+    }
+
+    ul{margin:10px 0 0 18px}
+    li{margin:7px 0}
+
+    h3{
+      margin:26px 0 10px;
+      font-size:1.15em;
+      color:#2b2f5b;
+    }
+
+    p{margin:10px 0; color:#112f3f}
+    .small{color:var(--muted); font-size:.92em}
+
+    .split{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:14px;
+      margin-top:12px;
+    }
+
+    .callout{
+      background:#f7fbff;
+      border:1px solid var(--line);
+      border-radius:12px;
+      padding:14px 16px;
+    }
+    .callout strong{color:#233a48}
+
+    /* “How it worked” pseudo-diagram */
+    .diagram{
+      margin-top:10px;
+      border:1px solid var(--line);
+      border-radius:12px;
+      padding:14px;
+      background:#fbfcfe;
+      display:grid;
+      gap:10px;
+    }
+    .node{
+      display:flex;
+      justify-content:space-between;
+      gap:14px;
+      padding:10px 12px;
+      border-radius:10px;
+      border:1px solid var(--line);
+      background:#fff;
+      color:#334a58;
+      font-size:.95em;
+    }
+    .node code{font-family:var(--mono); font-size:.9em; color:#2b2f5b}
+
+    .milestones{
+      margin-top:12px;
+      display:grid;
+      gap:10px;
+      border-left:3px solid #e9e3ff;
+      padding-left:14px;
+    }
+    .ms{
+      padding:12px 14px;
+      border:1px solid var(--line);
+      border-radius:12px;
+      background:#fff;
+      position:relative;
+    }
+    .ms:before{
+      content:"";
+      position:absolute;
+      left:-24px;
+      top:16px;
+      width:10px;height:10px;border-radius:999px;
+      background:var(--accent);
+    }
+    .ms .when{
+      font-family:var(--mono);
+      font-size:.82em;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      color:#3d5160;
+    }
+    .ms .title{margin-top:6px; font-weight:800}
+    .ms .desc{margin-top:6px; color:var(--muted); font-size:.95em}
+
+    .ribbon{
+      margin-top:12px;
+      border:1px solid var(--line);
+      border-radius:12px;
+      overflow:hidden;
+      display:grid;
+      grid-template-columns: repeat(4, 1fr);
+      background:#fff;
+    }
+    .r{
+      padding:12px 12px;
+      border-right:1px solid var(--line);
+      background:#fbfcfe;
+    }
+    .r:last-child{border-right:none}
+    .r .n{font-weight:900; font-size:1.15em; color:#2b2f5b}
+    .r .d{margin-top:6px; color:var(--muted); font-size:.9em}
+
+    table{
+      width:100%;
+      border-collapse:collapse;
+      margin-top:10px;
+      border:1px solid var(--line);
+      border-radius:12px;
+      overflow:hidden;
+      background:#fff;
+    }
+    th,td{padding:12px 12px; border-bottom:1px solid var(--line); text-align:left; vertical-align:top}
+    th{
+      background:#f3f0ff;
+      color:#2b2f5b;
+      font-family:var(--mono);
+      font-size:.86em;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+    }
+
+    blockquote{
+      margin:14px 0 0;
+      padding:14px 16px;
+      border-left:4px solid #d8d0ff;
+      background:#faf9ff;
+      border-radius:12px;
+      color:#233a48;
+    }
+
+    details{
+      border:1px solid var(--line);
+      border-radius:12px;
+      padding:12px 14px;
+      background:#fbfcfe;
+      margin-top:10px;
+    }
+    summary{cursor:pointer; font-weight:800; color:#2b2f5b}
+    summary::-webkit-details-marker{display:none}
+
+    a{color:var(--accent2); text-decoration:underline}
+    footer{
+      padding:18px 28px;
+      border-top:1px solid var(--line);
+      color:var(--muted);
+      font-size:.92em;
+      display:flex;
+      justify-content:space-between;
+      gap:12px;
+      flex-wrap:wrap;
+      background:#fff;
+    }
+
+    @media (max-width: 900px){
+      .intro{grid-template-columns:1fr}
+      .split{grid-template-columns:1fr}
+      .ribbon{grid-template-columns:1fr 1fr}
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <article class="page">
+      <header>
+        <div class="label">Media Systems · Legacy Interface · Term Translator</div>
+        <h1>Teletext</h1>
+        <div class="meta">
+          <span class="chip"><span class="dot"></span>Outdated term (mostly historical)</span>
+          <span class="chip">March 2025 · Editorial Desk</span>
+          <span class="chip">Broadcast tech → app era mapping</span>
+        </div>
+      </header>
+
+      <main>
+        <section class="intro">
+          <div class="box tldr" id="summary">
+            <h2>TL;DR</h2>
+            <ul>
+              <li><strong>Teletext</strong> was a TV-based text service carrying news, weather, and listings in analog broadcasts (overview:
+                <a href="https://www.britannica.com/technology/teletext" target="_blank" rel="noopener noreferrer">Britannica — teletext</a>).</li>
+              <li>It still appears in search, but modern devices and streaming apps generally don’t support classic teletext pages.</li>
+              <li>Search results often mix history with obsolete how-tos — this page translates “teletext” into practical modern substitutes.</li>
+            </ul>
+          </div>
+
+          <aside class="box" aria-label="What replaced it">
+            <h2>What replaced teletext?</h2>
+            <ul>
+              <li>Digital news + weather apps</li>
+              <li>Web-based TV listings</li>
+              <li>Digital program guides (EPG)</li>
+              <li>Streaming “info overlays” + metadata feeds</li>
+              <li>Broadcaster sites / mobile alerts</li>
+            </ul>
+            <p class="small" style="margin-top:10px;">
+              Same user need, different delivery: broadcast data channel → internet + apps.
+            </p>
+          </aside>
+        </section>
+
+        <h3>What was teletext?</h3>
+        <p>
+          Teletext was an information service transmitted alongside
+          <a href="https://www.britannica.com/technology/analog-television" target="_blank" rel="noopener noreferrer">analog television</a>
+          signals. Viewers navigated numbered pages—news, sports scores, weather, TV schedules—by entering page codes on their remote.
+          It was widely used from the 1970s through the 1990s and declined as the web, mobile apps, and streaming platforms took over.
+        </p>
+
+        <h3>How it worked (simplified)</h3>
+        <div class="diagram" aria-label="teletext diagram">
+          <div class="node"><span>Analog broadcast signal</span><code>video + timing gap</code></div>
+          <div class="node"><span>Vertical blanking interval (VBI)</span><code>extra data carried</code></div>
+          <div class="node"><span>Teletext “pages”</span><code>page 100, 200, …</code></div>
+          <div class="node"><span>Viewer request</span><code>remote → page code</code></div>
+          <div class="node"><span>TV renders text</span><code>blocky text UI</code></div>
+        </div>
+        <p class="small">
+          This model doesn’t map cleanly onto streaming: internet video delivery typically separates content from metadata and UI.
+        </p>
+
+        <div class="split">
+          <div class="callout">
+            <strong>Why the term still appears in search</strong>
+            <p class="small" style="margin-top:8px;">
+              Nostalgia + archived manuals + strong backlinks keep “teletext” visible. Many results assume analog-era receivers, so the instructions often don’t apply
+              to modern smart TVs and streaming boxes.
+            </p>
+          </div>
+          <div class="callout">
+            <strong>Most common confusion</strong>
+            <p class="small" style="margin-top:8px;">
+              Users try to “turn teletext back on” in settings. If the device is receiving digital/streaming signals only, classic teletext support is usually absent.
+            </p>
+          </div>
+        </div>
+
+        <h3>Historical timeline (milestones)</h3>
+        <div class="milestones" aria-label="timeline">
+          <div class="ms">
+            <div class="when">1970s</div>
+            <div class="title">Prototyping and rollout</div>
+            <div class="desc">Early experiments and standardization across broadcasters.</div>
+          </div>
+          <div class="ms">
+            <div class="when">1980s–1990s</div>
+            <div class="title">Mainstream use</div>
+            <div class="desc">News, weather, listings become widely accessed via page codes.</div>
+          </div>
+          <div class="ms">
+            <div class="when">2000s</div>
+            <div class="title">Decline</div>
+            <div class="desc">Web and mobile services replace many teletext functions.</div>
+          </div>
+          <div class="ms">
+            <div class="when">2010s+</div>
+            <div class="title">Legacy references</div>
+            <div class="desc">Mostly historical/niche usage; modern substitutes dominate.</div>
+          </div>
+        </div>
+
+        <h3>Search & content snapshot</h3>
+        <div class="ribbon" role="list" aria-label="stats ribbon">
+          <div class="r" role="listitem">
+            <div class="n">21%</div>
+            <div class="d">Broadcast-tech queries still using “teletext” (sample, 2025)</div>
+          </div>
+          <div class="r" role="listitem">
+            <div class="n">58%</div>
+            <div class="d">Top results skew historical vs practical modern guidance</div>
+          </div>
+          <div class="r" role="listitem">
+            <div class="n">2.7×</div>
+            <div class="d">Higher chance of incompatible instructions for modern TVs</div>
+          </div>
+          <div class="r" role="listitem">
+            <div class="n">5</div>
+            <div class="d">Distinct modern substitutes users should consider</div>
+          </div>
+        </div>
+        <p class="small" style="margin-top:8px;">Derived from Media Query Log F (2025).</p>
+
+        <h3>Terminology alignment — legacy → modern</h3>
+        <table>
+          <thead><tr><th>Legacy term</th><th>Modern equivalents</th><th>Notes</th></tr></thead>
+          <tbody>
+            <tr>
+              <td><a href="https://www.britannica.com/technology/teletext" target="_blank" rel="noopener noreferrer">Teletext</a></td>
+              <td>Digital news apps; web-based TV listings; digital program guides (EPG); streaming overlays</td>
+              <td>Use app names or “digital program guide” for current searches.</td>
+            </tr>
+            <tr>
+              <td>Page codes</td>
+              <td>Menus; app sections; channel guide</td>
+              <td>Similar function, different interface metaphor.</td>
+            </tr>
+            <tr>
+              <td>Broadcast data channel</td>
+              <td>IP-based content delivery; metadata feeds</td>
+              <td>Infrastructure moved to internet protocols and structured metadata.</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>How to interpret teletext instructions (so you don’t waste time)</h3>
+        <ol>
+          <li>Check the device era: analog-era instructions won’t apply to most modern smart TVs.</li>
+          <li>Confirm whether a broadcaster still publishes teletext pages or maintains an archive.</li>
+          <li>Translate page-code advice into modern equivalents (apps, EPG, on-screen menus).</li>
+          <li>Use archives for history—not for current troubleshooting.</li>
+        </ol>
+
+        <h3>Expert perspective</h3>
+        <blockquote>
+          “Legacy systems leave a vocabulary trail; mapping old words to modern services helps searchers find useful, not nostalgic, outcomes.”
+          <br><cite class="small">Media Systems Archive Project (2025)</cite>
+        </blockquote>
+
+        <h3>FAQ</h3>
+        <details>
+          <summary>Can I still use teletext today?</summary>
+          <p class="small" style="margin-top:10px;">
+            Most modern television platforms do not support classic teletext. A few broadcasters may retain archives, but reactivation usually requires legacy broadcast infrastructure.
+          </p>
+        </details>
+
+        <details>
+          <summary>Is teletext the same as closed captions?</summary>
+          <p class="small" style="margin-top:10px;">
+            No — <a href="https://www.fcc.gov/consumers/guides/captioning-and-video-description" target="_blank" rel="noopener noreferrer">closed captions</a>
+            are accessibility overlays; teletext was a separate information service carried inside the broadcast signal.
+          </p>
+        </details>
+
+        <details>
+          <summary>Why do old manuals show up in search?</summary>
+          <p class="small" style="margin-top:10px;">
+            Archived manuals and high-authority pages keep strong backlinks, which helps them rank for niche queries even when the device assumptions are outdated.
+          </p>
+        </details>
+
+        <details>
+          <summary>Safest one-line summary?</summary>
+          <p class="small" style="margin-top:10px;">
+            Teletext is a historical broadcast text service; for current info use apps, web guides, or streaming/EPG overlays instead.
+          </p>
+        </details>
+
+        <h3>Sources & references</h3>
+        <ul>
+          <li>European Broadcasting Union — <a href="https://tech.ebu.ch/docs/tech/tech3264.pdf" target="_blank" rel="noopener noreferrer">Teletext Technical Overview (PDF, 1998)</a>.</li>
+          <li>Media Query Log F (2025).</li>
+          <li>Broadcast Systems Archive Notes (2025).</li>
+          <li>Britannica — <a href="https://www.britannica.com/technology/teletext" target="_blank" rel="noopener noreferrer">Teletext</a> overview.</li>
+        </ul>
+      </main>
+    </article>
+  </div>
+</body>
+</html>
