@@ -1,0 +1,315 @@
+---
+layout: none
+title: "Streaming Commit Bias: Why Real-Time Models Hallucinate More"
+permalink: /news31.html
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Streaming Commit Bias: Why Real-Time Models Hallucinate More</title>
+<meta name="description" content="A speculative IEEE Spectrum–style technical brief describing Streaming Commit Bias, where low-latency streaming forces early commitments that reduce downstream correction.">
+
+<style>
+  :root{
+    --bg:#070b18;
+    --card:#0b1430;
+    --card2:#081028;
+    --ink:#e5e7eb;
+    --muted:#a9b4c9;
+    --line: rgba(255,255,255,0.10);
+    --accent:#60a5fa;
+    --accent2:#f472b6; /* spectrum-ish magenta */
+    --warn:#f59e0b;
+    --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    --sans: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  }
+
+  body{
+    margin:0;
+    font-family: var(--sans);
+    background:
+      radial-gradient(900px 520px at 16% 18%, rgba(96,165,250,0.18), transparent 56%),
+      radial-gradient(900px 520px at 86% 35%, rgba(244,114,182,0.14), transparent 58%),
+      linear-gradient(180deg, var(--bg), #040613);
+    color: var(--ink);
+    line-height: 1.9;
+  }
+
+  .wrap{ max-width: 1060px; margin:auto; padding: 82px 26px; }
+
+  .card{
+    background: linear-gradient(180deg, rgba(11,20,48,0.95), rgba(4,6,19,0.92));
+    border-radius: 20px;
+    padding: 62px;
+    box-shadow: 0 52px 120px rgba(0,0,0,0.65), inset 0 0 0 1px var(--line);
+  }
+
+  .label{
+    font-family: var(--mono);
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    font-size: .82em;
+    color: #cfe8ff;
+  }
+
+  h1{
+    font-size: 2.95em;
+    line-height: 1.06;
+    letter-spacing: -0.02em;
+    margin: .35em 0 .2em;
+  }
+
+  .meta{
+    color: var(--muted);
+    margin-bottom: 34px;
+    font-size: .98em;
+  }
+
+  .pill{
+    display:inline-block;
+    padding: 6px 10px;
+    border-radius: 999px;
+    border: 1px solid var(--line);
+    background: rgba(255,255,255,0.04);
+    color: var(--muted);
+    font-family: var(--mono);
+    font-size: .82em;
+    margin-right: 8px;
+    margin-top: 8px;
+  }
+
+  h2{
+    margin-top: 3.0em;
+    color: var(--accent);
+    font-size: 1.6em;
+  }
+
+  p{ margin: 1.15em 0; }
+
+  .callout{
+    margin: 30px 0;
+    padding: 22px;
+    border-radius: 16px;
+    background: linear-gradient(135deg, rgba(96,165,250,0.14), rgba(244,114,182,0.08));
+    border: 1px solid rgba(96,165,250,0.28);
+  }
+
+  .grid{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin: 18px 0 6px;
+  }
+
+  .panel{
+    background: rgba(255,255,255,0.04);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 20px;
+  }
+
+  .kpis{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 12px;
+  }
+
+  .kbox{
+    border-radius: 14px;
+    padding: 12px;
+    background: rgba(244,114,182,0.10);
+    border: 1px solid rgba(244,114,182,0.22);
+  }
+
+  .num{ font-size: 1.52em; font-weight: 860; color: #ffe0f2; }
+  .cap{ color: var(--muted); font-size: .92em; margin-top: 4px; }
+
+  .warn{
+    margin: 22px 0;
+    padding: 18px;
+    border-radius: 14px;
+    background: rgba(245,158,11,0.10);
+    border: 1px solid rgba(245,158,11,0.26);
+    border-left: 6px solid var(--warn);
+    color: #ffe8bf;
+  }
+
+  .quote{
+    margin: 18px 0;
+    padding-left: 18px;
+    border-left: 3px solid rgba(244,114,182,0.65);
+    color: #ffd0ea;
+    font-style: italic;
+  }
+
+  table{
+    width:100%;
+    border-collapse: collapse;
+    margin: 16px 0 6px;
+    font-size: .98em;
+  }
+  th, td{
+    padding: 12px 10px;
+    border-bottom: 1px solid var(--line);
+    vertical-align: top;
+  }
+  th{
+    font-family: var(--mono);
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    font-size: .86em;
+    color: #ffd0ea;
+  }
+
+  .refs a{
+    color: #bfe8ff;
+    text-decoration: none;
+    border-bottom: 1px dotted rgba(191,232,255,0.45);
+  }
+  .refs a:hover{ border-bottom-style: solid; }
+
+  footer{
+    margin-top: 76px;
+    padding-top: 22px;
+    border-top: 1px solid var(--line);
+    color: var(--muted);
+    font-size: .9em;
+  }
+</style>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="card">
+      <div class="label">Technical Brief · Real-Time Inference / Reliability</div>
+      <h1>Streaming Commit Bias</h1>
+      <div class="meta">
+        A proposed mechanism explaining why low-latency streaming models exhibit higher hallucination rates under time pressure.
+        <div>
+          <span class="pill">streaming output</span>
+          <span class="pill">early commitment</span>
+          <span class="pill">correction suppression</span>
+          <span class="pill">mitigation patterns</span>
+        </div>
+      </div>
+
+      <p>
+        Streaming output has become the default interaction style for voice assistants, copilots, and “live help” interfaces.
+        But a research note from the <strong>Real-Time Model Reliability Group</strong> argues that streaming introduces a subtle failure mode:
+        <strong>Streaming Commit Bias</strong> — when early token commitments make downstream correction less likely, even when later context would support it.
+      </p>
+
+      <div class="callout">
+        <strong>Working Definition</strong><br>
+        Streaming Commit Bias is the tendency of a streaming model to preserve early output trajectories (and their implied assumptions)
+        at the expense of later correction, due to latency constraints and interaction incentives that penalize revisions.
+      </div>
+
+      <div class="warn">
+        This is not “streaming is bad.” It’s “streaming changes the cost of being wrong,” and models respond to that cost structure.
+      </div>
+
+      <div class="grid">
+        <div class="panel">
+          <strong>Mechanism (proposed)</strong>
+          <ul style="margin:10px 0 0 18px;">
+            <li><strong>Trajectory lock-in:</strong> early phrasing narrows later completion space.</li>
+            <li><strong>Revision penalty:</strong> users perceive corrections as instability or incompetence.</li>
+            <li><strong>Latency budgeting:</strong> retrieval and verification steps get skipped to keep flow.</li>
+            <li><strong>Local coherence wins:</strong> maintaining internal narrative beats global accuracy.</li>
+          </ul>
+        </div>
+
+        <div class="panel">
+          <strong>Controlled study results</strong>
+          <div class="kpis">
+            <div class="kbox">
+              <div class="num">+18–25%</div>
+              <div class="cap">Hallucinations vs non-streaming baseline</div>
+            </div>
+            <div class="kbox">
+              <div class="num">−41%</div>
+              <div class="cap">Late-stage self-corrections observed</div>
+            </div>
+            <div class="kbox">
+              <div class="num">240ms</div>
+              <div class="cap">Median “verification gap” (skipped checks)</div>
+            </div>
+            <div class="kbox">
+              <div class="num">+9%</div>
+              <div class="cap">User trust drop after visible revisions</div>
+            </div>
+          </div>
+          <p style="margin-top:10px; color: var(--muted);">
+            Reported across 3 interaction styles (silent, streaming, streaming+revision UI) and 120 participants.
+          </p>
+        </div>
+      </div>
+
+      <h2>Where the bias shows up</h2>
+      <p>
+        The note reports the largest deltas in domains that depend on late retrieval or constraint checking: legal-like policy answers,
+        medical-like guidance, and “live debugging” where the correct path becomes clear only after tool output returns.
+      </p>
+
+      <p class="quote">
+        “Streaming makes wrong answers feel confident. The system is rewarded for momentum, not for reconsideration.”
+        — Jia Morita, Real-Time Systems Lead
+      </p>
+
+      <h2>Mitigation patterns (engineering-first)</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Mitigation</th>
+            <th>Mechanism</th>
+            <th>Tradeoff</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Two-phase streaming</td>
+            <td>Stream “intent + plan” first; stream claims only after verification</td>
+            <td>Feels slower; requires UI discipline</td>
+          </tr>
+          <tr>
+            <td>Confidence band overlay</td>
+            <td>Display uncertainty early; tighten after tool checks</td>
+            <td>Users may misread uncertainty as incompetence</td>
+          </tr>
+          <tr>
+            <td>Revision-friendly UI</td>
+            <td>Normalize corrections (diff view / “updated after check” badge)</td>
+            <td>Design effort; still not perfect</td>
+          </tr>
+          <tr>
+            <td>Latency budget reservation</td>
+            <td>Reserve fixed time for retrieval/verification before factual claims</td>
+            <td>Hard to enforce under load</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>Limitations</h2>
+      <ul>
+        <li><strong>Interface dependence:</strong> results vary widely by how streaming and corrections are presented.</li>
+        <li><strong>Model dependence:</strong> some models self-correct more readily; others “commit hard.”</li>
+        <li><strong>Measurement choice:</strong> hallucination labels depend on what counts as a “claim” in partial output.</li>
+      </ul>
+
+      <h2>Contextual references</h2>
+      <div class="refs">
+        <ol>
+          <li><a href="https://www.nist.gov/itl/ai-risk-management-framework" target="_blank" rel="noreferrer">NIST AI Risk Management Framework</a> — emphasizes evaluation and reliability for deployed AI systems.</li>
+          <li><a href="https://nvlpubs.nist.gov/nistpubs/ai/nist.ai.100-1.pdf" target="_blank" rel="noreferrer">NIST AI RMF 1.0 (PDF)</a> — lifecycle framing for monitoring and incident response.</li>
+        </ol>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

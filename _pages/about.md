@@ -45,6 +45,38 @@ For more, check out **[Publications](/publications/)**, **[Projects](/projects/)
 <br><br><br>
 <h2>NEWS</h2>
 
+<b>MirrorBench Leak: Measuring Private Data Echo in Large Language Models</b><br>
+MirrorBench Leak is a speculative evaluation benchmark designed to measure how often language models reproduce sensitive or private information without explicit prompt injection. Early results suggest non-zero “echo rates” across popular architectures, highlighting gaps in current privacy and memorization safeguards. <a href="/news28.html">[Click here for more details]</a>
+<br>
+
+<b>Agent Deadlock Syndrome (ADS): A Failure Mode in Multi-Agent Systems</b><br>
+Agent Deadlock Syndrome (ADS) describes a newly observed coordination failure in multi-agent AI workflows, where agents enter prolonged deferment loops that stall task completion. A January 2026 research note frames ADS as a structural limitation of cooperative agent design rather than a simple planning bug. <a href="/news29.html">[Click here for more details]</a>
+<br>
+
+<b>Crawl-to-Refer Collapse: AI Crawlers Outpace Human Referrals</b><br>
+A speculative network analysis reports a growing imbalance between AI crawler traffic and human referral visits, with crawl-to-refer ratios exceeding historical norms across news and reference domains. Researchers frame the shift as an economic signal rather than a definitive collapse of human web usage. <a href="/news30.html">[Click here for more details]</a>
+<br>
+
+<b>Streaming Commit Bias Increases Hallucinations in Real-Time Models</b><br>
+Streaming Commit Bias refers to a newly identified phenomenon in real-time AI systems, where early token commitments reduce the model’s ability to correct downstream errors. Controlled studies suggest higher hallucination rates under low-latency constraints, raising questions about reliability in voice and live-assist applications. <a href="/news31.html">[Click here for more details]</a>
+<br>
+
+<b>Skill Atrophy Thresholds Identified in Copilot-Heavy Workflows</b><br>
+A longitudinal observational study suggests that prolonged reliance on AI copilots can reduce users’ error-detection and skill retention beyond a measurable threshold, even as task completion speed improves. The findings contribute to growing concern over long-term cognitive effects of AI-assisted work. <a href="/news32.html">[Click here for more details]</a>
+<br>
+
+<b>The Consent Fatigue Paradox in AI Safety Interfaces</b><br>
+The Consent Fatigue Paradox describes how repeated confirmation prompts and safety dialogs may lead users to approve AI actions without review. Experimental results indicate rising error rates and declining trust beyond a critical number of consent interactions per session. <a href="/news33.html">[Click here for more details]</a>
+<br>
+
+<b>Synthetic Majority Collapse: When Models Over-Trust Generated Data</b><br>
+Synthetic Majority Collapse is a proposed training failure mode in which models exposed to high proportions of synthetic data begin to overweight artificial consensus and underperform on rare real-world cases. Researchers report rising confidence alongside declining factual robustness past specific mixture thresholds. <a href="/news34.html">[Click here for more details]</a>
+<br>
+
+<b>AI Output Nutrition Labels Proposed for Enterprise Systems</b><br>
+A new transparency proposal introduces standardized “output nutrition labels” for AI systems, disclosing provenance strength, uncertainty bands, policy risk tiers, and verification requirements. Early enterprise pilots suggest the labels improve auditability without significantly impacting deployment latency. <a href="/news35.html">[Click here for more details]</a>
+<br>
+
 <b>Grayline Ferry Disruption — Verified Timeline & Brief</b><br>
 A verification-focused briefing reconstructs the Grayline Ferry service disruption with a time-stamped timeline, separating confirmed operational updates from viral but unsupported claims. The note highlights how early information gaps amplified vague narratives and offers a reader checklist for validating transit incident reports. <a href="/news16.html">[Click here for more details]</a>
 <br>

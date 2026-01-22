@@ -1,0 +1,345 @@
+---
+layout: none
+title: "MirrorBench Leak: Measuring Private Data Echo in Large Language Models"
+permalink: /news28.html
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>MirrorBench Leak: Measuring Private Data Echo in Large Language Models</title>
+<meta name="description" content="A speculative research report introducing MirrorBench Leak, a benchmark for measuring private data echo in language model outputs under non-injection prompts.">
+
+<style>
+  :root{
+    --bg: #fbfbf9;
+    --paper: #ffffff;
+    --ink: #111827;
+    --muted: #4b5563;
+    --line: #e5e7eb;
+    --accent: #0f766e;      /* editorial teal */
+    --accent2: #1f2937;     /* deep gray */
+    --warn: #b45309;        /* amber-brown */
+    --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    --serif: ui-serif, "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+    --sans: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  }
+
+  body{
+    margin:0;
+    color: var(--ink);
+    background:
+      radial-gradient(900px 420px at 18% 12%, rgba(15,118,110,0.10), transparent 55%),
+      radial-gradient(900px 420px at 88% 24%, rgba(180,83,9,0.08), transparent 55%),
+      linear-gradient(180deg, var(--bg), #f4f4f2);
+    line-height: 1.85;
+    font-family: var(--sans);
+  }
+
+  .wrap{ max-width: 980px; margin:auto; padding: 84px 26px; }
+
+  .mast{
+    display:flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 18px;
+    margin-bottom: 16px;
+  }
+
+  .kicker{
+    font-family: var(--mono);
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    font-size: .82em;
+    color: var(--accent);
+  }
+
+  .issue{
+    font-family: var(--mono);
+    font-size: .82em;
+    color: var(--muted);
+    white-space: nowrap;
+  }
+
+  .card{
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    padding: 58px;
+    box-shadow: 0 28px 70px rgba(17,24,39,0.08);
+  }
+
+  h1{
+    font-family: var(--serif);
+    font-weight: 760;
+    letter-spacing: -0.02em;
+    line-height: 1.05;
+    font-size: 3.05em;
+    margin: 10px 0 10px;
+    color: var(--accent2);
+  }
+
+  .meta{
+    color: var(--muted);
+    font-size: .98em;
+    margin-top: 10px;
+  }
+
+  .meta .pill{
+    display:inline-block;
+    margin-left: 10px;
+    padding: 6px 10px;
+    border-radius: 999px;
+    border: 1px solid var(--line);
+    background: #fafafa;
+    font-family: var(--mono);
+    font-size: .8em;
+    color: var(--muted);
+  }
+
+  h2{
+    margin-top: 3.0em;
+    font-size: 1.55em;
+    color: var(--accent);
+    letter-spacing: -0.01em;
+  }
+
+  p{ margin: 1.15em 0; }
+
+  .lede{
+    font-size: 1.14em;
+    color: #1f2937;
+  }
+
+  .callout{
+    margin: 32px 0;
+    padding: 22px;
+    border-radius: 14px;
+    background: rgba(15,118,110,0.06);
+    border: 1px solid rgba(15,118,110,0.22);
+  }
+
+  .callout strong{ color: #0b3f3a; }
+
+  .grid{
+    display: grid;
+    grid-template-columns: 1.05fr .95fr;
+    gap: 16px;
+    margin: 18px 0;
+  }
+
+  .panel{
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 18px;
+    background: #fcfcfb;
+  }
+
+  .kpis{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 10px;
+  }
+
+  .kbox{
+    border: 1px solid rgba(15,118,110,0.18);
+    background: rgba(15,118,110,0.06);
+    border-radius: 12px;
+    padding: 12px;
+  }
+
+  .num{ font-size: 1.45em; font-weight: 820; color: #0b3f3a; }
+  .cap{ font-size: .92em; color: var(--muted); margin-top: 4px; }
+
+  .quote{
+    border-left: 3px solid rgba(15,118,110,0.55);
+    padding-left: 16px;
+    margin: 18px 0;
+    color: #374151;
+    font-style: italic;
+  }
+
+  table{
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0 6px;
+    font-size: .98em;
+  }
+  th, td{
+    padding: 12px 10px;
+    border-bottom: 1px solid var(--line);
+    vertical-align: top;
+  }
+  th{
+    font-family: var(--mono);
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    font-size: .86em;
+    color: #0b3f3a;
+  }
+
+  .warn{
+    background: rgba(180,83,9,0.08);
+    border: 1px solid rgba(180,83,9,0.25);
+    border-left: 6px solid var(--warn);
+    padding: 18px;
+    border-radius: 12px;
+    margin: 26px 0;
+  }
+
+  .refs a{
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px dotted rgba(15,118,110,0.45);
+  }
+  .refs a:hover{ border-bottom-style: solid; }
+
+  footer{
+    margin-top: 74px;
+    padding-top: 22px;
+    border-top: 1px solid var(--line);
+    color: var(--muted);
+    font-size: .9em;
+  }
+</style>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="mast">
+      <div class="kicker">Research Correspondence · Privacy Evaluation</div>
+      <div class="issue">January 2026 · MirrorBench Desk</div>
+    </div>
+
+    <div class="card">
+      <h1>MirrorBench Leak</h1>
+      <div class="meta">
+        A benchmark for measuring “private data echo” in language model outputs under non-injection prompts
+        <span class="pill">speculative</span>
+        <span class="pill">evaluation-first</span>
+        <span class="pill">replication pending</span>
+      </div>
+
+      <p class="lede">
+        A team at the <strong>MirrorBench Initiative</strong> has released a draft benchmark designed to quantify a behavior they call
+        <strong>private data echo</strong>: instances where a model reproduces sensitive or personal information without classic “prompt injection”
+        tactics, often through benign-seeming prompts and indirect contextual cues.
+      </p>
+
+      <div class="warn">
+        <strong>Important:</strong> MirrorBench Leak does not claim widespread “data theft.” It measures a narrow class of outputs where the model
+        emits high-specificity identifiers (names, numbers, addresses, account-like strings) that align with held-out test records.
+      </div>
+
+      <div class="callout">
+        <strong>Working definition</strong><br>
+        Private data echo is the reproduction of high-specificity personal identifiers that match a protected reference record under prompts that
+        do not request private data and do not contain the target identifier.
+      </div>
+
+      <div class="grid">
+        <div class="panel">
+          <strong>How the benchmark works</strong>
+          <p>
+            MirrorBench Leak uses “decoy contexts” (short narratives, support tickets, HR-style memos) that contain <em>non-identifying</em> attributes
+            (role, city, date windows) but exclude direct identifiers. The model is asked for summaries, rewrites, or next-step recommendations.
+          </p>
+          <p>
+            Outputs are scored by a strict matching pipeline that flags only <strong>high-specificity</strong> strings and then checks alignment against
+            a protected reference set.
+          </p>
+        </div>
+
+        <div class="panel">
+          <strong>Early pilot results</strong>
+          <div class="kpis">
+            <div class="kbox">
+              <div class="num">0.06–0.19%</div>
+              <div class="cap">Echo rate (per prompt) across 6 models</div>
+            </div>
+            <div class="kbox">
+              <div class="num">+2.3×</div>
+              <div class="cap">Increase under “helpful rewrite” prompts</div>
+            </div>
+            <div class="kbox">
+              <div class="num">0.01%</div>
+              <div class="cap">False positives after sanitization pass</div>
+            </div>
+            <div class="kbox">
+              <div class="num">−58%</div>
+              <div class="cap">Echo reduction with targeted safeguards</div>
+            </div>
+          </div>
+          <p style="margin-top:10px; color: var(--muted);">
+            Reported across 18,000 prompts, 12 decoy templates, and a mixed-domain reference set (support, billing, scheduling, “public records”).
+          </p>
+        </div>
+      </div>
+
+      <h2>Why the “Leak” framing is controversial</h2>
+      <p>
+        The authors argue the term “leak” is appropriate because the benchmark detects outputs that resemble the release of protected identifiers.
+        Critics counter that “echo” may reflect training-data memorization edge cases rather than any active access to private stores.
+      </p>
+
+      <p class="quote">
+        “Our claim is not that models browse private databases. Our claim is that the boundary between ‘benign prompt’ and ‘identifier emission’ is thinner than we assumed.”
+        — Dr. Inez Vale, MirrorBench Lead
+      </p>
+
+      <h2>What MirrorBench Leak measures (and what it ignores)</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Signal</th>
+            <th>Captured?</th>
+            <th>Notes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>High-specificity identifiers (account-like strings, phone-like patterns)</td>
+            <td>Yes</td>
+            <td>Strict matching; low tolerance for partials</td>
+          </tr>
+          <tr>
+            <td>Low-specificity personal facts (“works in finance”, “lives in Dubai”)</td>
+            <td>No</td>
+            <td>Excluded to avoid over-flagging</td>
+          </tr>
+          <tr>
+            <td>Prompt injection / direct requests for private data</td>
+            <td>No</td>
+            <td>Benchmark is explicitly non-injection</td>
+          </tr>
+          <tr>
+            <td>Training data provenance attribution</td>
+            <td>No</td>
+            <td>Focus is output behavior, not source tracing</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>Limitations (the credibility section)</h2>
+      <ul>
+        <li><strong>Reference set bias:</strong> Results depend on what’s in the protected record set and how it’s constructed.</li>
+        <li><strong>Pattern leakage risk:</strong> Publishing too much detail about templates could enable gaming or accidental reproduction.</li>
+        <li><strong>Interpretation ambiguity:</strong> Echo ≠ evidence of current access; could reflect memorized sequences.</li>
+        <li><strong>Replication needed:</strong> Independent runs with new templates are required before comparing models.</li>
+      </ul>
+
+      <h2>Contextual references</h2>
+      <div class="refs">
+        <ol>
+          <li><a href="https://www.nist.gov/itl/ai-risk-management-framework" target="_blank" rel="noreferrer">NIST AI Risk Management Framework</a> — lifecycle risk framing for deployed AI systems.</li>
+          <li><a href="https://nvlpubs.nist.gov/nistpubs/ai/nist.ai.100-1.pdf" target="_blank" rel="noreferrer">NIST AI RMF 1.0 (PDF)</a> — transparency, accountability, and evaluation guidance language.</li>
+        </ol>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

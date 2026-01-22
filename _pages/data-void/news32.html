@@ -1,0 +1,331 @@
+---
+layout: none
+title: "Skill Atrophy Thresholds in Copilot-Heavy Workflows"
+permalink: /news32.html
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Skill Atrophy Thresholds in Copilot-Heavy Workflows</title>
+<meta name="description" content="A speculative Nature-style research brief describing measurable thresholds where AI copilot reliance improves speed but degrades error detection and skill retention over time.">
+
+<style>
+  :root{
+    --bg:#fbfbf9;
+    --paper:#ffffff;
+    --ink:#111827;
+    --muted:#4b5563;
+    --line:#e5e7eb;
+    --accent:#1d4ed8;   /* editorial blue */
+    --accent2:#0f766e;  /* teal */
+    --warn:#b45309;
+    --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    --serif: ui-serif, "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+    --sans: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  }
+
+  body{
+    margin:0;
+    font-family: var(--sans);
+    color: var(--ink);
+    background:
+      radial-gradient(900px 420px at 18% 12%, rgba(29,78,216,0.10), transparent 58%),
+      radial-gradient(900px 420px at 88% 24%, rgba(15,118,110,0.08), transparent 58%),
+      linear-gradient(180deg, var(--bg), #f4f4f2);
+    line-height: 1.85;
+  }
+
+  .wrap{ max-width: 980px; margin:auto; padding: 84px 26px; }
+
+  .mast{
+    display:flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 18px;
+    margin-bottom: 16px;
+  }
+
+  .kicker{
+    font-family: var(--mono);
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    font-size: .82em;
+    color: var(--accent);
+  }
+
+  .issue{
+    font-family: var(--mono);
+    font-size: .82em;
+    color: var(--muted);
+    white-space: nowrap;
+  }
+
+  .card{
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    padding: 58px;
+    box-shadow: 0 28px 70px rgba(17,24,39,0.08);
+  }
+
+  h1{
+    font-family: var(--serif);
+    font-weight: 760;
+    letter-spacing: -0.02em;
+    line-height: 1.06;
+    font-size: 3.0em;
+    margin: 10px 0 10px;
+  }
+
+  .meta{
+    color: var(--muted);
+    font-size: .98em;
+    margin-top: 10px;
+  }
+  .pill{
+    display:inline-block;
+    margin-left: 10px;
+    padding: 6px 10px;
+    border-radius: 999px;
+    border: 1px solid var(--line);
+    background: #fafafa;
+    font-family: var(--mono);
+    font-size: .8em;
+    color: var(--muted);
+  }
+
+  .lede{ font-size: 1.14em; color:#1f2937; }
+
+  h2{
+    margin-top: 3.0em;
+    font-size: 1.55em;
+    color: var(--accent2);
+    letter-spacing: -0.01em;
+  }
+
+  p{ margin: 1.15em 0; }
+
+  .callout{
+    margin: 32px 0;
+    padding: 22px;
+    border-radius: 14px;
+    background: rgba(29,78,216,0.06);
+    border: 1px solid rgba(29,78,216,0.20);
+  }
+
+  .grid{
+    display:grid;
+    grid-template-columns: 1.05fr .95fr;
+    gap: 16px;
+    margin: 18px 0;
+  }
+
+  .panel{
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 18px;
+    background: #fcfcfb;
+  }
+
+  .kpis{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 10px;
+  }
+  .kbox{
+    border: 1px solid rgba(15,118,110,0.18);
+    background: rgba(15,118,110,0.06);
+    border-radius: 12px;
+    padding: 12px;
+  }
+  .num{ font-size: 1.45em; font-weight: 820; color: #0b3f3a; }
+  .cap{ font-size: .92em; color: var(--muted); margin-top: 4px; }
+
+  .quote{
+    border-left: 3px solid rgba(15,118,110,0.55);
+    padding-left: 16px;
+    margin: 18px 0;
+    color: #374151;
+    font-style: italic;
+  }
+
+  table{
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0 6px;
+    font-size: .98em;
+  }
+  th, td{
+    padding: 12px 10px;
+    border-bottom: 1px solid var(--line);
+    vertical-align: top;
+  }
+  th{
+    font-family: var(--mono);
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    font-size: .86em;
+    color: #0f766e;
+  }
+
+  .warn{
+    background: rgba(180,83,9,0.08);
+    border: 1px solid rgba(180,83,9,0.25);
+    border-left: 6px solid var(--warn);
+    padding: 18px;
+    border-radius: 12px;
+    margin: 26px 0;
+  }
+
+  .refs a{
+    color: var(--accent2);
+    text-decoration: none;
+    border-bottom: 1px dotted rgba(15,118,110,0.45);
+  }
+  .refs a:hover{ border-bottom-style: solid; }
+
+  footer{
+    margin-top: 74px;
+    padding-top: 22px;
+    border-top: 1px solid var(--line);
+    color: var(--muted);
+    font-size: .9em;
+  }
+</style>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="mast">
+      <div class="kicker">Human–AI Interaction · Longitudinal Study</div>
+      <div class="issue">January 2026 · Work Systems Correspondence</div>
+    </div>
+
+    <div class="card">
+      <h1>Skill Atrophy Thresholds</h1>
+      <div class="meta">
+        A speculative longitudinal analysis of how copilot reliance affects error detection, retention, and independent problem-solving.
+        <span class="pill">speculative</span>
+        <span class="pill">longitudinal</span>
+        <span class="pill">pre-registered</span>
+      </div>
+
+      <p class="lede">
+        AI copilots can speed up work without making it feel easier and a research team at the
+        <strong>Center for Adaptive Work Systems</strong> argues that this mismatch hides a measurable phenomenon:
+        <strong>skill atrophy thresholds</strong>, where reliance crosses a point beyond which error-detection and retention decline
+        even as immediate task throughput improves.
+      </p>
+
+      <div class="warn">
+        <strong>Key framing:</strong> This report does not claim “AI makes people stupid.” It claims a narrower effect:
+        assistance can reduce the need to perform internal checks, and that reduction compounds over time.
+      </div>
+
+      <div class="callout">
+        <strong>Working Definition</strong><br>
+        A <strong>skill atrophy threshold</strong> is the minimum sustained exposure to copilot assistance after which
+        a user’s independent performance (without assistance) declines on the same task family, relative to baseline.
+      </div>
+
+      <div class="grid">
+        <div class="panel">
+          <strong>Study design</strong>
+          <p style="margin-top:10px;">
+            96 participants were tracked over 28 days across three task families: debugging, analytic writing, and spreadsheet modeling.
+            Participants were randomly assigned to one of three assistance conditions: <em>low</em>, <em>moderate</em>, or <em>high</em>.
+          </p>
+          <table>
+            <thead>
+              <tr>
+                <th>Condition</th>
+                <th>Assistance exposure</th>
+                <th>Weekly “no-copilot” test</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Low</td>
+                <td>Hints only; no direct solutions</td>
+                <td>Yes</td>
+              </tr>
+              <tr>
+                <td>Moderate</td>
+                <td>Drafts + suggestions; user edits required</td>
+                <td>Yes</td>
+              </tr>
+              <tr>
+                <td>High</td>
+                <td>Auto-solutions + auto-complete by default</td>
+                <td>Yes</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="panel">
+          <strong>Primary outcomes</strong>
+          <div class="kpis">
+            <div class="kbox">
+              <div class="num">−12%</div>
+              <div class="cap">Error-detection rate (high exposure, week 4)</div>
+            </div>
+            <div class="kbox">
+              <div class="num">−9%</div>
+              <div class="cap">Retention score (high exposure, week 4)</div>
+            </div>
+            <div class="kbox">
+              <div class="num">+22%</div>
+              <div class="cap">Task throughput (during assisted work)</div>
+            </div>
+            <div class="kbox">
+              <div class="num">+2%</div>
+              <div class="cap">Throughput on “no-copilot” tests</div>
+            </div>
+          </div>
+          <p style="margin-top:10px; color: var(--muted);">
+            Effects were strongest in debugging and weakest in spreadsheet tasks; expert users showed slower decline, not immunity.
+          </p>
+        </div>
+      </div>
+
+      <h2>The “threshold” is not a single number</h2>
+      <p>
+        The researchers argue against a universal threshold, proposing instead a family of thresholds by task type and user expertise.
+        However, they report a consistent pattern: atrophy effects accelerate when a user’s workflow shifts from
+        <strong>verification-first</strong> to <strong>acceptance-first</strong> behavior.
+      </p>
+
+      <p class="quote">
+        “The assistant didn’t remove the skill. It removed the need to exercise the skill — and that’s enough to change the baseline.”
+        — Dr. Rowan Keats, Study Lead
+      </p>
+
+      <h2>What changes first</h2>
+      <p>
+        Notably, the first measurable decline was not output quality during assisted work — it was <strong>self-correction</strong>:
+        participants became slower to notice contradictions, edge-case failures, and small logic gaps when the assistant was unavailable.
+      </p>
+
+      <h2>Limitations</h2>
+      <ul>
+        <li><strong>Task bounded:</strong> results may not generalize beyond the studied task families.</li>
+        <li><strong>Tool effects:</strong> specific UI designs can amplify or dampen atrophy.</li>
+        <li><strong>Short horizon:</strong> 28 days suggests early dynamics; long-term adaptation may differ.</li>
+      </ul>
+
+      <h2>Contextual references</h2>
+      <div class="refs">
+        <ol>
+          <li><a href="https://www.nist.gov/itl/ai-risk-management-framework" target="_blank" rel="noreferrer">NIST AI Risk Management Framework</a> — emphasizes evaluation, monitoring, and human oversight considerations in deployed AI.</li>
+          <li><a href="https://nvlpubs.nist.gov/nistpubs/ai/nist.ai.100-1.pdf" target="_blank" rel="noreferrer">NIST AI RMF 1.0 (PDF)</a> — lifecycle framing that motivates measurement of human factors and downstream impacts.</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

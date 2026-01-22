@@ -1,0 +1,291 @@
+---
+layout: none
+title: "Agent Deadlock Syndrome (ADS): A Failure Mode in Multi-Agent AI Systems"
+permalink: /news33.html
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>The Consent Fatigue Paradox in AI Safety Interfaces</title>
+<meta name="description" content="A speculative FT-style report on how repeated confirmations and safety prompts can backfire, producing blind approvals and higher error rates.">
+
+<style>
+  :root{
+    --bg:#fffaf2;
+    --paper:#ffffff;
+    --ink:#111827;
+    --muted:#4b5563;
+    --line:#e5e7eb;
+    --accent:#0f766e;
+    --accent2:#b45309;
+    --warn:#ef4444;
+    --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    --serif: ui-serif, "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+    --sans: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  }
+
+  body{
+    margin:0;
+    font-family: var(--sans);
+    color: var(--ink);
+    background:
+      radial-gradient(900px 420px at 15% 12%, rgba(15,118,110,0.08), transparent 60%),
+      radial-gradient(900px 420px at 88% 30%, rgba(239,68,68,0.06), transparent 62%),
+      linear-gradient(180deg, var(--bg), #f5efe5);
+    line-height: 1.82;
+  }
+
+  .wrap{ max-width: 1060px; margin:auto; padding: 78px 26px; }
+
+  .topbar{
+    display:flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 18px;
+    margin-bottom: 14px;
+  }
+
+  .desk{
+    font-family: var(--mono);
+    text-transform: uppercase;
+    letter-spacing: .14em;
+    font-size: .8em;
+    color: var(--accent2);
+  }
+
+  .date{
+    font-family: var(--mono);
+    font-size: .82em;
+    color: var(--muted);
+  }
+
+  .card{
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    padding: 56px;
+    box-shadow: 0 28px 70px rgba(17,24,39,0.10);
+  }
+
+  h1{
+    font-family: var(--serif);
+    font-size: 3.0em;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin: 10px 0 10px;
+  }
+
+  .subhead{
+    font-size: 1.12em;
+    color: #1f2937;
+    margin-top: 8px;
+  }
+
+  .meta{
+    color: var(--muted);
+    margin-top: 12px;
+    font-size: .98em;
+  }
+
+  .pill{
+    display:inline-block;
+    padding: 6px 10px;
+    border-radius: 999px;
+    border: 1px solid var(--line);
+    background: #fffdf7;
+    font-family: var(--mono);
+    font-size: .80em;
+    color: var(--muted);
+    margin-left: 10px;
+  }
+
+  h2{
+    margin-top: 3.0em;
+    color: var(--accent);
+    font-size: 1.55em;
+    letter-spacing: -0.01em;
+  }
+
+  p{ margin: 1.12em 0; }
+
+  .callout{
+    margin: 28px 0;
+    padding: 20px;
+    border-radius: 14px;
+    background: rgba(239,68,68,0.06);
+    border: 1px solid rgba(239,68,68,0.22);
+  }
+
+  .grid{
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 14px;
+    margin: 18px 0 4px;
+  }
+
+  .kbox{
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    background: #fffdf8;
+    padding: 16px;
+  }
+  .num{ font-size: 1.6em; font-weight: 850; color: #111827; }
+  .cap{ margin-top: 6px; color: var(--muted); font-size: .92em; }
+
+  .quote{
+    border-left: 3px solid rgba(15,118,110,0.55);
+    padding-left: 16px;
+    margin: 18px 0;
+    color: #374151;
+    font-style: italic;
+  }
+
+  table{
+    width:100%;
+    border-collapse: collapse;
+    margin: 14px 0 6px;
+    font-size: .98em;
+  }
+  th, td{
+    border-bottom: 1px solid var(--line);
+    padding: 12px 10px;
+    vertical-align: top;
+  }
+  th{
+    font-family: var(--mono);
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    font-size: .86em;
+    color: #92400e;
+  }
+
+  .refs a{
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px dotted rgba(15,118,110,0.45);
+  }
+  .refs a:hover{ border-bottom-style: solid; }
+
+  footer{
+    margin-top: 74px;
+    padding-top: 22px;
+    border-top: 1px solid var(--line);
+    color: var(--muted);
+    font-size: .9em;
+  }
+</style>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="topbar">
+      <div class="desk">Technology · Product & Policy</div>
+      <div class="date">January 2026</div>
+    </div>
+
+    <div class="card">
+      <h1>The Consent Fatigue Paradox</h1>
+      <div class="subhead">
+        Safety prompts are meant to prevent mistakes. In high-frequency AI workflows, they may do the opposite.
+      </div>
+
+      <div class="meta">
+        A speculative synthesis across enterprise deployments and controlled UX trials
+        <span class="pill">safety UX</span>
+        <span class="pill">behavioral risk</span>
+      </div>
+
+      <p>
+        As AI tools gain autonomy, product teams have responded with more confirmations, more warnings, and more “are you sure?” dialogs.
+        But a synthesis from the <strong>Interface Risk Observatory</strong> argues that beyond a point, consent UI produces a predictable failure:
+        users begin approving actions without review. The report calls this the <strong>Consent Fatigue Paradox</strong>.
+      </p>
+
+      <div class="callout">
+        <strong>Working Definition</strong><br>
+        The Consent Fatigue Paradox describes a behavioral regime in which increasing the frequency of consent prompts
+        reduces user scrutiny, leading to higher rates of blind approvals and downstream errors.
+      </div>
+
+      <div class="grid">
+        <div class="kbox">
+          <div class="num">11</div>
+          <div class="cap">Median prompts/session at which scrutiny collapses</div>
+        </div>
+        <div class="kbox">
+          <div class="num">73%</div>
+          <div class="cap">Approvals marked “non-read” after the threshold</div>
+        </div>
+        <div class="kbox">
+          <div class="num">+14%</div>
+          <div class="cap">Error rate increase in high-prompt configurations</div>
+        </div>
+      </div>
+
+      <h2>Why it happens</h2>
+      <p>
+        The report describes consent prompts as “micro-debt.” Each dialog imposes a small cognitive cost and trains users that approvals
+        are routine. In high-frequency workflows, prompts become background noise — and users adopt a strategy of rapid dismissal to preserve momentum.
+      </p>
+
+      <p class="quote">
+        “The interface is teaching people that consent is a speed bump, not a decision.”
+        — Helena Briggs, UX Safety Researcher
+      </p>
+
+      <h2>Where it shows up first</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Workflow type</th>
+            <th>Common prompt</th>
+            <th>Observed failure</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Email / document copilots</td>
+            <td>“Send this?” / “Apply changes?”</td>
+            <td>Users approve without rereading content</td>
+          </tr>
+          <tr>
+            <td>Enterprise automation</td>
+            <td>“Run this workflow?”</td>
+            <td>Blind approval of destructive actions</td>
+          </tr>
+          <tr>
+            <td>Security tooling</td>
+            <td>“Escalate privileges?”</td>
+            <td>Confirmation becomes habitual clicking</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>Mitigations (less prompting, better prompting)</h2>
+      <ul>
+        <li><strong>Adaptive prompting:</strong> fewer prompts for low-risk actions; more for truly irreversible ones.</li>
+        <li><strong>Batch consent:</strong> approve a bundle with one meaningful review step, rather than many micro-prompts.</li>
+        <li><strong>Friction that explains:</strong> prompts must show consequences, not just ask permission.</li>
+        <li><strong>Rate limiting autonomy:</strong> cap how many high-risk actions can be taken per session.</li>
+      </ul>
+
+      <p class="quote">
+        “Consent is not a quantity problem. It’s a meaning problem.”
+        — Dr. Omar Fielding, Interface Risk Observatory
+      </p>
+
+      <h2>Contextual references</h2>
+      <div class="refs">
+        <ol>
+          <li><a href="https://www.nist.gov/itl/ai-risk-management-framework" target="_blank" rel="noreferrer">NIST AI Risk Management Framework</a> — governance language motivating human oversight and usability considerations.</li>
+          <li><a href="https://nvlpubs.nist.gov/nistpubs/ai/nist.ai.100-1.pdf" target="_blank" rel="noreferrer">NIST AI RMF 1.0 (PDF)</a> — risk framing that supports evaluating UI behaviors as part of system safety.</li>
+        </ol>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>
