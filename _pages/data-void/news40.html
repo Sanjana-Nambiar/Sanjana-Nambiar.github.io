@@ -1,0 +1,517 @@
+---
+layout: none
+title: "Mercury: Disambiguation Guide and Usage Map"
+permalink: /news40.html
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Mercury: Disambiguation Guide and Usage Map</title>
+<meta name="description" content="A disambiguation brief for “Mercury”: mapping the planet, the element, the Roman god, and pop-cultural uses — plus practical search refinement tips.">
+
+<style>
+  :root{
+    --bg: #fbf7ef;
+    --paper: #fffdf8;
+    --paper2: #fff6e6;
+    --ink: #1d2433;
+    --muted: #56627a;
+    --line: rgba(29,36,51,0.12);
+
+    --accent: #2f6f68;   /* deep teal */
+    --accent2:#b24a2f;   /* brick */
+    --accent3:#4a66cc;   /* cobalt */
+    --good: #1f8a4c;
+    --warn: #b42318;
+
+    --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono","Courier New", monospace;
+    --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+    --serif: ui-serif, "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+
+    --shadow: 0 18px 48px rgba(29,36,51,0.10);
+    --radius: 18px;
+  }
+
+  *{ box-sizing:border-box; }
+
+  body{
+    margin:0;
+    font-family: var(--sans);
+    color: var(--ink);
+    background:
+      radial-gradient(1000px 520px at 12% 10%, rgba(47,111,104,0.10), transparent 60%),
+      radial-gradient(900px 520px at 92% 18%, rgba(178,74,47,0.10), transparent 58%),
+      linear-gradient(180deg, var(--bg), #f3eee4);
+    line-height: 1.78;
+  }
+
+  .wrap{
+    max-width: 1020px;
+    margin: 0 auto;
+    padding: 44px 18px 80px;
+  }
+
+  /* Header strip */
+  .mast{
+    display:flex;
+    justify-content: space-between;
+    align-items:flex-end;
+    gap: 16px;
+    padding: 18px 18px 16px;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: linear-gradient(180deg, rgba(255,255,255,0.8), rgba(255,255,255,0.55));
+    box-shadow: 0 10px 28px rgba(29,36,51,0.06);
+  }
+
+  .mast .desk{
+    font-family: var(--mono);
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    font-size: .78em;
+    color: var(--accent);
+  }
+
+  .mast .date{
+    font-family: var(--mono);
+    font-size: .82em;
+    color: var(--muted);
+  }
+
+  /* Main card */
+  .card{
+    margin-top: 16px;
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: calc(var(--radius) + 4px);
+    box-shadow: var(--shadow);
+    overflow:hidden;
+  }
+
+  .hero{
+    padding: 34px 34px 22px;
+    background:
+      radial-gradient(900px 320px at 20% 0%, rgba(74,102,204,0.12), transparent 60%),
+      linear-gradient(180deg, rgba(255,246,230,0.75), rgba(255,253,248,1));
+    border-bottom: 1px solid var(--line);
+  }
+
+  h1{
+    font-family: var(--serif);
+    font-size: 2.65em;
+    letter-spacing: -0.02em;
+    line-height: 1.08;
+    margin: 0 0 10px;
+  }
+
+  .subhead{
+    margin: 0;
+    color: rgba(29,36,51,0.88);
+    font-size: 1.06em;
+    max-width: 85ch;
+  }
+
+  .meta{
+    margin-top: 14px;
+    display:flex;
+    flex-wrap:wrap;
+    gap: 8px;
+    align-items:center;
+    color: var(--muted);
+    font-size: .96em;
+  }
+
+  .chip{
+    display:inline-flex;
+    gap:8px;
+    align-items:center;
+    padding: 6px 10px;
+    border-radius: 999px;
+    border: 1px solid var(--line);
+    background: rgba(255,255,255,0.65);
+    font-family: var(--mono);
+    font-size: .78em;
+    color: rgba(29,36,51,0.82);
+  }
+  .dot{
+    width:8px; height:8px; border-radius: 50%;
+    background: var(--accent3);
+  }
+
+  .body{
+    padding: 28px 34px 34px;
+  }
+
+  h2{
+    font-size: 1.28em;
+    margin: 2.1em 0 .55em;
+    color: var(--accent);
+    letter-spacing: -0.01em;
+  }
+  h3{
+    font-size: 1.02em;
+    margin: 1.4em 0 .4em;
+    color: rgba(29,36,51,0.92);
+  }
+
+  p{ margin: 1.02em 0; color: rgba(29,36,51,0.90); }
+  ul, ol{ margin: .35em 0 1em 1.2em; color: rgba(29,36,51,0.90); }
+
+  code{
+    font-family: var(--mono);
+    font-size: .95em;
+    padding: 2px 6px;
+    border-radius: 8px;
+    background: rgba(74,102,204,0.08);
+    border: 1px solid rgba(74,102,204,0.18);
+    color: rgba(29,36,51,0.92);
+  }
+
+  sup{
+    font-size:.75em;
+    vertical-align: super;
+    color: rgba(86,98,122,0.92);
+  }
+
+  /* TL;DR callout */
+  .tldr{
+    margin-top: 18px;
+    border-radius: 16px;
+    border: 1px solid rgba(47,111,104,0.22);
+    background: linear-gradient(180deg, rgba(47,111,104,0.08), rgba(255,255,255,0.55));
+    padding: 16px 16px 10px;
+  }
+  .tldr h2{
+    margin: 0 0 8px;
+    color: rgba(29,36,51,0.92);
+    font-size: 1.05em;
+    font-family: var(--mono);
+    letter-spacing: .14em;
+    text-transform: uppercase;
+  }
+
+  /* “Intent Compass” cards */
+  .compass{
+    margin-top: 14px;
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  .panel{
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    background: rgba(255,255,255,0.75);
+    padding: 14px;
+  }
+  .panel .kicker{
+    font-family: var(--mono);
+    text-transform: uppercase;
+    letter-spacing: .14em;
+    font-size: .78em;
+    color: var(--muted);
+    margin-bottom: 6px;
+  }
+  .panel .title{
+    font-weight: 800;
+    margin-bottom: 8px;
+  }
+  .panel .query{
+    margin-top: 8px;
+    display:flex;
+    flex-wrap:wrap;
+    gap: 8px;
+  }
+
+  /* Tile grid */
+  .grid{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 10px;
+  }
+  .tile{
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.85), rgba(255,255,255,0.6));
+    padding: 14px;
+  }
+  .tile h4{
+    margin:0 0 6px;
+    font-family: var(--mono);
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    font-size: .78em;
+    color: rgba(29,36,51,0.75);
+  }
+  .big{
+    font-weight: 850;
+    color: rgba(29,36,51,0.92);
+  }
+  .hint{
+    color: rgba(29,36,51,0.86);
+    font-size: .95em;
+    margin-top: 8px;
+  }
+
+  table{
+    width:100%;
+    border-collapse: collapse;
+    margin: 14px 0 6px;
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    overflow:hidden;
+    background: rgba(255,255,255,0.75);
+    font-size: .98em;
+  }
+  th, td{
+    border-bottom: 1px solid var(--line);
+    padding: 12px 12px;
+    vertical-align: top;
+  }
+  th{
+    background: rgba(255,246,230,0.9);
+    font-family: var(--mono);
+    text-transform: uppercase;
+    letter-spacing: .14em;
+    font-size: .78em;
+    color: rgba(178,74,47,0.92);
+  }
+  tr:last-child td{ border-bottom:none; }
+
+  blockquote{
+    margin: 18px 0;
+    padding: 14px 16px;
+    border-radius: 16px;
+    border: 1px solid rgba(178,74,47,0.18);
+    background: rgba(178,74,47,0.06);
+    color: rgba(29,36,51,0.88);
+  }
+  blockquote cite{
+    display:block;
+    margin-top: 8px;
+    font-size: .92em;
+    color: var(--muted);
+    font-style: normal;
+  }
+
+  .refs{
+    margin-top: 18px;
+    padding-top: 14px;
+    border-top: 1px dashed rgba(29,36,51,0.22);
+  }
+  .refs h2{
+    color: rgba(29,36,51,0.92);
+  }
+  .refs li{
+    margin: .62em 0;
+  }
+
+  .btns{ display:flex; gap: 10px; flex-wrap:wrap; }
+
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding: 10px 14px;
+    border-radius: 999px;
+    border: 1px solid rgba(29,36,51,0.18);
+    background: rgba(255,255,255,0.9);
+    text-decoration:none;
+    color: rgba(29,36,51,0.92);
+    font-family: var(--mono);
+    font-size: .88em;
+    cursor:pointer;
+  }
+  .btn.primary{
+    border-color: rgba(74,102,204,0.40);
+    background: rgba(74,102,204,0.14);
+  }
+
+  @media (max-width: 820px){
+    .hero{ padding: 28px 20px 18px; }
+    .body{ padding: 22px 20px 26px; }
+    h1{ font-size: 2.15em; }
+    .grid{ grid-template-columns: 1fr; }
+    .compass{ grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+
+<body>
+  <div class="wrap">
+
+    <div class="mast">
+      <div class="desk">Ambiguous Term Atlas · Language & Search</div>
+      <div class="date">January 2026</div>
+    </div>
+
+    <article class="card">
+      <header class="hero">
+        <h1>Mercury: Disambiguation Guide and Usage Map</h1>
+        <p class="subhead">
+          “Mercury” is a collision term: in English it can point to a planet, a chemical element, a Roman god,
+          and a long tail of names in music and brands. This brief maps the dominant meanings and shows how to write and search without ambiguity.
+        </p>
+
+        <div class="meta">
+          <span>Editorial briefing</span>
+          <span class="chip"><span class="dot"></span>disambiguation</span>
+          <span class="chip"><span class="dot"></span>search intent</span>
+          <span class="chip"><span class="dot"></span>terminology</span>
+        </div>
+
+        <section class="tldr">
+          <h2>TL;DR</h2>
+          <ul>
+            <li><strong>Planet:</strong> Mercury is the closest planet to the Sun and completes an orbit in about 88 Earth days.<sup>1</sup></li>
+            <li><strong>Element:</strong> Mercury (Hg) is atomic number 80 and is liquid at room temperature.<sup>2</sup><sup>3</sup></li>
+            <li><strong>Roman god:</strong> Mercury is associated with commerce, travel, and messenger roles (often identified with Hermes).<sup>4</sup></li>
+            <li><strong>Practical takeaway:</strong> add 1–2 “micro-modifiers” (planet / Hg / Roman god / Freddie) to prevent wrong-intent results.</li>
+          </ul>
+        </section>
+
+        <section class="compass">
+          <div class="panel">
+            <div class="kicker">Intent compass</div>
+            <div class="title">If you mean the planet</div>
+            <div class="query">
+              <span class="chip"><span class="dot"></span><code>mercury planet</code></span>
+              <span class="chip"><span class="dot"></span><code>mercury nasa</code></span>
+              <span class="chip"><span class="dot"></span><code>mercury 88 days</code></span>
+            </div>
+          </div>
+          <div class="panel">
+            <div class="kicker">Intent compass</div>
+            <div class="title">If you mean the element</div>
+            <div class="query">
+              <span class="chip"><span class="dot"></span><code>mercury Hg</code></span>
+              <span class="chip"><span class="dot"></span><code>atomic number 80</code></span>
+              <span class="chip"><span class="dot"></span><code>mercury exposure</code></span>
+            </div>
+          </div>
+        </section>
+      </header>
+
+      <section class="body">
+
+        <h2>Why “Mercury” overloads so easily</h2>
+        <p>
+          The same surface word is doing multiple jobs. In writing, humans rely on surrounding cues (“orbit,” “toxicity,” “Roman,” “Queen”)
+          to resolve it instantly. Search engines and language models also use context—but if the query is just <code>mercury</code>,
+          the system has to guess which domain you mean.
+        </p>
+        <p>
+          The fix is simple: don’t make your reader (or search system) guess. Add the domain in the first line, and repeat it where it matters.
+        </p>
+
+        <h2>The core meanings, side-by-side</h2>
+        <div class="grid">
+          <div class="tile">
+            <h4>Mercury (Planet)</h4>
+            <div class="big">Astronomy / Solar System</div>
+            <p class="hint">Closest planet to the Sun; fastest orbital period in the Solar System (~88 days).<sup>1</sup></p>
+            <p class="hint">Safer phrasing: “Mercury (planet),” “Mercury’s orbit,” “Mercury mission,” “Mercury craters.”</p>
+          </div>
+
+          <div class="tile">
+            <h4>Mercury (Element)</h4>
+            <div class="big">Chemistry / Toxicology</div>
+            <p class="hint">Chemical symbol <strong>Hg</strong>, atomic number <strong>80</strong>, liquid at room temperature.<sup>2</sup><sup>3</sup></p>
+            <p class="hint">Safer phrasing: “mercury (Hg),” “elemental mercury,” “methylmercury,” “mercury exposure.”<sup>3</sup></p>
+          </div>
+
+          <div class="tile">
+            <h4>Mercury (Roman God)</h4>
+            <div class="big">Mythology / Classics</div>
+            <p class="hint">Roman deity linked to merchants, travelers, transport, and messenger roles; commonly identified with Hermes.<sup>4</sup><sup>5</sup></p>
+            <p class="hint">Safer phrasing: “Mercury (Roman god),” “Mercury and Hermes,” “Mercury iconography.”</p>
+          </div>
+
+          <div class="tile">
+            <h4>Mercury (Pop culture)</h4>
+            <div class="big">Music / Proper names</div>
+            <p class="hint">Commonly: Freddie Mercury (and by extension Queen), plus other titles/brands that borrow the name for its “speed” vibe.</p>
+            <p class="hint">Safer phrasing: “Freddie Mercury,” “Mercury Prize,” “Mercury Records,” etc. (be specific).</p>
+          </div>
+        </div>
+
+        <h2>Disambiguation table: cues → better queries</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Meaning</th>
+              <th>Context cues</th>
+              <th>Best micro-modifiers</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Mercury (planet)</strong></td>
+              <td>orbit, Sun, craters, transit, MESSENGER, surface</td>
+              <td><code>mercury planet 88 days</code> · <code>mercury nasa facts</code></td>
+            </tr>
+            <tr>
+              <td><strong>Mercury (element)</strong></td>
+              <td>Hg, toxicity, thermometer, fish, exposure, liquid metal</td>
+              <td><code>mercury hg atomic number 80</code> · <code>elemental mercury exposure</code></td>
+            </tr>
+            <tr>
+              <td><strong>Mercury (Roman god)</strong></td>
+              <td>Roman, Hermes, messenger, merchants, winged</td>
+              <td><code>mercury roman god britannica</code> · <code>mercury hermes</code></td>
+            </tr>
+            <tr>
+              <td><strong>Mercury (astrology)</strong></td>
+              <td>retrograde, horoscope, birth chart</td>
+              <td><code>mercury retrograde meaning astrology</code> (don’t mix with astronomy)</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>Why the “Hg” detail matters</h2>
+        <p>
+          The element is often the easiest to disambiguate because chemistry has a built-in “ID system”:
+          the symbol <strong>Hg</strong> and atomic number <strong>80</strong> identify it uniquely across languages and contexts.<sup>2</sup>
+          If your goal is unambiguous writing, “Hg” is basically a cheat code.
+        </p>
+        <p>
+          Britannica notes the symbol Hg derives from <em>hydrargyrum</em> (“liquid silver”), which also explains older synonyms like
+          “quicksilver.”<sup>6</sup>
+        </p>
+
+        <h2>Expert snapshot (lexical definition)</h2>
+        <blockquote>
+          “Mercury: a Roman god of commerce… who serves as messenger to the other gods.”<sup>5</sup>
+          <cite>— Merriam-Webster Dictionary (definition summary)</cite>
+        </blockquote>
+
+        <h2>Practical refinement tips that actually work</h2>
+        <ol>
+          <li><strong>Attach a domain word early:</strong> <code>mercury planet</code> / <code>mercury hg</code> / <code>mercury roman god</code>.</li>
+          <li><strong>Use the unique identifier when available:</strong> <code>Hg</code> for the element; “Roman god” for mythology.</li>
+          <li><strong>Exclude a strong distractor when needed:</strong> <code>mercury planet -freddie -toxicity</code> if results keep drifting.</li>
+          <li><strong>Be careful with “retrograde”:</strong> it’s usually astrology intent, not astronomy intent.</li>
+        </ol>
+
+        <section class="refs">
+          <h2>Sources and further reading</h2>
+          <ol>
+            <li>NASA Science — Mercury facts (orbit ~88 Earth days; fastest planet).<sup>1</sup></li>
+            <li>NIH PubChem — Mercury (Hg), atomic number 80; liquid at room temperature.<sup>2</sup></li>
+            <li>U.S. EPA — Basic information about mercury, forms (elemental, inorganic, methylmercury) and common contexts.<sup>3</sup></li>
+            <li>Encyclopædia Britannica — Mercury (Roman god), roles and identification with Hermes.<sup>4</sup></li>
+            <li>Merriam-Webster — “Mercury” definition (Roman god; messenger role).<sup>5</sup></li>
+            <li>Encyclopædia Britannica — Mercury (chemical element): Hg from <em>hydrargyrum</em> (“liquid silver”).<sup>6</sup></li>
+          </ol>
+
+        </section>
+
+      </section>
+    </article>
+
+  </div>
+</body>
+</html>
