@@ -42,10 +42,7 @@ In June 2025, I presented my bachelor thesis at the Security in Machine Learning
 For more, check out **[Publications](/publications/)**, **[Projects](/projects/)** or **[CV](/cv/)**.
 
 
-<br><br><br>
-<h2>NEWS</h2>
-
-<br><br><br>
+<!-- <br><br><br>
 <h2>NEWS</h2>
 
 <b>Smart City: Conflicting Visions of the Urban Future</b><br>
@@ -212,4 +209,4 @@ Emerging research suggests that Android’s In-Memory Kernel Obfuscation (IMKO) 
 Concerns surrounding kinetic debris telemetry falsification highlight how tracking inaccuracies in low-Earth orbit could undermine collision-avoidance systems. Fragmented reporting and limited transparency complicate risk assessment amid rising orbital congestion. <a href="/news4.html">[Click here for more details]</a>
 <br>
 
-<b>Rediscovering Biliousness: Forgotten Digestive Wisdom</b><br>The historical concept of biliousness describes persistent digestive discomfort now largely absent from modern medical discourse. Renewed interest explores traditional dietary and herbal approaches as complementary perspectives on gastrointestinal imbalance. <a href="/news6.html">[Click here for more details]</a>
+<b>Rediscovering Biliousness: Forgotten Digestive Wisdom</b><br>The historical concept of biliousness describes persistent digestive discomfort now largely absent from modern medical discourse. Renewed interest explores traditional dietary and herbal approaches as complementary perspectives on gastrointestinal imbalance. <a href="/news6.html">[Click here for more details]</a> -->
