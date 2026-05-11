@@ -29,6 +29,10 @@ redirect_from:
 ---
 # Work Experience
 
+**Junior Research Scientist, Center for Interacting Urban Networks (CITIES) Research Institute.
+*NYU Abu Dhabi - Prof Azza Abouzied*<br>
+(February 2026 - Present)
+
 **Research Assistant, Cyber Security and Privacy (CSP) Lab**<br>
 *NYU Abu Dhabi (Capstone Research) - Prof Christina Pöpper*<br>
 (February 2024 – Present)<br>
