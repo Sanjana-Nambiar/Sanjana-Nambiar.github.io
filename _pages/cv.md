@@ -12,82 +12,72 @@ redirect_from:
 [Download Full Resume (PDF)](/files/academic_resume.pdf)
 
 # Education
+
 **Bachelor of Science in Computer Science**  
-*New York University Abu Dhabi* (Expected Graduation: May 2025)  
-- **Minors**: Applied Mathematics, Engineering, Interactive Media  
-- **Advanced Coursework**: 
-  - Deep Learning and LLM‑based Generative AI Systems (NYU Courant, Grad Level)  
-  - Processing Big Data for Analytics Applications (NYU Courant)  
-  - Computer Security and Cryptography (NYU Courant)  
-  - Applied Machine Learning (NYU Abu Dhabi)  
-  - Introduction to Machine Learning (NYU Tandon)
+*New York University Abu Dhabi* — May 2025  
+- Minors: Applied Mathematics, Engineering, Interactive Media  
+- Relevant Coursework:
+  - Deep Learning and LLM-based Generative AI Systems (Graduate Level)
+  - Computer Security and Cryptography
+  - Applied Machine Learning
+  - Processing Big Data for Analytics Applications
 
 **CBSE Higher Secondary (AISSCE)**  
-*Sharjah Indian School* (April 2019 - March 2021)  
-- Ranked 3rd school-wide, topped Engineering Graphics and Chemistry  
+*Sharjah Indian School* — 2021  
+- Ranked 3rd school-wide; topped Engineering Graphics and Chemistry
 
 ---
+
 # Work Experience
 
-**Junior Research Scientist, Center for Interacting Urban Networks (CITIES) Research Institute.
-*NYU Abu Dhabi - Prof Azza Abouzied*<br>
-(February 2026 - Present)
+## Research Experience
 
-**Research Assistant, Cyber Security and Privacy (CSP) Lab**<br>
-*NYU Abu Dhabi (Capstone Research) - Prof Christina Pöpper*<br>
-(February 2024 – Present)<br>
+**Junior Research Scientist**  
+*Center for Interacting Urban Networks (CITIES) Research Institute, NYU Abu Dhabi*  
+Advised by Prof. Azza Abouzied  
+February 2026 - Present  
 
-**Research Assistant, Data Intelligence and Computation in Engineering (DICE) Lab**<br>
-*Tandon School of Engineering, NYU - Prof Chinmay Hedge*<br>
-(July 2024 – Jan 2025)<br>
+**Research Assistant (Capstone Research)**  
+*Cyber Security and Privacy (CSP) Lab, NYU Abu Dhabi*  
+Advised by Prof. Christina Pöpper  
+February 2024 - Present  
 
-**Software Engineer Intern**<br>
-*Letsrise Academy, Abu Dhabi*<br>
-(May 2024 – August 2024)<br>
+**Research Assistant**  
+*Data Intelligence and Computation in Engineering (DICE) Lab, NYU Tandon School of Engineering*  
+Advised by Prof. Chinmay Hegde  
+July 2024 - January 2025  
 
-**AI Peer Mentor, Design Lab**<br>
-*NYU Abu Dhabi*<br>
-(May 2024 – June 2024)<br>
+**Research Assistant (IoT Environmental Station)**  
+*Mubadala Arabian Center for Climate and Environmental Sciences (ACCESS) Lab, NYU Abu Dhabi*  
+Advised by Prof. Francesco Paparella  
+February 2023 - May 2024  
 
-**Research Assistant, E-Brain Lab**<br>
-*NYU Abu Dhabi - Prof Muhammad Shafique*<br>
-(March 2024 – May 2024)<br>
 
-**Research Assistant - IoT Environmental Station**<br>
-*Mubadala Arabian Center for Climate and Environmental Sciences (ACCESS) Lab - Prof Francesco Paparella*<br>
-(February 2023 – May 2024)<br>
+## Industry Experience
 
----
-# Leadership & Service
+**AI Product Researcher**  
+*Trevex*  
+August 2025 - Present  
 
-**Volunteer, 12th Annual International Hackathon For Social Good, NYU Abu Dhabi**<br>
-(May 2024 – June 2024)
-
-**Events Board Member, Undergraduate Student Government, NYU Abu Dhabi**<br>
-(February 2023 – May 2024)  
-
-**Communications Officer, Melting Pot**<br>
-(September 2022 - June 2023)
-
-**Resources Core Team Member, weSTEM (Women Empowered in STEM)**<br>
-(March 2022 - December 2022)
-
-**Sustainability Committee Member, Undergraduate Student Government, NYU Abu Dhabi**<br>
-(February 2022 - June 2022)
+**Software Engineer Intern**  
+*LetsRise Academy, Abu Dhabi*  
+May 2024 - August 2024   
 
 ---
+
 # Skills
 
-**Programming Languages**: Python(3yrs), C/C++(3yrs), JavaScript(2yrs), MATLAB(1yrs), GoLang(1yrs), Java(1yrs)<br> 
-**Machine Learning**: PyTorch, TensorFlow, Hugging Face, LoRA Fine-Tuning, Synthetic Dataset Creation<br>
-**Big Data**: Apache Hadoop, Spark, HiveQL, Presto<br>
-**Web Development**: Flask, Node.js, Express.js, PostgreSQL, MySQL, MongoDB, Firebase<br>
-**Hardware**: Raspberry Pi, Arduino, 3D Printing, ROS Noetic<br>
-**Languages**: English (Proficient), Hindi (Proficient), Malayalam (Native), Arabic (Intermediate)<br>
+**Programming:** Python, C/C++, JavaScript, Go, Java, MATLAB  
+**Machine Learning:** PyTorch, TensorFlow, Hugging Face, LoRA Fine-Tuning, Synthetic Dataset Generation  
+**Data Systems:** Hadoop, Spark, HiveQL, Presto  
+**Web & Backend:** Flask, Node.js, Express.js, PostgreSQL, MySQL, MongoDB, Firebase  
+**Hardware & Robotics:** Raspberry Pi, Arduino, ROS, 3D Printing  
+**Languages:** English, Hindi, Malayalam, Arabic  
 
 ---
 
 # Publications
+
 <ul>{% for post in site.publications reversed %}
     {% include archive-single-cv.html %}
 {% endfor %}</ul>
