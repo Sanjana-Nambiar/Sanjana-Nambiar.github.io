@@ -20,7 +20,7 @@ I’m **Sanjana Nambiar**, an AI security researcher and engineer working on the
 
 My interests include adversarial behavior, trustworthy AI, and the reliability of LLMs. More broadly, I’m curious about understanding language models “under the hood,” including mechanistic interpretability, reasoning behavior, and the reliability of agentic AI systems.
 
-Currently, I work as a Junior Research Scientist at the [Center for Interacting Urban Networks (CITIES) Research Institute](https://cities.ac.ae/) at NYU Abu Dhabi, under [Prof. Azza Abouzied](https://azzah.github.io/) and [Prof. Christina Pöpper](https://www.christinapoepper.com/), where I study misinformation, retrieval vulnerabilities, and adversarial behavior in web-searching LLMs.
+Currently, I work as a Junior Research Scientist at the Center for Interacting Urban Networks (CITIES) Research Institute at NYU Abu Dhabi, under [Prof. Azza Abouzied](https://azzaabouzied.com/) and [Prof. Christina Pöpper](https://poepper.net/), where I study misinformation, retrieval vulnerabilities, and adversarial behavior in web-searching LLMs.
 
 Previously, during my undergraduate studies, I worked on LLM jailbreak attacks, alignment benchmarking, and adversarial defense strategies through collaborations across NYU Abu Dhabi, CCSAD, and NYU Tandon. Alongside research, I enjoy building practical AI systems and experimenting with agentic workflows.
 ## News
