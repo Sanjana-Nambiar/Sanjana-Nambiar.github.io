@@ -25,6 +25,8 @@ Currently, I work as a Junior Research Scientist at the Center for Interacting U
 Previously, during my undergraduate studies, I worked on LLM jailbreak attacks, alignment benchmarking, and adversarial defense strategies through collaborations across NYU Abu Dhabi, CCSAD, and NYU Tandon. Alongside research, I enjoy building practical AI systems and experimenting with agentic workflows.
 ## News
 
+- **Jun 2026**: Invited to serve as a Program Committee Member for the AI Security track at the 22nd ACM ASIA Conference on Computer and Communications Security ([ACM ASIACCS 2027](https://asiaccs2027.cityu.edu.mo/index.html)).
+
 - **May 2026**: Research on misinformation in web-searching LLMs currently under review.
 
 - **Feb 2026**: Joined the [Center for Interacting Urban Networks (CITIES) Research Institute](https://nyuad.nyu.edu/en/research/faculty-labs-and-projects/center-for-interacting-urban-networks.html) at NYU Abu Dhabi as a [Junior Research Scientist](https://nyuad.nyu.edu/en/research/faculty-labs-and-projects/center-for-interacting-urban-networks/sanjana-nambiar.html), working on Data void exploits, misinformation and LLM  vulnerabilities.
