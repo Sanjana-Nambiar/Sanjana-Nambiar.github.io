@@ -16,20 +16,21 @@ redirect_from:
 
 <script defer src="{{ '/assets/js/home.js' | relative_url }}"></script>
 
-I’m **Sanjana Nambiar**, an AI security researcher and engineer working on the reliability, robustness, and safety of large language models and generative AI systems.
+I’m **Sanjana Nambiar**, an AI security researcher working on the reliability, robustness, and safety of LLMs and generative AI systems.
 
 My interests include adversarial behavior, trustworthy AI, and the reliability of LLMs. More broadly, I’m curious about understanding language models “under the hood,” including mechanistic interpretability, reasoning behavior, and the reliability of agentic AI systems.
 
 Currently, I work as a Junior Research Scientist at the Center for Interacting Urban Networks (CITIES) Research Institute at NYU Abu Dhabi, under [Prof. Azza Abouzied](https://azzaabouzied.com/) and [Prof. Christina Pöpper](https://poepper.net/), where I study misinformation, retrieval vulnerabilities, and adversarial behavior in web-searching LLMs.
 
-Previously, during my undergraduate studies, I worked on LLM jailbreak attacks, alignment benchmarking, and adversarial defense strategies through collaborations across NYU Abu Dhabi, CCSAD, and NYU Tandon. Alongside research, I enjoy building practical AI systems and experimenting with agentic workflows.
+
 ## News
+- **Sept 2026**: Serving as the Artifact Evalutors for [IEEE S&P 2027](https://sp2027.ieee-security.org/)
+- 
+- **Aug 2026**: Organize and co-host the weekly [Cybersecurity Seminar Series](https://sites.nyuad.nyu.edu/ccs-ad/?page_id=243765) for AY 2026-2027
+- 
+- **Jun 2026**: Serving as the PC Member for AI Security track at [ACM ASIACCS 2027](https://asiaccs2027.cityu.edu.mo/index.html)
 
-- **Jun 2026**: Invited to serve as a Program Committee Member for the AI Security track at the 22nd ACM ASIA Conference on Computer and Communications Security ([ACM ASIACCS 2027](https://asiaccs2027.cityu.edu.mo/index.html)).
-
-- **May 2026**: Research on misinformation in web-searching LLMs currently under review.
-
-- **Feb 2026**: Joined the [Center for Interacting Urban Networks (CITIES) Research Institute](https://nyuad.nyu.edu/en/research/faculty-labs-and-projects/center-for-interacting-urban-networks.html) at NYU Abu Dhabi as a [Junior Research Scientist](https://nyuad.nyu.edu/en/research/faculty-labs-and-projects/center-for-interacting-urban-networks/sanjana-nambiar.html), working on Data void exploits, misinformation and LLM  vulnerabilities.
+- **Feb 2026**: Joined the [Center for Interacting Urban Networks (CITIES) Research Institute](https://nyuad.nyu.edu/en/research/faculty-labs-and-projects/center-for-interacting-urban-networks.html) at NYU Abu Dhabi as a [Junior Research Scientist](https://nyuad.nyu.edu/en/research/faculty-labs-and-projects/center-for-interacting-urban-networks/sanjana-nambiar.html).
 
 - **Jan 2026**: Completed the [Technical AI Safety Course](https://www.bluedot.org/) by Bluedot Impact, focused on frontier AI risks and AI safety evaluation.
 
