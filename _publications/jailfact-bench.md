@@ -3,14 +3,16 @@ title: "JailFact-Bench: A Comprehensive Analysis of Jailbreak Attacks vs. Halluc
 collection: publications
 category: conferences
 permalink: /publication/jailfact-bench
-excerpt: "Benchmarks jailbreak attacks on LLMs and investigates their potential to induce hallucinations, proposing categorization strategies and countermeasures to strengthen AI alignment."
+excerpt: "Introduces a benchmark that pairs jailbreak prompts with semantically similar factual prompts to measure how jailbreaks affect factual accuracy and toxicity in LLM responses."
 date: 2025-06-24
-venue: 'SiMLA 2025 Workshop @ ACNS (to appear in Springer LNCS post-proceedings)'
+venue: 'SiMLA 2025 Workshop at ACNS (published in Springer LNCS post-proceedings)'
 header:
-  teaser: publications/jailfact-bench.png 
-paperurl: '/files/SiMLA-2-main.pdf'
+  teaser: publications/jailfact-bench.png
+paperurl: 'https://link.springer.com/chapter/10.1007/978-3-032-01823-6_2'
 slidesurl: 'https://docs.google.com/presentation/d/1YXF5duFIcuPsV7E2arLNwX-EGhgvRXhgTqOktDS_XZE/edit?usp=sharing'
-citation: 'Sanjana Nambiar, Christina Pöpper. (2025). "JailFact-Bench: A Comprehensive Analysis of Jailbreak Attacks vs. Hallucinations in LLMs." <i>SiMLA 2025 Workshop, co-located with ACNS 2025</i>. To appear in Springer LNCS.'
+citation: 'Sanjana Nambiar and Christina Pöpper. (2026). "JailFact-Bench: A Comprehensive Analysis of Jailbreak Attacks vs. Hallucinations in LLMs." In <i>Applied Cryptography and Network Security Workshops</i>, Lecture Notes in Computer Science, vol. 15655, pp. 23–42. Springer, Cham.'
 ---
-This paper investigates the relationship between jailbreak prompts and hallucination behavior in large language models (LLMs). It introduces JailFact-Bench, a benchmark designed to evaluate factual accuracy under adversarial prompting scenarios. Through semantic similarity and factual precision scoring, the study reveals that many jailbreaks induce hallucinations, challenging conventional boundaries between safety and truthfulness in LLMs. The research was presented at the SiMLA 2025 Workshop, co-located with ACNS 2025, and will be published in the Springer LNCS post-proceedings.
 
+JailFact-Bench pairs jailbreak prompts with semantically similar, non-adversarial factual prompts to compare the factual precision and toxicity of large language model responses. Across five jailbreak techniques, the study found that responses could drift from the topic and become more prone to factual errors. The findings highlight the importance of evaluating factual accuracy alongside toxicity when assessing jailbreaks.
+
+Presented at the SiMLA 2025 Workshop, co-located with ACNS 2025. The chapter first appeared online on October 25, 2025, in the [Springer LNCS post-proceedings](https://doi.org/10.1007/978-3-032-01823-6_2).

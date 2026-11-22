@@ -8,7 +8,7 @@ date: 2024-09-23
 venue: 'International Conference on Learning Representations (ICLR) 2025'
 header:
   teaser: publications/style.png 
-paperurl: 'https://arxiv.org/pdf/2409.15268'
+paperurl: 'https://openreview.net/forum?id=MzHNftnAM1'
 citation: 'Benjamin Feuer, Micah Goldblum, Teresa Datta, Sanjana Nambiar, Raz Besaleli, Samuel Dooley, Max Cembalest, John P. Dickerson. (2025). "Style Outweighs Substance: Failure Modes of LLM Judges in Alignment Benchmarking." <i>International Conference on Learning Representations (ICLR) 2025</i>.'
 ---
 
