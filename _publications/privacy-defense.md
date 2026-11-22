@@ -3,7 +3,7 @@ title: "Synthetic Fine-Tuning as a Defense Mechanism in Large Language Model PII
 collection: publications
 category: competitions
 permalink: /publication/privacy-defense
-excerpt: "Explores synthetic data fine-tuning to mitigate unauthorized access to private information in LLMs, focusing on reducing attack success rates while maintaining model utility."
+excerpt: "Explores synthetic data fine-tuning to mitigate unauthorized access to PII data in LLMs, focusing on reducing attack success rates while maintaining model utility."
 date: 2024-12-01
 venue: 'NeurIPS 2024 LLM Privacy Competition'
 header:

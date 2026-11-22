@@ -3,7 +3,7 @@ title: "JailFact-Bench: A Comprehensive Analysis of Jailbreak Attacks vs. Halluc
 collection: publications
 category: conferences
 permalink: /publication/jailfact-bench
-excerpt: "Introduces a benchmark that pairs jailbreak prompts with semantically similar factual prompts to measure how jailbreaks affect factual accuracy and toxicity in LLM responses."
+excerpt: "A benchmark that pairs jailbreak prompts with semantically similar factual prompts to measure how jailbreaks affect factual accuracy and toxicity in LLM responses."
 date: 2025-06-24
 venue: 'SiMLA 2025 Workshop at ACNS (published in Springer LNCS post-proceedings)'
 header:
